@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fração Geratriz - Promover</title>
+    <title>Princípio Multiplicativo - Promover</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,9 @@
             --text-color: #2D3748;
             --border-color: #000000;
             
-            /* CORES DA MATÉRIA: TEMA AZUL PETRÓLEO (Técnica/Mecânica) */
-            --theme-color: #E0F2F1; 
-            --theme-active: #00695C; 
+            /* CORES DA MATÉRIA: TEMA AMBAR/OURO (Escolhas/Combinações) */
+            --theme-color: #FEF3C7; 
+            --theme-active: #D97706; 
             --theme-text-active: #FFFFFF;
             
             /* FEEDBACK */
@@ -156,14 +156,14 @@
             justify-content: center;
             margin: 15px 0;
             padding: 15px;
-            background-color: #E0F2F1;
+            background-color: #FEF3C7;
             border-radius: 12px;
             border: 1px dashed var(--theme-active);
         }
 
         .example-box {
-            background-color: #F0FDFA; /* Verde/Azul claro */
-            border-left: 5px solid #00695C;
+            background-color: #FFFBEB; /* Amarelo muito claro */
+            border-left: 5px solid #D97706;
             padding: 15px;
             margin: 15px 0;
             border-radius: 8px;
@@ -173,7 +173,7 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: 800;
-            color: #004D40;
+            color: #B45309;
             margin-bottom: 5px;
             display: block;
         }
@@ -362,38 +362,48 @@
 
         <div id="viewExplanation" class="section-view" style="display: block;">
             
-            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Fração Geratriz</h1>
-            <p style="color: #555; margin-bottom: 20px;">Transformar dízimas infinitas em frações é como encontrar a "receita" que gerou aquele número.</p>
+            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Princípio Multiplicativo</h1>
+            <p style="color: #555; margin-bottom: 20px;">Também conhecido como Princípio Fundamental da Contagem. É a base para descobrir quantas combinações podemos fazer.</p>
             
             <div class="card-content">
-                <h3>🔢 Método Prático</h3>
-                <p>O segredo está em montar a fração usando o <strong>Período</strong> (quem repete) e o <strong>Anti-período</strong> (intruso).</p>
-                
-                <div class="example-box">
-                    <span class="example-tag">1. Dízima Simples (0,ppp...)</span>
-                    <p>Coloque o período no topo. Embaixo, coloque tantos <strong>9s</strong> quantos forem os algarismos do período.</p>
-                    <p style="font-weight:700; margin-top:5px; color:#00695C;">0,777... ➝ 7/9</p>
-                    <p style="font-weight:700; color:#00695C;">0,1212... ➝ 12/99</p>
+                <h3>🧩 A Regra do "E"</h3>
+                <p>Se você tem que tomar uma decisão <strong>E</strong> depois outra decisão, você <strong>MULTIPLICA</strong> as opções.</p>
+                <br>
+                <div class="visual-row">
+                    <div class="visual-item">
+                        <svg class="visual-svg" width="60" height="60" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3">
+                            <rect x="15" y="10" width="30" height="40" rx="5" stroke="#D97706" fill="none"/>
+                            <path d="M20 20 H40" stroke="#D97706"/>
+                            <path d="M20 30 H40" stroke="#D97706"/>
+                            <path d="M20 40 H40" stroke="#D97706"/>
+                        </svg>
+                        <p style="font-size:0.75rem; font-weight:bold;">3 Camisetas</p>
+                    </div>
+                    <div style="font-size: 2rem; color:#D97706; display:flex; align-items:center;">x</div>
+                    <div class="visual-item">
+                        <svg class="visual-svg" width="60" height="60" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3">
+                            <path d="M20 10 L20 50 M40 10 L40 50 M20 30 H40" stroke="#D97706"/>
+                        </svg>
+                        <p style="font-size:0.75rem; font-weight:bold;">2 Calças</p>
+                    </div>
                 </div>
-
-                <div class="example-box">
-                    <span class="example-tag">2. Dízima Composta (0,iap...)</span>
-                    <p>Numerador: (Tudo até o 1º período) - (Tudo antes do período).</p>
-                    <p>Denominador: <strong>9s</strong> (pelo período) e <strong>0s</strong> (pelo anti-período).</p>
-                    <p style="font-weight:700; margin-top:5px; color:#00695C;">0,2555...</p>
-                    <p>(25 - 2) / 90 = 23/90</p>
-                </div>
+                <p style="text-align:center; font-weight:700; margin-top:10px;">Total = 3 x 2 = 6 Looks</p>
             </div>
 
             <div class="card-content">
-                <h3>✂️ Simplificação</h3>
-                <p>Sempre verifique se dá para dividir o numerador e o denominador pelo mesmo número.</p>
-                <div class="visual-row" style="justify-content: center; margin-top:10px;">
-                    <div style="background:#E0F2F1; padding:10px; border-radius:8px; text-align:center;">
-                        <span style="font-weight:bold;">12/99</span>
-                        <span>(div por 3)</span>
-                        <span style="font-weight:bold;">➝ 4/33</span>
-                    </div>
+                <h3>🚦 Caminhos e Etapas</h3>
+                <p>Funciona para qualquer sequência de escolhas:</p>
+                
+                <div class="example-box">
+                    <span class="example-tag">O Menu</span>
+                    <p>Entrada (2 opções) x Prato (3 opções) x Sobremesa (2 opções).</p>
+                    <p style="font-weight:700; margin-top:5px;">Total = 2 x 3 x 2 = 12 combinações.</p>
+                </div>
+
+                <div class="example-box">
+                    <span class="example-tag">Dica de Ouro</span>
+                    <p>Sempre pergunte: "Quantas opções eu tenho para a primeira vaga? E para a segunda?..."</p>
+                    <p>Depois, multiplique tudo!</p>
                 </div>
             </div>
 
@@ -405,7 +415,7 @@
         <div id="viewPractice" class="section-view">
             <div style="margin-bottom: 15px;">
                 <h2>Hora de Praticar!</h2>
-                <p style="color: #666; font-size: 0.9rem;">Calcule a fração geratriz.</p>
+                <p style="color: #666; font-size: 0.9rem;">Multiplique as possibilidades.</p>
             </div>
             <div class="question-map" id="qMap"></div>
             <div id="quizContainer" style="margin-bottom: 100px;"></div>
@@ -431,177 +441,177 @@
     </footer>
 
     <script>
-        // --- BANCO DE QUESTÕES (FRAÇÃO GERATRIZ - 8º ANO) ---
+        // --- BANCO DE QUESTÕES (PRINCÍPIO MULTIPLICATIVO) ---
         const questions = [
-            // NÍVEL 1: DÍZIMAS SIMPLES
+            // NÍVEL 1: CONCEITOS BÁSICOS
             {
                 id: 1,
-                text: "Qual é a fração geratriz de <strong>0,555...</strong>?",
-                options: ["5/10", "5/9", "5/90", "5/99"],
+                text: "Se tenho 3 tipos de pão e 2 tipos de recheio, quantos sanduíches diferentes posso fazer?",
+                options: ["5", "6", "1", "3"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 5/10 é igual a 0,5 (decimal exato).<br>
-                    <strong>(B) Correta:</strong> Período é 5 (um algarismo). Denominador é um 9. Resultado: 5/9.<br>
-                    <strong>(C) Incorreta:</strong> 90 é usado para dízimas compostas.<br>
-                    <strong>(D) Incorreta:</strong> 99 é para período com dois algarismos.`
+                    <strong>(A) Incorreta:</strong> 3 + 2 = 5 (soma está errada).<br>
+                    <strong>(B) Correta:</strong> Princípio multiplicativo: 3 x 2 = 6 combinações.<br>
+                    <strong>(C) Incorreta:</strong> Impossível.<br>
+                    <strong>(D) Incorreta:</strong> Apenas o número de pães.`
             },
             {
                 id: 2,
-                text: "A dízima <strong>0,232323...</strong> tem como geratriz:",
-                options: ["23/100", "23/90", "23/99", "2/9"],
-                correct: 2,
+                text: "Para ir da cidade A para a B existem 4 estradas. De B para C existem 2 estradas. Quantos caminhos existem de A até C?",
+                options: ["6", "8", "2", "4"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 23/100 é 0,23 (exato).<br>
-                    <strong>(B) Incorreta:</strong> 23/90 seria 0,2555...<br>
-                    <strong>(C) Correta:</strong> Período é 23 (dois algarismos). Colocamos dois noves: 23/99.<br>
-                    <strong>(D) Incorreta:</strong> 2/9 é 0,222...`
+                    <strong>(A) Incorreta:</strong> Somou as estradas (4+2).<br>
+                    <strong>(B) Correta:</strong> Para cada uma das 4 estradas iniciais, tenho 2 opções seguintes. 4 x 2 = 8.<br>
+                    <strong>(C) Incorreta:</strong> Menor número.<br>
+                    <strong>(D) Incorreta:</strong> Maior número isolado.`
             },
             {
                 id: 3,
-                text: "Determine a fração de <strong>0,999...</strong>",
-                options: ["9/10", "99/100", "1", "0,9"],
-                correct: 2,
+                text: "Uma moeda é lançada 3 vezes. Quantos resultados possíveis existem (ex: Cara-Cara-Coroa)?",
+                options: ["6", "8", "3", "9"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> É 0,9.<br>
-                    <strong>(B) Incorreta:</strong> É 0,99.<br>
-                    <strong>(C) Correta:</strong> 9/9 é igual a 1. Matematicamente, 0,999... é igual a 1.<br>
-                    <strong>(D) Incorreta:</strong> É o próprio número arredondado.`
+                    <strong>(A) Incorreta:</strong> 2 x 3 = 6 (erro comum).<br>
+                    <strong>(B) Correta:</strong> 2 opções (1º) x 2 opções (2º) x 2 opções (3º) = 8.<br>
+                    <strong>(C) Incorreta:</strong> Número de lançamentos.<br>
+                    <strong>(D) Incorreta:</strong> 3 x 3 = 9.`
             },
-            // NÍVEL 2: DÍZIMAS COMPOSTAS BÁSICAS
+            // NÍVEL 2: ROUPAS E COMBINAÇÕES
             {
                 id: 4,
-                text: "Qual a fração geratriz de <strong>0,1666...</strong>?",
-                options: ["16/99", "16/90", "15/90", "15/99"],
+                text: "Tenho 4 camisetas, 3 calças e 2 pares de tênis. De quantas formas posso me vestir?",
+                options: ["9", "12", "24", "14"],
                 correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria 0,1616...<br>
-                    <strong>(B) Incorreta:</strong> Esqueceu de subtrair o anti-período.<br>
-                    <strong>(C) Correta:</strong> (16 - 1) / 90 = 15/90. (Simplificando dá 1/6).<br>
-                    <strong>(D) Incorreta:</strong> Denominador de simples.`
+                    <strong>(A) Incorreta:</strong> 4+3+2 = 9 (soma).<br>
+                    <strong>(B) Incorreta:</strong> 4 x 3 = 12 (esqueceu o tênis).<br>
+                    <strong>(C) Correta:</strong> 4 x 3 x 2 = 24 combinações.<br>
+                    <strong>(D) Incorreta:</strong> Cálculo aleatório.`
             },
             {
                 id: 5,
-                text: "Converta <strong>0,2333...</strong> para fração.",
-                options: ["21/90", "23/90", "21/99", "23/99"],
-                correct: 0,
+                text: "Uma sorveteria oferece 2 tipos de casquinha e 5 sabores de sorvete. Quantas opções de 1 bola existem?",
+                options: ["7", "10", "25", "5"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Correta:</strong> (23 - 2) / 90 = 21/90.<br>
-                    <strong>(B) Incorreta:</strong> Não subtraiu o anti-período (2).<br>
-                    <strong>(C) Incorreta:</strong> Denominador errado.<br>
-                    <strong>(D) Incorreta:</strong> Seria 0,2323...`
+                    <strong>(A) Incorreta:</strong> Somou.<br>
+                    <strong>(B) Correta:</strong> 2 casquinhas x 5 sabores = 10 opções.<br>
+                    <strong>(C) Incorreta:</strong> 5 x 5.<br>
+                    <strong>(D) Incorreta:</strong> Só os sabores.`
             },
             {
                 id: 6,
-                text: "A geratriz de <strong>0,4111...</strong> é:",
-                options: ["41/99", "37/90", "41/90", "37/99"],
+                text: "Numa sala com 3 portas, de quantas formas posso entrar por uma e sair por outra (qualquer uma)?",
+                options: ["6", "9", "3", "5"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria 0,4141...<br>
-                    <strong>(B) Correta:</strong> (41 - 4) / 90 = 37/90.<br>
-                    <strong>(C) Incorreta:</strong> Esqueceu de subtrair.<br>
-                    <strong>(D) Incorreta:</strong> Denominador errado.`
+                    <strong>(A) Incorreta:</strong> 3 + 3.<br>
+                    <strong>(B) Correta:</strong> Tenho 3 opções para entrar e 3 opções para sair. 3 x 3 = 9. (A questão não proibiu sair pela mesma).<br>
+                    <strong>(C) Incorreta:</strong> Apenas uma etapa.<br>
+                    <strong>(D) Incorreta:</strong> Erro de cálculo.`
             },
-            // NÍVEL 3: COM PARTE INTEIRA
+            // NÍVEL 3: NÚMEROS E SENHAS (COM REPETIÇÃO)
             {
                 id: 7,
-                text: "Encontre a fração de <strong>1,333...</strong>",
-                options: ["13/9", "4/3", "10/9", "13/10"],
+                text: "Quantos números de 2 algarismos podemos formar usando apenas os dígitos 1, 2 e 3?",
+                options: ["6", "9", "3", "5"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> (13-1)/9 = 12/9 = 4/3. 13/9 é 1,444...<br>
-                    <strong>(B) Correta:</strong> Separe: 1 + 0,333... = 1 + 3/9 = 1 + 1/3 = 4/3.<br>
-                    <strong>(C) Incorreta:</strong> Cálculo errado.<br>
-                    <strong>(D) Incorreta:</strong> Decimal exato 1,3.`
+                    <strong>(A) Incorreta:</strong> 3 x 2 (sem repetição).<br>
+                    <strong>(B) Correta:</strong> Tenho 3 opções para a dezena e 3 opções para a unidade. 3 x 3 = 9.<br>
+                    <strong>(C) Incorreta:</strong> Apenas os dígitos.<br>
+                    <strong>(D) Incorreta:</strong> Soma.`
             },
             {
                 id: 8,
-                text: "Qual é a fração de <strong>2,1212...</strong>?",
-                options: ["212/99", "210/99", "70/33", "21/99"],
-                correct: 2,
+                text: "Uma senha é formada por 2 letras (A, B, C, D). Quantas senhas possíveis existem?",
+                options: ["8", "16", "4", "12"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> (212-2)/99 = 210/99.<br>
-                    <strong>(B) Incorreta:</strong> Está correto antes de simplificar. Vamos ver se tem simplificada...<br>
-                    <strong>(C) Correta:</strong> 210/99 simplificado por 3 é 70/33. Essa é a resposta final mais adequada.<br>
-                    <strong>(D) Incorreta:</strong> Ignorou a parte inteira.`
+                    <strong>(A) Incorreta:</strong> 4 + 4.<br>
+                    <strong>(B) Correta:</strong> 4 opções para a 1ª letra x 4 opções para a 2ª letra = 16.<br>
+                    <strong>(C) Incorreta:</strong> Só uma letra.<br>
+                    <strong>(D) Incorreta:</strong> 4 x 3 (sem repetição).`
             },
             {
                 id: 9,
-                text: "A dízima <strong>1,555...</strong> em fração imprópria é:",
-                options: ["15/9", "14/9", "16/9", "5/9"],
+                text: "Quantos resultados possíveis existem ao lançar 2 dados de 6 faces?",
+                options: ["12", "36", "6", "24"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Não subtraiu.<br>
-                    <strong>(B) Correta:</strong> (15 - 1) / 9 = 14/9.<br>
-                    <strong>(C) Incorreta:</strong> Somou.<br>
-                    <strong>(D) Incorreta:</strong> Ignorou o inteiro.`
+                    <strong>(A) Incorreta:</strong> 6 + 6 = 12.<br>
+                    <strong>(B) Correta:</strong> 6 faces x 6 faces = 36 pares possíveis.<br>
+                    <strong>(C) Incorreta:</strong> Só um dado.<br>
+                    <strong>(D) Incorreta:</strong> 6 x 4.`
             },
-            // NÍVEL 4: SIMPLIFICAÇÃO OBRIGATÓRIA
+            // NÍVEL 4: RESTRIÇÕES (SEM REPETIÇÃO)
             {
                 id: 10,
-                text: "Qual a fração <strong>irredutível</strong> de 0,666...?",
-                options: ["6/9", "2/3", "3/2", "66/99"],
+                text: "Quantos números de 2 algarismos <strong>distintos</strong> (diferentes) formamos com 1, 2, 3 e 4?",
+                options: ["16", "12", "10", "4"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Correta, mas não está simplificada.<br>
-                    <strong>(B) Correta:</strong> 6/9 simplificado por 3 vira 2/3.<br>
-                    <strong>(C) Incorreta:</strong> Inverso.<br>
-                    <strong>(D) Incorreta:</strong> Não simplificada.`
+                    <strong>(A) Incorreta:</strong> 4 x 4 = 16 (com repetição).<br>
+                    <strong>(B) Correta:</strong> 4 opções para o primeiro dígito. Como não pode repetir, sobram 3 para o segundo. 4 x 3 = 12.<br>
+                    <strong>(C) Incorreta:</strong> Soma.<br>
+                    <strong>(D) Incorreta:</strong> Apenas os dígitos.`
             },
             {
                 id: 11,
-                text: "A dízima <strong>0,1515...</strong> simplificada é:",
-                options: ["15/99", "5/33", "1/5", "3/20"],
+                text: "4 pessoas disputam uma corrida. De quantas formas podem ficar o 1º e o 2º lugar?",
+                options: ["16", "12", "8", "4"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Falta simplificar.<br>
-                    <strong>(B) Correta:</strong> 15/99 dividido por 3 em cima e embaixo resulta em 5/33.<br>
-                    <strong>(C) Incorreta:</strong> Decimal exato 0,2.<br>
-                    <strong>(D) Incorreta:</strong> Decimal exato 0,15.`
+                    <strong>(A) Incorreta:</strong> A mesma pessoa não pode ficar em 1º e 2º.<br>
+                    <strong>(B) Correta:</strong> 4 opções para campeão x 3 opções para vice = 12.<br>
+                    <strong>(C) Incorreta:</strong> 4 + 4.<br>
+                    <strong>(D) Incorreta:</strong> Número de pessoas.`
             },
             {
                 id: 12,
-                text: "Simplifique a geratriz de <strong>0,222...</strong>",
-                options: ["2/9", "1/9", "2/10", "1/5"],
-                correct: 0,
+                text: "Tenho 3 cores para pintar uma bandeira de 3 listras. Cores adjacentes não podem ser iguais. Quantas formas?",
+                options: ["27", "12", "6", "9"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Correta:</strong> 2/9 não dá para simplificar mais, pois 2 e 9 não têm divisores comuns.<br>
-                    <strong>(B) Incorreta:</strong> É 0,111...<br>
-                    <strong>(C) Incorreta:</strong> É 0,2.<br>
-                    <strong>(D) Incorreta:</strong> É 0,2.`
+                    <strong>(A) Incorreta:</strong> 3 x 3 x 3 (ignorou a regra).<br>
+                    <strong>(B) Correta:</strong> 1ª listra: 3 opções. 2ª listra: 2 opções (não pode ser igual à 1ª). 3ª listra: 2 opções (não pode ser igual à 2ª). 3 x 2 x 2 = 12.<br>
+                    <strong>(C) Incorreta:</strong> 3 x 2 x 1.<br>
+                    <strong>(D) Incorreta:</strong> Soma.`
             },
-            // NÍVEL 5: DESAFIOS E OPERAÇÕES
+            // NÍVEL 5: DESAFIOS E LÓGICA
             {
                 id: 13,
-                text: "Quanto vale <strong>√0,444...</strong>?",
-                options: ["0,2", "0,222...", "2/3", "0,666..."],
-                correct: 3,
+                text: "Quantos anagramas (trocas de ordem) tem a palavra AMOR?",
+                options: ["4", "16", "24", "10"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Raiz de 0,04.<br>
-                    <strong>(B) Incorreta:</strong> Raiz de 0,049...<br>
-                    <strong>(C) Incorreta:</strong> É 2/3, mas a opção D mostra o decimal equivalente.<br>
-                    <strong>(D) Correta:</strong> √(4/9) = 2/3. E 2/3 é igual a 0,666... (As opções C e D são matematicamente iguais, mas D mantém o formato dízima).`
+                    <strong>(A) Incorreta:</strong> Número de letras.<br>
+                    <strong>(B) Incorreta:</strong> 4 x 4.<br>
+                    <strong>(C) Correta:</strong> 4 opções para a 1ª letra, 3 para a 2ª, 2 para a 3ª, 1 para a última. 4 x 3 x 2 x 1 = 24.<br>
+                    <strong>(D) Incorreta:</strong> Soma.`
             },
             {
                 id: 14,
-                text: "Calcule a soma: <strong>0,333... + 0,111...</strong>",
-                options: ["0,4", "0,444...", "4/10", "44/99"],
+                text: "Em um computador, um 'bit' é 0 ou 1. Quantas sequências diferentes de 4 bits existem (ex: 1011)?",
+                options: ["8", "16", "4", "32"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Decimal exato.<br>
-                    <strong>(B) Correta:</strong> 3/9 + 1/9 = 4/9. E 4/9 é 0,444...<br>
-                    <strong>(C) Incorreta:</strong> Decimal exato.<br>
-                    <strong>(D) Incorreta:</strong> Fração equivalente, mas formato diferente.`
+                    <strong>(A) Incorreta:</strong> 2 x 4 = 8.<br>
+                    <strong>(B) Correta:</strong> Cada bit tem 2 opções. São 4 posições. 2 x 2 x 2 x 2 = 16.<br>
+                    <strong>(C) Incorreta:</strong> Número de bits.<br>
+                    <strong>(D) Incorreta:</strong> 2 elevado a 5.`
             },
             {
                 id: 15,
-                text: "Qual é o valor de <strong>1,222... x 9</strong>?",
-                options: ["10", "11", "12", "9"],
+                text: "Tenho 5 livros para organizar na estante, mas o livro de Matemática tem que ser o primeiro. Quantas ordens restam?",
+                options: ["120", "24", "5", "20"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Erro de conta.<br>
-                    <strong>(B) Correta:</strong> 1,222... = (12-1)/9 = 11/9. Multiplicando: (11/9) x 9 = 11.<br>
-                    <strong>(C) Incorreta:</strong> Seria se fosse 12/9.<br>
-                    <strong>(D) Incorreta:</strong> Erro de conta.`
+                    <strong>(A) Incorreta:</strong> 5! = 120 (sem restrição).<br>
+                    <strong>(B) Correta:</strong> O 1º lugar é fixo (1 opção). Sobram 4 livros para 4 lugares. 1 x 4 x 3 x 2 x 1 = 24.<br>
+                    <strong>(C) Incorreta:</strong> Número de livros.<br>
+                    <strong>(D) Incorreta:</strong> 5 x 4.`
             }
         ];
 
@@ -766,7 +776,7 @@
             if (currentQuestion === questions.length - 1) {
                 btnNext.textContent = "Finalizar";
                 btnNext.onclick = finishQuiz;
-                btnNext.style.backgroundColor = "#00695C"; 
+                btnNext.style.backgroundColor = "#D97706"; 
             } else {
                 btnNext.textContent = "Próxima";
                 btnNext.onclick = () => changeQuestion(1);

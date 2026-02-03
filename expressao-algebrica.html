@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fração Geratriz - Promover</title>
+    <title>Expressões Algébricas - Promover</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,9 @@
             --text-color: #2D3748;
             --border-color: #000000;
             
-            /* CORES DA MATÉRIA: TEMA AZUL PETRÓLEO (Técnica/Mecânica) */
-            --theme-color: #E0F2F1; 
-            --theme-active: #00695C; 
+            /* CORES DA MATÉRIA: TEMA ROXO PROFUNDO (Abstração/Álgebra) */
+            --theme-color: #E9D8FD; 
+            --theme-active: #6B46C1; 
             --theme-text-active: #FFFFFF;
             
             /* FEEDBACK */
@@ -156,14 +156,14 @@
             justify-content: center;
             margin: 15px 0;
             padding: 15px;
-            background-color: #E0F2F1;
+            background-color: #E9D8FD;
             border-radius: 12px;
             border: 1px dashed var(--theme-active);
         }
 
         .example-box {
-            background-color: #F0FDFA; /* Verde/Azul claro */
-            border-left: 5px solid #00695C;
+            background-color: #F3E8FF; /* Roxo muito claro */
+            border-left: 5px solid #6B46C1;
             padding: 15px;
             margin: 15px 0;
             border-radius: 8px;
@@ -173,7 +173,7 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: 800;
-            color: #004D40;
+            color: #553C9A;
             margin-bottom: 5px;
             display: block;
         }
@@ -362,39 +362,44 @@
 
         <div id="viewExplanation" class="section-view" style="display: block;">
             
-            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Fração Geratriz</h1>
-            <p style="color: #555; margin-bottom: 20px;">Transformar dízimas infinitas em frações é como encontrar a "receita" que gerou aquele número.</p>
+            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Expressões Algébricas</h1>
+            <p style="color: #555; margin-bottom: 20px;">É a linguagem secreta da matemática, onde letras representam números desconhecidos ou variáveis.</p>
             
             <div class="card-content">
-                <h3>🔢 Método Prático</h3>
-                <p>O segredo está em montar a fração usando o <strong>Período</strong> (quem repete) e o <strong>Anti-período</strong> (intruso).</p>
+                <h3>🔤 Variáveis e Termos</h3>
+                <p>As letras (x, y, a...) são chamadas de <strong>variáveis</strong>.</p>
+                <p>O número que acompanha a letra é o <strong>coeficiente</strong>.</p>
+                <br>
+                <div class="visual-row" style="justify-content: center;">
+                    <div class="visual-item" style="font-size: 2rem; font-weight: 800; color: #6B46C1; border: 2px dashed #6B46C1; padding: 10px; border-radius: 10px;">
+                        5x²
+                    </div>
+                </div>
+                <p style="text-align:center; font-size:0.9rem; margin-top:5px;">Coeficiente: 5 | Parte Literal: x²</p>
+            </div>
+
+            <div class="card-content">
+                <h3>🍎 Simplificação</h3>
+                <p>Só podemos somar ou subtrair <strong>termos semelhantes</strong> (que têm a mesma parte literal).</p>
                 
                 <div class="example-box">
-                    <span class="example-tag">1. Dízima Simples (0,ppp...)</span>
-                    <p>Coloque o período no topo. Embaixo, coloque tantos <strong>9s</strong> quantos forem os algarismos do período.</p>
-                    <p style="font-weight:700; margin-top:5px; color:#00695C;">0,777... ➝ 7/9</p>
-                    <p style="font-weight:700; color:#00695C;">0,1212... ➝ 12/99</p>
+                    <span class="example-tag">Exemplo</span>
+                    <p>3 maçãs + 2 maçãs = 5 maçãs</p>
+                    <p style="font-weight:700; margin-top:5px; color:#553C9A;">3x + 2x = 5x</p>
                 </div>
 
                 <div class="example-box">
-                    <span class="example-tag">2. Dízima Composta (0,iap...)</span>
-                    <p>Numerador: (Tudo até o 1º período) - (Tudo antes do período).</p>
-                    <p>Denominador: <strong>9s</strong> (pelo período) e <strong>0s</strong> (pelo anti-período).</p>
-                    <p style="font-weight:700; margin-top:5px; color:#00695C;">0,2555...</p>
-                    <p>(25 - 2) / 90 = 23/90</p>
+                    <span class="example-tag">Atenção!</span>
+                    <p>Não podemos somar 3x + 2y.</p>
+                    <p>Eles são diferentes (maçã com laranja).</p>
                 </div>
             </div>
 
             <div class="card-content">
-                <h3>✂️ Simplificação</h3>
-                <p>Sempre verifique se dá para dividir o numerador e o denominador pelo mesmo número.</p>
-                <div class="visual-row" style="justify-content: center; margin-top:10px;">
-                    <div style="background:#E0F2F1; padding:10px; border-radius:8px; text-align:center;">
-                        <span style="font-weight:bold;">12/99</span>
-                        <span>(div por 3)</span>
-                        <span style="font-weight:bold;">➝ 4/33</span>
-                    </div>
-                </div>
+                <h3>🔢 Valor Numérico</h3>
+                <p>É quando trocamos a letra por um número específico para descobrir o valor final.</p>
+                <p><strong>Exemplo:</strong> Se x = 2, quanto vale 3x + 1?</p>
+                <p>3(2) + 1 = 6 + 1 = 7.</p>
             </div>
 
             <button onclick="setMode('practice')" style="width: 100%; padding: 15px; background: var(--text-color); color: white; border: none; border-radius: 12px; font-weight: 700; margin-bottom: 20px;">
@@ -405,7 +410,7 @@
         <div id="viewPractice" class="section-view">
             <div style="margin-bottom: 15px;">
                 <h2>Hora de Praticar!</h2>
-                <p style="color: #666; font-size: 0.9rem;">Calcule a fração geratriz.</p>
+                <p style="color: #666; font-size: 0.9rem;">Traduza e calcule as expressões.</p>
             </div>
             <div class="question-map" id="qMap"></div>
             <div id="quizContainer" style="margin-bottom: 100px;"></div>
@@ -431,177 +436,177 @@
     </footer>
 
     <script>
-        // --- BANCO DE QUESTÕES (FRAÇÃO GERATRIZ - 8º ANO) ---
+        // --- BANCO DE QUESTÕES (EXPRESSÕES ALGÉBRICAS - 8º ANO) ---
         const questions = [
-            // NÍVEL 1: DÍZIMAS SIMPLES
+            // NÍVEL 1: CONCEITOS E LINGUAGEM
             {
                 id: 1,
-                text: "Qual é a fração geratriz de <strong>0,555...</strong>?",
-                options: ["5/10", "5/9", "5/90", "5/99"],
+                text: "Em uma expressão algébrica, o que representa a letra (ex: x, y)?",
+                options: ["Um número fixo sempre igual a 1", "Uma variável ou incógnita (valor desconhecido)", "Um sinal de pontuação", "O resultado final"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 5/10 é igual a 0,5 (decimal exato).<br>
-                    <strong>(B) Correta:</strong> Período é 5 (um algarismo). Denominador é um 9. Resultado: 5/9.<br>
-                    <strong>(C) Incorreta:</strong> 90 é usado para dízimas compostas.<br>
-                    <strong>(D) Incorreta:</strong> 99 é para período com dois algarismos.`
+                    <strong>(A) Incorreta:</strong> A letra pode assumir vários valores.<br>
+                    <strong>(B) Correta:</strong> As letras são chamadas de variáveis porque seu valor pode variar, ou incógnitas quando queremos descobrir seu valor.<br>
+                    <strong>(C) Incorreta:</strong> Não é pontuação.<br>
+                    <strong>(D) Incorreta:</strong> É parte do cálculo, não o fim.`
             },
             {
                 id: 2,
-                text: "A dízima <strong>0,232323...</strong> tem como geratriz:",
-                options: ["23/100", "23/90", "23/99", "2/9"],
-                correct: 2,
+                text: "Como escrevemos 'o dobro de um número menos 5' em linguagem algébrica?",
+                options: ["2 + x - 5", "2x - 5", "x² - 5", "5 - 2x"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 23/100 é 0,23 (exato).<br>
-                    <strong>(B) Incorreta:</strong> 23/90 seria 0,2555...<br>
-                    <strong>(C) Correta:</strong> Período é 23 (dois algarismos). Colocamos dois noves: 23/99.<br>
-                    <strong>(D) Incorreta:</strong> 2/9 é 0,222...`
+                    <strong>(A) Incorreta:</strong> 2 + x é 'dois mais um número'.<br>
+                    <strong>(B) Correta:</strong> 'Dobro' é multiplicar por 2 (2x). 'Menos 5' é subtrair 5. Logo, 2x - 5.<br>
+                    <strong>(C) Incorreta:</strong> x² é 'o quadrado de um número'.<br>
+                    <strong>(D) Incorreta:</strong> Inverteu a ordem da subtração.`
             },
             {
                 id: 3,
-                text: "Determine a fração de <strong>0,999...</strong>",
-                options: ["9/10", "99/100", "1", "0,9"],
+                text: "No termo <strong>-5y²</strong>, qual é o coeficiente?",
+                options: ["y", "2", "-5", "5"],
                 correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> É 0,9.<br>
-                    <strong>(B) Incorreta:</strong> É 0,99.<br>
-                    <strong>(C) Correta:</strong> 9/9 é igual a 1. Matematicamente, 0,999... é igual a 1.<br>
-                    <strong>(D) Incorreta:</strong> É o próprio número arredondado.`
+                    <strong>(A) Incorreta:</strong> y é a variável.<br>
+                    <strong>(B) Incorreta:</strong> 2 é o expoente.<br>
+                    <strong>(C) Correta:</strong> O coeficiente é o número que multiplica a letra, incluindo o sinal. Neste caso, -5.<br>
+                    <strong>(D) Incorreta:</strong> Esqueceu o sinal negativo.`
             },
-            // NÍVEL 2: DÍZIMAS COMPOSTAS BÁSICAS
+            // NÍVEL 2: VALOR NUMÉRICO
             {
                 id: 4,
-                text: "Qual a fração geratriz de <strong>0,1666...</strong>?",
-                options: ["16/99", "16/90", "15/90", "15/99"],
-                correct: 2,
+                text: "Qual o valor numérico de <strong>3x + 2</strong> para x = 4?",
+                options: ["14", "9", "6", "5"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria 0,1616...<br>
-                    <strong>(B) Incorreta:</strong> Esqueceu de subtrair o anti-período.<br>
-                    <strong>(C) Correta:</strong> (16 - 1) / 90 = 15/90. (Simplificando dá 1/6).<br>
-                    <strong>(D) Incorreta:</strong> Denominador de simples.`
+                    <strong>(A) Correta:</strong> Substitua x por 4: 3(4) + 2. Multiplicação primeiro: 12 + 2 = 14.<br>
+                    <strong>(B) Incorreta:</strong> Somou 3+4+2.<br>
+                    <strong>(C) Incorreta:</strong> Esqueceu de multiplicar.<br>
+                    <strong>(D) Incorreta:</strong> Erro de cálculo.`
             },
             {
                 id: 5,
-                text: "Converta <strong>0,2333...</strong> para fração.",
-                options: ["21/90", "23/90", "21/99", "23/99"],
-                correct: 0,
+                text: "Calcule <strong>x² - 3x</strong> para x = -2 (Cuidado com o sinal!).",
+                options: ["-2", "10", "-10", "2"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Correta:</strong> (23 - 2) / 90 = 21/90.<br>
-                    <strong>(B) Incorreta:</strong> Não subtraiu o anti-período (2).<br>
-                    <strong>(C) Incorreta:</strong> Denominador errado.<br>
-                    <strong>(D) Incorreta:</strong> Seria 0,2323...`
+                    <strong>(A) Incorreta:</strong> Erro de sinal.<br>
+                    <strong>(B) Correta:</strong> (-2)² - 3(-2). (-2)² = 4. -3 vezes -2 = +6. Então 4 + 6 = 10.<br>
+                    <strong>(C) Incorreta:</strong> Errou o sinal do produto.<br>
+                    <strong>(D) Incorreta:</strong> Erro na potência.`
             },
             {
                 id: 6,
-                text: "A geratriz de <strong>0,4111...</strong> é:",
-                options: ["41/99", "37/90", "41/90", "37/99"],
+                text: "Se a = 2 e b = 3, qual o valor de <strong>2a + 3b</strong>?",
+                options: ["5", "13", "12", "10"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria 0,4141...<br>
-                    <strong>(B) Correta:</strong> (41 - 4) / 90 = 37/90.<br>
-                    <strong>(C) Incorreta:</strong> Esqueceu de subtrair.<br>
-                    <strong>(D) Incorreta:</strong> Denominador errado.`
+                    <strong>(A) Incorreta:</strong> Somou a e b.<br>
+                    <strong>(B) Correta:</strong> 2(2) + 3(3) = 4 + 9 = 13.<br>
+                    <strong>(C) Incorreta:</strong> Erro de cálculo.<br>
+                    <strong>(D) Incorreta:</strong> Erro de cálculo.`
             },
-            // NÍVEL 3: COM PARTE INTEIRA
+            // NÍVEL 3: SIMPLIFICAÇÃO E OPERAÇÕES
             {
                 id: 7,
-                text: "Encontre a fração de <strong>1,333...</strong>",
-                options: ["13/9", "4/3", "10/9", "13/10"],
-                correct: 1,
+                text: "Simplifique a expressão: <strong>2x + 5x - 3x</strong>",
+                options: ["4x", "7x", "4", "10x"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> (13-1)/9 = 12/9 = 4/3. 13/9 é 1,444...<br>
-                    <strong>(B) Correta:</strong> Separe: 1 + 0,333... = 1 + 3/9 = 1 + 1/3 = 4/3.<br>
-                    <strong>(C) Incorreta:</strong> Cálculo errado.<br>
-                    <strong>(D) Incorreta:</strong> Decimal exato 1,3.`
+                    <strong>(A) Correta:</strong> Como são termos semelhantes (todos têm x), operamos os coeficientes: 2 + 5 - 3 = 4. Resultado: 4x.<br>
+                    <strong>(B) Incorreta:</strong> 2+5=7, esqueceu do -3.<br>
+                    <strong>(C) Incorreta:</strong> O x não desaparece.<br>
+                    <strong>(D) Incorreta:</strong> Somou tudo.`
             },
             {
                 id: 8,
-                text: "Qual é a fração de <strong>2,1212...</strong>?",
-                options: ["212/99", "210/99", "70/33", "21/99"],
+                text: "Qual é o resultado da multiplicação <strong>(3x) . (2x)</strong>?",
+                options: ["6x", "5x²", "6x²", "5x"],
                 correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> (212-2)/99 = 210/99.<br>
-                    <strong>(B) Incorreta:</strong> Está correto antes de simplificar. Vamos ver se tem simplificada...<br>
-                    <strong>(C) Correta:</strong> 210/99 simplificado por 3 é 70/33. Essa é a resposta final mais adequada.<br>
-                    <strong>(D) Incorreta:</strong> Ignorou a parte inteira.`
+                    <strong>(A) Incorreta:</strong> Esqueceu de multiplicar o x por x.<br>
+                    <strong>(B) Incorreta:</strong> Somou os números.<br>
+                    <strong>(C) Correta:</strong> Multiplica número com número (3.2=6) e letra com letra (x.x=x²). Resultado: 6x².<br>
+                    <strong>(D) Incorreta:</strong> Somou.`
             },
             {
                 id: 9,
-                text: "A dízima <strong>1,555...</strong> em fração imprópria é:",
-                options: ["15/9", "14/9", "16/9", "5/9"],
+                text: "Aplique a propriedade distributiva: <strong>2(x - 4)</strong>",
+                options: ["2x - 4", "2x - 8", "x - 8", "2x - 6"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Não subtraiu.<br>
-                    <strong>(B) Correta:</strong> (15 - 1) / 9 = 14/9.<br>
-                    <strong>(C) Incorreta:</strong> Somou.<br>
-                    <strong>(D) Incorreta:</strong> Ignorou o inteiro.`
+                    <strong>(A) Incorreta:</strong> Esqueceu de multiplicar o 4.<br>
+                    <strong>(B) Correta:</strong> O 2 multiplica quem está dentro: 2 vezes x = 2x. 2 vezes -4 = -8. Resultado: 2x - 8.<br>
+                    <strong>(C) Incorreta:</strong> Não multiplicou o x.<br>
+                    <strong>(D) Incorreta:</strong> Subtraiu 2 de 4.`
             },
-            // NÍVEL 4: SIMPLIFICAÇÃO OBRIGATÓRIA
+            // NÍVEL 4: POLINÔMIOS E GEOMETRIA
             {
                 id: 10,
-                text: "Qual a fração <strong>irredutível</strong> de 0,666...?",
-                options: ["6/9", "2/3", "3/2", "66/99"],
-                correct: 1,
+                text: "Quais termos são semelhantes na lista: <strong>3x, 4y, -2x, 5</strong>?",
+                options: ["3x e 5", "4y e 5", "3x e -2x", "Todos são diferentes"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Correta, mas não está simplificada.<br>
-                    <strong>(B) Correta:</strong> 6/9 simplificado por 3 vira 2/3.<br>
-                    <strong>(C) Incorreta:</strong> Inverso.<br>
-                    <strong>(D) Incorreta:</strong> Não simplificada.`
+                    <strong>(A) Incorreta:</strong> Um tem letra, outro não.<br>
+                    <strong>(B) Incorreta:</strong> Letra vs número.<br>
+                    <strong>(C) Correta:</strong> Termos semelhantes são aqueles que têm a mesma parte literal (letra). 3x e -2x compartilham o 'x'.<br>
+                    <strong>(D) Incorreta:</strong> Existem semelhantes.`
             },
             {
                 id: 11,
-                text: "A dízima <strong>0,1515...</strong> simplificada é:",
-                options: ["15/99", "5/33", "1/5", "3/20"],
+                text: "Qual expressão representa o perímetro de um retângulo com lados <strong>2x</strong> e <strong>x</strong>?",
+                options: ["3x", "6x", "2x²", "4x"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Falta simplificar.<br>
-                    <strong>(B) Correta:</strong> 15/99 dividido por 3 em cima e embaixo resulta em 5/33.<br>
-                    <strong>(C) Incorreta:</strong> Decimal exato 0,2.<br>
-                    <strong>(D) Incorreta:</strong> Decimal exato 0,15.`
+                    <strong>(A) Incorreta:</strong> Somou apenas dois lados.<br>
+                    <strong>(B) Correta:</strong> Perímetro é a soma de TODOS os lados. 2x + 2x + x + x = 6x.<br>
+                    <strong>(C) Incorreta:</strong> Isso seria a área.<br>
+                    <strong>(D) Incorreta:</strong> Cálculo errado.`
             },
             {
                 id: 12,
-                text: "Simplifique a geratriz de <strong>0,222...</strong>",
-                options: ["2/9", "1/9", "2/10", "1/5"],
+                text: "Qual expressão representa a <strong>Área</strong> de um quadrado de lado <strong>3x</strong>?",
+                options: ["9x²", "3x²", "6x", "12x"],
                 correct: 0,
                 explanation: `
-                    <strong>(A) Correta:</strong> 2/9 não dá para simplificar mais, pois 2 e 9 não têm divisores comuns.<br>
-                    <strong>(B) Incorreta:</strong> É 0,111...<br>
-                    <strong>(C) Incorreta:</strong> É 0,2.<br>
-                    <strong>(D) Incorreta:</strong> É 0,2.`
+                    <strong>(A) Correta:</strong> Área = Lado x Lado. (3x) . (3x) = 9x².<br>
+                    <strong>(B) Incorreta:</strong> Esqueceu de elevar o 3 ao quadrado.<br>
+                    <strong>(C) Incorreta:</strong> Somou (3x+3x).<br>
+                    <strong>(D) Incorreta:</strong> Isso é o perímetro (3x.4).`
             },
-            // NÍVEL 5: DESAFIOS E OPERAÇÕES
+            // NÍVEL 5: DESAFIOS E APLICAÇÕES
             {
                 id: 13,
-                text: "Quanto vale <strong>√0,444...</strong>?",
-                options: ["0,2", "0,222...", "2/3", "0,666..."],
-                correct: 3,
+                text: "Simplifique: <strong>3(a + b) + 2(a - b)</strong>",
+                options: ["5a + 5b", "5a + b", "5a - b", "6a"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Raiz de 0,04.<br>
-                    <strong>(B) Incorreta:</strong> Raiz de 0,049...<br>
-                    <strong>(C) Incorreta:</strong> É 2/3, mas a opção D mostra o decimal equivalente.<br>
-                    <strong>(D) Correta:</strong> √(4/9) = 2/3. E 2/3 é igual a 0,666... (As opções C e D são matematicamente iguais, mas D mantém o formato dízima).`
+                    <strong>(A) Incorreta:</strong> Erro no sinal do b.<br>
+                    <strong>(B) Correta:</strong> Distributiva: 3a + 3b + 2a - 2b. Juntando semelhantes: (3a+2a) + (3b-2b) = 5a + b.<br>
+                    <strong>(C) Incorreta:</strong> Sinal errado.<br>
+                    <strong>(D) Incorreta:</strong> Cancelou o b incorretamente.`
             },
             {
                 id: 14,
-                text: "Calcule a soma: <strong>0,333... + 0,111...</strong>",
-                options: ["0,4", "0,444...", "4/10", "44/99"],
+                text: "Um táxi cobra R$ 5,00 fixos mais R$ 2,00 por km rodado (x). Qual a fórmula do preço?",
+                options: ["5x + 2", "2x + 5", "7x", "10x"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Decimal exato.<br>
-                    <strong>(B) Correta:</strong> 3/9 + 1/9 = 4/9. E 4/9 é 0,444...<br>
-                    <strong>(C) Incorreta:</strong> Decimal exato.<br>
-                    <strong>(D) Incorreta:</strong> Fração equivalente, mas formato diferente.`
+                    <strong>(A) Incorreta:</strong> O valor fixo não multiplica x.<br>
+                    <strong>(B) Correta:</strong> O custo variável é 2 vezes a quilometragem (2x), somado ao valor fixo (5). P = 2x + 5.<br>
+                    <strong>(C) Incorreta:</strong> Somou 5+2.<br>
+                    <strong>(D) Incorreta:</strong> Multiplicou tudo.`
             },
             {
                 id: 15,
-                text: "Qual é o valor de <strong>1,222... x 9</strong>?",
-                options: ["10", "11", "12", "9"],
-                correct: 1,
+                text: "Introdução aos Produtos Notáveis: Quanto é <strong>(x + 2)²</strong>? (Lembre que é (x+2).(x+2))",
+                options: ["x² + 4", "x² + 2x + 4", "x² + 4x + 4", "2x + 4"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Erro de conta.<br>
-                    <strong>(B) Correta:</strong> 1,222... = (12-1)/9 = 11/9. Multiplicando: (11/9) x 9 = 11.<br>
-                    <strong>(C) Incorreta:</strong> Seria se fosse 12/9.<br>
-                    <strong>(D) Incorreta:</strong> Erro de conta.`
+                    <strong>(A) Incorreta:</strong> Erro comum! Não basta elevar os termos.<br>
+                    <strong>(B) Incorreta:</strong> Faltou dobrar o termo do meio.<br>
+                    <strong>(C) Correta:</strong> (x+2)(x+2) = x² + 2x + 2x + 4 = x² + 4x + 4.<br>
+                    <strong>(D) Incorreta:</strong> Isso é soma.`
             }
         ];
 
@@ -766,7 +771,7 @@
             if (currentQuestion === questions.length - 1) {
                 btnNext.textContent = "Finalizar";
                 btnNext.onclick = finishQuiz;
-                btnNext.style.backgroundColor = "#00695C"; 
+                btnNext.style.backgroundColor = "#6B46C1"; 
             } else {
                 btnNext.textContent = "Próxima";
                 btnNext.onclick = () => changeQuestion(1);

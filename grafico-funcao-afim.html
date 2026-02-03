@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fração Geratriz - Promover</title>
+    <title>Gráfico da Função Afim - Promover</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,9 @@
             --text-color: #2D3748;
             --border-color: #000000;
             
-            /* CORES DA MATÉRIA: TEMA AZUL PETRÓLEO (Técnica/Mecânica) */
-            --theme-color: #E0F2F1; 
-            --theme-active: #00695C; 
+            /* CORES DA MATÉRIA: TEMA TURQUESA ESCURO (Visualização/Precisão) */
+            --theme-color: #CCFBF1; 
+            --theme-active: #0D9488; 
             --theme-text-active: #FFFFFF;
             
             /* FEEDBACK */
@@ -156,14 +156,14 @@
             justify-content: center;
             margin: 15px 0;
             padding: 15px;
-            background-color: #E0F2F1;
+            background-color: #F0FDFA;
             border-radius: 12px;
             border: 1px dashed var(--theme-active);
         }
 
         .example-box {
-            background-color: #F0FDFA; /* Verde/Azul claro */
-            border-left: 5px solid #00695C;
+            background-color: #F0FDFA; /* Turquesa muito claro */
+            border-left: 5px solid #0D9488;
             padding: 15px;
             margin: 15px 0;
             border-radius: 8px;
@@ -173,7 +173,7 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: 800;
-            color: #004D40;
+            color: #115E59;
             margin-bottom: 5px;
             display: block;
         }
@@ -362,39 +362,45 @@
 
         <div id="viewExplanation" class="section-view" style="display: block;">
             
-            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Fração Geratriz</h1>
-            <p style="color: #555; margin-bottom: 20px;">Transformar dízimas infinitas em frações é como encontrar a "receita" que gerou aquele número.</p>
+            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Gráfico da Função Afim</h1>
+            <p style="color: #555; margin-bottom: 20px;">Toda função afim (do 1º grau) desenha uma <strong>RETA</strong>. Aprenda a ler os segredos desse gráfico.</p>
             
             <div class="card-content">
-                <h3>🔢 Método Prático</h3>
-                <p>O segredo está em montar a fração usando o <strong>Período</strong> (quem repete) e o <strong>Anti-período</strong> (intruso).</p>
+                <h3>📉 A Reta e seus Pontos</h3>
+                <p>Para desenhar a reta, precisamos de dois pontos principais.</p>
+                <br>
+                <div class="visual-row">
+                    <div class="visual-item">
+                        <svg class="visual-svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="50" y1="0" x2="50" y2="100" stroke="#ccc"/>
+                            <line x1="0" y1="50" x2="100" y2="50" stroke="#ccc"/>
+                            <line x1="10" y1="90" x2="90" y2="10" stroke="#0D9488" stroke-width="3"/>
+                            <circle cx="50" cy="50" r="4" fill="#0D9488"/>
+                            <circle cx="70" cy="30" r="4" fill="#0D9488"/>
+                        </svg>
+                    </div>
+                </div>
                 
                 <div class="example-box">
-                    <span class="example-tag">1. Dízima Simples (0,ppp...)</span>
-                    <p>Coloque o período no topo. Embaixo, coloque tantos <strong>9s</strong> quantos forem os algarismos do período.</p>
-                    <p style="font-weight:700; margin-top:5px; color:#00695C;">0,777... ➝ 7/9</p>
-                    <p style="font-weight:700; color:#00695C;">0,1212... ➝ 12/99</p>
+                    <span class="example-tag">Onde corta Y?</span>
+                    <p>A reta sempre corta o eixo vertical (Y) no valor de <strong>b</strong>.</p>
+                    <p style="font-size:0.8rem;">Se f(x) = 2x + <strong>3</strong>, a reta passa pelo 3 no eixo Y.</p>
                 </div>
 
                 <div class="example-box">
-                    <span class="example-tag">2. Dízima Composta (0,iap...)</span>
-                    <p>Numerador: (Tudo até o 1º período) - (Tudo antes do período).</p>
-                    <p>Denominador: <strong>9s</strong> (pelo período) e <strong>0s</strong> (pelo anti-período).</p>
-                    <p style="font-weight:700; margin-top:5px; color:#00695C;">0,2555...</p>
-                    <p>(25 - 2) / 90 = 23/90</p>
+                    <span class="example-tag">Onde corta X?</span>
+                    <p>A reta corta o eixo horizontal (X) na <strong>Raiz</strong>.</p>
+                    <p style="font-size:0.8rem;">Para achar, iguale a função a zero: 2x + 3 = 0.</p>
                 </div>
             </div>
 
             <div class="card-content">
-                <h3>✂️ Simplificação</h3>
-                <p>Sempre verifique se dá para dividir o numerador e o denominador pelo mesmo número.</p>
-                <div class="visual-row" style="justify-content: center; margin-top:10px;">
-                    <div style="background:#E0F2F1; padding:10px; border-radius:8px; text-align:center;">
-                        <span style="font-weight:bold;">12/99</span>
-                        <span>(div por 3)</span>
-                        <span style="font-weight:bold;">➝ 4/33</span>
-                    </div>
-                </div>
+                <h3>📈 Sobe ou Desce?</h3>
+                <p>Quem manda na inclinação é o coeficiente <strong>a</strong>.</p>
+                <ul style="margin-left: 20px; font-size: 0.9rem; margin-top: 10px;">
+                    <li><strong>a > 0 (Positivo):</strong> A reta sobe (Crescente). ↗️</li>
+                    <li><strong>a < 0 (Negativo):</strong> A reta desce (Decrescente). ↘️</li>
+                </ul>
             </div>
 
             <button onclick="setMode('practice')" style="width: 100%; padding: 15px; background: var(--text-color); color: white; border: none; border-radius: 12px; font-weight: 700; margin-bottom: 20px;">
@@ -405,7 +411,7 @@
         <div id="viewPractice" class="section-view">
             <div style="margin-bottom: 15px;">
                 <h2>Hora de Praticar!</h2>
-                <p style="color: #666; font-size: 0.9rem;">Calcule a fração geratriz.</p>
+                <p style="color: #666; font-size: 0.9rem;">Analise os gráficos e funções.</p>
             </div>
             <div class="question-map" id="qMap"></div>
             <div id="quizContainer" style="margin-bottom: 100px;"></div>
@@ -431,177 +437,177 @@
     </footer>
 
     <script>
-        // --- BANCO DE QUESTÕES (FRAÇÃO GERATRIZ - 8º ANO) ---
+        // --- BANCO DE QUESTÕES (GRÁFICO DA FUNÇÃO AFIM) ---
         const questions = [
-            // NÍVEL 1: DÍZIMAS SIMPLES
+            // NÍVEL 1: CONCEITOS VISUAIS
             {
                 id: 1,
-                text: "Qual é a fração geratriz de <strong>0,555...</strong>?",
-                options: ["5/10", "5/9", "5/90", "5/99"],
+                text: "O gráfico de uma função afim é sempre:",
+                options: ["Uma parábola", "Uma reta", "Uma circunferência", "Uma onda"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 5/10 é igual a 0,5 (decimal exato).<br>
-                    <strong>(B) Correta:</strong> Período é 5 (um algarismo). Denominador é um 9. Resultado: 5/9.<br>
-                    <strong>(C) Incorreta:</strong> 90 é usado para dízimas compostas.<br>
-                    <strong>(D) Incorreta:</strong> 99 é para período com dois algarismos.`
+                    <strong>(A) Incorreta:</strong> Parábola é função do 2º grau.<br>
+                    <strong>(B) Correta:</strong> A principal característica visual da função do 1º grau é ser uma linha reta.<br>
+                    <strong>(C) Incorreta:</strong> Não é curva fechada.<br>
+                    <strong>(D) Incorreta:</strong> Não oscila.`
             },
             {
                 id: 2,
-                text: "A dízima <strong>0,232323...</strong> tem como geratriz:",
-                options: ["23/100", "23/90", "23/99", "2/9"],
-                correct: 2,
+                text: "Na função <strong>f(x) = -2x + 5</strong>, o gráfico é:",
+                options: ["Crescente (sobe)", "Decrescente (desce)", "Horizontal", "Vertical"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 23/100 é 0,23 (exato).<br>
-                    <strong>(B) Incorreta:</strong> 23/90 seria 0,2555...<br>
-                    <strong>(C) Correta:</strong> Período é 23 (dois algarismos). Colocamos dois noves: 23/99.<br>
-                    <strong>(D) Incorreta:</strong> 2/9 é 0,222...`
+                    <strong>(A) Incorreta:</strong> Requer 'a' positivo.<br>
+                    <strong>(B) Correta:</strong> O coeficiente 'a' é -2 (negativo). Isso faz a reta descer da esquerda para a direita.<br>
+                    <strong>(C) Incorreta:</strong> Requer a = 0.<br>
+                    <strong>(D) Incorreta:</strong> Não é função.`
             },
             {
                 id: 3,
-                text: "Determine a fração de <strong>0,999...</strong>",
-                options: ["9/10", "99/100", "1", "0,9"],
-                correct: 2,
+                text: "O coeficiente <strong>b</strong> (linear) indica onde a reta corta qual eixo?",
+                options: ["Eixo X (horizontal)", "Eixo Y (vertical)", "A origem (0,0)", "Nenhum eixo"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> É 0,9.<br>
-                    <strong>(B) Incorreta:</strong> É 0,99.<br>
-                    <strong>(C) Correta:</strong> 9/9 é igual a 1. Matematicamente, 0,999... é igual a 1.<br>
-                    <strong>(D) Incorreta:</strong> É o próprio número arredondado.`
+                    <strong>(A) Incorreta:</strong> O corte em X é a Raiz.<br>
+                    <strong>(B) Correta:</strong> Quando x=0, sobra apenas o b. Logo, o gráfico corta o eixo Y na altura b.<br>
+                    <strong>(C) Incorreta:</strong> Só se b=0.<br>
+                    <strong>(D) Incorreta:</strong> Sempre corta o eixo Y.`
             },
-            // NÍVEL 2: DÍZIMAS COMPOSTAS BÁSICAS
+            // NÍVEL 2: IDENTIFICAÇÃO NA EQUAÇÃO
             {
                 id: 4,
-                text: "Qual a fração geratriz de <strong>0,1666...</strong>?",
-                options: ["16/99", "16/90", "15/90", "15/99"],
-                correct: 2,
+                text: "Onde a reta da função <strong>y = 3x - 4</strong> corta o eixo Y?",
+                options: ["No ponto 3", "No ponto -4", "No ponto 4", "No ponto -3"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria 0,1616...<br>
-                    <strong>(B) Incorreta:</strong> Esqueceu de subtrair o anti-período.<br>
-                    <strong>(C) Correta:</strong> (16 - 1) / 90 = 15/90. (Simplificando dá 1/6).<br>
-                    <strong>(D) Incorreta:</strong> Denominador de simples.`
+                    <strong>(A) Incorreta:</strong> 3 é a inclinação.<br>
+                    <strong>(B) Correta:</strong> O corte em Y é dado pelo termo independente b, que é -4.<br>
+                    <strong>(C) Incorreta:</strong> Ignorou o sinal negativo.<br>
+                    <strong>(D) Incorreta:</strong> Confundiu os números.`
             },
             {
                 id: 5,
-                text: "Converta <strong>0,2333...</strong> para fração.",
-                options: ["21/90", "23/90", "21/99", "23/99"],
-                correct: 0,
+                text: "Qual destas funções gera um gráfico que <strong>sobe</strong> (crescente)?",
+                options: ["y = -5x + 10", "y = 4 - x", "y = 2x - 100", "y = -x"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Correta:</strong> (23 - 2) / 90 = 21/90.<br>
-                    <strong>(B) Incorreta:</strong> Não subtraiu o anti-período (2).<br>
-                    <strong>(C) Incorreta:</strong> Denominador errado.<br>
-                    <strong>(D) Incorreta:</strong> Seria 0,2323...`
+                    <strong>(A) Incorreta:</strong> a = -5 (Desce).<br>
+                    <strong>(B) Incorreta:</strong> a = -1 (Desce).<br>
+                    <strong>(C) Correta:</strong> a = 2 (Positivo). A reta sobe, mesmo começando lá embaixo (-100).<br>
+                    <strong>(D) Incorreta:</strong> a = -1 (Desce).`
             },
             {
                 id: 6,
-                text: "A geratriz de <strong>0,4111...</strong> é:",
-                options: ["41/99", "37/90", "41/90", "37/99"],
+                text: "Se uma reta passa pela origem (0,0), podemos afirmar que:",
+                options: ["a = 0", "b = 0", "x é sempre positivo", "A função não existe"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria 0,4141...<br>
-                    <strong>(B) Correta:</strong> (41 - 4) / 90 = 37/90.<br>
-                    <strong>(C) Incorreta:</strong> Esqueceu de subtrair.<br>
-                    <strong>(D) Incorreta:</strong> Denominador errado.`
+                    <strong>(A) Incorreta:</strong> Se a=0, é reta horizontal.<br>
+                    <strong>(B) Correta:</strong> Se corta Y no 0, então b=0. A função é do tipo f(x) = ax (Função Linear).<br>
+                    <strong>(C) Incorreta:</strong> A reta continua para os negativos.<br>
+                    <strong>(D) Incorreta:</strong> Existe sim.`
             },
-            // NÍVEL 3: COM PARTE INTEIRA
+            // NÍVEL 3: CÁLCULO DA RAIZ (CORTE EM X)
             {
                 id: 7,
-                text: "Encontre a fração de <strong>1,333...</strong>",
-                options: ["13/9", "4/3", "10/9", "13/10"],
-                correct: 1,
+                text: "Em qual ponto a função <strong>f(x) = 2x - 10</strong> corta o eixo X?",
+                options: ["5", "-5", "10", "2"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> (13-1)/9 = 12/9 = 4/3. 13/9 é 1,444...<br>
-                    <strong>(B) Correta:</strong> Separe: 1 + 0,333... = 1 + 3/9 = 1 + 1/3 = 4/3.<br>
-                    <strong>(C) Incorreta:</strong> Cálculo errado.<br>
-                    <strong>(D) Incorreta:</strong> Decimal exato 1,3.`
+                    <strong>(A) Correta:</strong> Para achar o corte em X, faça f(x)=0. 2x - 10 = 0 ➝ 2x = 10 ➝ x = 5.<br>
+                    <strong>(B) Incorreta:</strong> Erro de sinal.<br>
+                    <strong>(C) Incorreta:</strong> Esse é o corte em Y (com sinal trocado).<br>
+                    <strong>(D) Incorreta:</strong> Esse é o coeficiente 'a'.`
             },
             {
                 id: 8,
-                text: "Qual é a fração de <strong>2,1212...</strong>?",
-                options: ["212/99", "210/99", "70/33", "21/99"],
-                correct: 2,
+                text: "Qual é a raiz da função <strong>y = -3x + 12</strong>?",
+                options: ["-4", "4", "3", "12"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> (212-2)/99 = 210/99.<br>
-                    <strong>(B) Incorreta:</strong> Está correto antes de simplificar. Vamos ver se tem simplificada...<br>
-                    <strong>(C) Correta:</strong> 210/99 simplificado por 3 é 70/33. Essa é a resposta final mais adequada.<br>
-                    <strong>(D) Incorreta:</strong> Ignorou a parte inteira.`
+                    <strong>(A) Incorreta:</strong> 12 / -3 = -4, mas ao passar 12 pro outro lado fica -12. -12/-3 = +4.<br>
+                    <strong>(B) Correta:</strong> -3x + 12 = 0 ➝ -3x = -12 ➝ x = 4.<br>
+                    <strong>(C) Incorreta:</strong> Coeficiente 'a'.<br>
+                    <strong>(D) Incorreta:</strong> Coeficiente 'b'.`
             },
             {
                 id: 9,
-                text: "A dízima <strong>1,555...</strong> em fração imprópria é:",
-                options: ["15/9", "14/9", "16/9", "5/9"],
+                text: "O gráfico corta o eixo X no ponto 2 e o eixo Y no ponto 4. Qual é a função?",
+                options: ["y = 2x + 4", "y = -2x + 4", "y = 4x + 2", "y = 2x - 4"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Não subtraiu.<br>
-                    <strong>(B) Correta:</strong> (15 - 1) / 9 = 14/9.<br>
-                    <strong>(C) Incorreta:</strong> Somou.<br>
-                    <strong>(D) Incorreta:</strong> Ignorou o inteiro.`
+                    <strong>(A) Incorreta:</strong> Se x=2, y = 2(2)+4 = 8 (não zero).<br>
+                    <strong>(B) Correta:</strong> Corta Y no 4 (b=4). Corta X no 2 (raiz). Testando: -2(2) + 4 = 0. Confere!<br>
+                    <strong>(C) Incorreta:</strong> Trocou a e b.<br>
+                    <strong>(D) Incorreta:</strong> Cortaria Y no -4.`
             },
-            // NÍVEL 4: SIMPLIFICAÇÃO OBRIGATÓRIA
+            // NÍVEL 4: ANÁLISE GRÁFICA
             {
                 id: 10,
-                text: "Qual a fração <strong>irredutível</strong> de 0,666...?",
-                options: ["6/9", "2/3", "3/2", "66/99"],
-                correct: 1,
+                text: "Se o gráfico é uma reta horizontal que passa pelo y = 3, qual é a função?",
+                options: ["y = 3x", "y = x + 3", "y = 3", "x = 3"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Correta, mas não está simplificada.<br>
-                    <strong>(B) Correta:</strong> 6/9 simplificado por 3 vira 2/3.<br>
-                    <strong>(C) Incorreta:</strong> Inverso.<br>
-                    <strong>(D) Incorreta:</strong> Não simplificada.`
+                    <strong>(A) Incorreta:</strong> Essa reta é inclinada e passa na origem.<br>
+                    <strong>(B) Incorreta:</strong> Inclinada.<br>
+                    <strong>(C) Correta:</strong> É uma função constante. Não importa o x, o y é sempre 3 (a=0).<br>
+                    <strong>(D) Incorreta:</strong> Isso é uma reta vertical (não é função).`
             },
             {
                 id: 11,
-                text: "A dízima <strong>0,1515...</strong> simplificada é:",
-                options: ["15/99", "5/33", "1/5", "3/20"],
+                text: "Olhando o gráfico, a reta desce e corta o eixo Y acima da origem. Sinais de 'a' e 'b':",
+                options: ["a > 0, b > 0", "a < 0, b > 0", "a < 0, b < 0", "a > 0, b < 0"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Falta simplificar.<br>
-                    <strong>(B) Correta:</strong> 15/99 dividido por 3 em cima e embaixo resulta em 5/33.<br>
-                    <strong>(C) Incorreta:</strong> Decimal exato 0,2.<br>
-                    <strong>(D) Incorreta:</strong> Decimal exato 0,15.`
+                    <strong>(A) Incorreta:</strong> 'a' positivo subiria.<br>
+                    <strong>(B) Correta:</strong> Desce = 'a' negativo. Corta Y acima da origem = 'b' positivo.<br>
+                    <strong>(C) Incorreta:</strong> b negativo cortaria abaixo.<br>
+                    <strong>(D) Incorreta:</strong> Subiria e cortaria abaixo.`
             },
             {
                 id: 12,
-                text: "Simplifique a geratriz de <strong>0,222...</strong>",
-                options: ["2/9", "1/9", "2/10", "1/5"],
-                correct: 0,
+                text: "Dois gráficos são paralelos (nunca se cruzam). O que eles têm em comum?",
+                options: ["O mesmo valor de b", "O mesmo valor de a (inclinação)", "A mesma raiz", "Nada"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Correta:</strong> 2/9 não dá para simplificar mais, pois 2 e 9 não têm divisores comuns.<br>
-                    <strong>(B) Incorreta:</strong> É 0,111...<br>
-                    <strong>(C) Incorreta:</strong> É 0,2.<br>
-                    <strong>(D) Incorreta:</strong> É 0,2.`
+                    <strong>(A) Incorreta:</strong> Começariam no mesmo ponto Y.<br>
+                    <strong>(B) Correta:</strong> Se têm a mesma inclinação ('a'), sobem ou descem no mesmo ritmo e nunca se tocam.<br>
+                    <strong>(C) Incorreta:</strong> Cortariam X no mesmo lugar.<br>
+                    <strong>(D) Incorreta:</strong> Têm a inclinação.`
             },
-            // NÍVEL 5: DESAFIOS E OPERAÇÕES
+            // NÍVEL 5: CONSTRUÇÃO E DESAFIOS
             {
                 id: 13,
-                text: "Quanto vale <strong>√0,444...</strong>?",
-                options: ["0,2", "0,222...", "2/3", "0,666..."],
-                correct: 3,
+                text: "Uma reta passa pelos pontos (1, 3) e (2, 5). Qual é a taxa de variação (a)?",
+                options: ["1", "2", "3", "0,5"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Raiz de 0,04.<br>
-                    <strong>(B) Incorreta:</strong> Raiz de 0,049...<br>
-                    <strong>(C) Incorreta:</strong> É 2/3, mas a opção D mostra o decimal equivalente.<br>
-                    <strong>(D) Correta:</strong> √(4/9) = 2/3. E 2/3 é igual a 0,666... (As opções C e D são matematicamente iguais, mas D mantém o formato dízima).`
+                    <strong>(A) Incorreta:</strong> 5-3 = 2.<br>
+                    <strong>(B) Correta:</strong> O x aumentou 1 (de 1 pra 2), o y aumentou 2 (de 3 pra 5). A cada passo em x, sobe 2. Logo a = 2.<br>
+                    <strong>(C) Incorreta:</strong> Erro de cálculo.<br>
+                    <strong>(D) Incorreta:</strong> Inverteu x e y.`
             },
             {
                 id: 14,
-                text: "Calcule a soma: <strong>0,333... + 0,111...</strong>",
-                options: ["0,4", "0,444...", "4/10", "44/99"],
+                text: "Para desenhar o gráfico de <strong>y = x + 1</strong>, quais pontos posso usar?",
+                options: ["(0,0) e (1,1)", "(0,1) e (1,2)", "(1,0) e (0,1)", "(2,2) e (3,3)"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Decimal exato.<br>
-                    <strong>(B) Correta:</strong> 3/9 + 1/9 = 4/9. E 4/9 é 0,444...<br>
-                    <strong>(C) Incorreta:</strong> Decimal exato.<br>
-                    <strong>(D) Incorreta:</strong> Fração equivalente, mas formato diferente.`
+                    <strong>(A) Incorreta:</strong> 0+1 não é 0.<br>
+                    <strong>(B) Correta:</strong> Se x=0, y=1. Se x=1, y=1+1=2. Os pontos conferem.<br>
+                    <strong>(C) Incorreta:</strong> Se x=1, y=2 (não 0).<br>
+                    <strong>(D) Incorreta:</strong> 2+1=3 (ok), 3+1=4 (erro).`
             },
             {
                 id: 15,
-                text: "Qual é o valor de <strong>1,222... x 9</strong>?",
-                options: ["10", "11", "12", "9"],
+                text: "Qual é a equação da reta que passa na origem e pelo ponto (3, 6)?",
+                options: ["y = 3x", "y = 2x", "y = x + 3", "y = 6x"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Erro de conta.<br>
-                    <strong>(B) Correta:</strong> 1,222... = (12-1)/9 = 11/9. Multiplicando: (11/9) x 9 = 11.<br>
-                    <strong>(C) Incorreta:</strong> Seria se fosse 12/9.<br>
-                    <strong>(D) Incorreta:</strong> Erro de conta.`
+                    <strong>(A) Incorreta:</strong> 3(3) = 9.<br>
+                    <strong>(B) Correta:</strong> Passa na origem (b=0). Testando (3,6): 6 = a(3) ➝ a = 2. Equação y = 2x.<br>
+                    <strong>(C) Incorreta:</strong> Não passa na origem.<br>
+                    <strong>(D) Incorreta:</strong> 6(3) = 18.`
             }
         ];
 
@@ -766,7 +772,7 @@
             if (currentQuestion === questions.length - 1) {
                 btnNext.textContent = "Finalizar";
                 btnNext.onclick = finishQuiz;
-                btnNext.style.backgroundColor = "#00695C"; 
+                btnNext.style.backgroundColor = "#0D9488"; 
             } else {
                 btnNext.textContent = "Próxima";
                 btnNext.onclick = () => changeQuestion(1);

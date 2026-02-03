@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fração Geratriz - Promover</title>
+    <title>Porcentagem - Promover</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,9 @@
             --text-color: #2D3748;
             --border-color: #000000;
             
-            /* CORES DA MATÉRIA: TEMA AZUL PETRÓLEO (Técnica/Mecânica) */
-            --theme-color: #E0F2F1; 
-            --theme-active: #00695C; 
+            /* CORES DA MATÉRIA: TEMA VERDE DINHEIRO (Finanças/Crescimento) */
+            --theme-color: #D1FAE5; 
+            --theme-active: #059669; 
             --theme-text-active: #FFFFFF;
             
             /* FEEDBACK */
@@ -156,14 +156,14 @@
             justify-content: center;
             margin: 15px 0;
             padding: 15px;
-            background-color: #E0F2F1;
+            background-color: #D1FAE5;
             border-radius: 12px;
             border: 1px dashed var(--theme-active);
         }
 
         .example-box {
-            background-color: #F0FDFA; /* Verde/Azul claro */
-            border-left: 5px solid #00695C;
+            background-color: #ECFDF5; /* Verde muito claro */
+            border-left: 5px solid #059669;
             padding: 15px;
             margin: 15px 0;
             border-radius: 8px;
@@ -173,7 +173,7 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: 800;
-            color: #004D40;
+            color: #065F46;
             margin-bottom: 5px;
             display: block;
         }
@@ -362,38 +362,37 @@
 
         <div id="viewExplanation" class="section-view" style="display: block;">
             
-            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Fração Geratriz</h1>
-            <p style="color: #555; margin-bottom: 20px;">Transformar dízimas infinitas em frações é como encontrar a "receita" que gerou aquele número.</p>
+            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Porcentagem</h1>
+            <p style="color: #555; margin-bottom: 20px;">No 8º ano, aprendemos a calcular aumentos, descontos e usar fatores de multiplicação.</p>
             
             <div class="card-content">
-                <h3>🔢 Método Prático</h3>
-                <p>O segredo está em montar a fração usando o <strong>Período</strong> (quem repete) e o <strong>Anti-período</strong> (intruso).</p>
-                
-                <div class="example-box">
-                    <span class="example-tag">1. Dízima Simples (0,ppp...)</span>
-                    <p>Coloque o período no topo. Embaixo, coloque tantos <strong>9s</strong> quantos forem os algarismos do período.</p>
-                    <p style="font-weight:700; margin-top:5px; color:#00695C;">0,777... ➝ 7/9</p>
-                    <p style="font-weight:700; color:#00695C;">0,1212... ➝ 12/99</p>
-                </div>
-
-                <div class="example-box">
-                    <span class="example-tag">2. Dízima Composta (0,iap...)</span>
-                    <p>Numerador: (Tudo até o 1º período) - (Tudo antes do período).</p>
-                    <p>Denominador: <strong>9s</strong> (pelo período) e <strong>0s</strong> (pelo anti-período).</p>
-                    <p style="font-weight:700; margin-top:5px; color:#00695C;">0,2555...</p>
-                    <p>(25 - 2) / 90 = 23/90</p>
+                <h3>🚀 Fator de Multiplicação</h3>
+                <p>É a forma mais rápida de calcular. Em vez de regra de três, multiplicamos:</p>
+                <br>
+                <div class="visual-row">
+                    <div class="visual-item">
+                        <p style="font-size:1.2rem; font-weight:800; color:#059669;">Aumento (+)</p>
+                        <p style="font-size:0.9rem;">Total (100%) + Taxa</p>
+                        <p>+20% ➝ Multiplica por <strong>1,20</strong></p>
+                    </div>
+                    <div class="visual-item">
+                        <p style="font-size:1.2rem; font-weight:800; color:#E53E3E;">Desconto (-)</p>
+                        <p style="font-size:0.9rem;">Total (100%) - Taxa</p>
+                        <p>-20% ➝ Multiplica por <strong>0,80</strong></p>
+                    </div>
                 </div>
             </div>
 
             <div class="card-content">
-                <h3>✂️ Simplificação</h3>
-                <p>Sempre verifique se dá para dividir o numerador e o denominador pelo mesmo número.</p>
-                <div class="visual-row" style="justify-content: center; margin-top:10px;">
-                    <div style="background:#E0F2F1; padding:10px; border-radius:8px; text-align:center;">
-                        <span style="font-weight:bold;">12/99</span>
-                        <span>(div por 3)</span>
-                        <span style="font-weight:bold;">➝ 4/33</span>
-                    </div>
+                <h3>📈 Aumentos Sucessivos</h3>
+                <p>Cuidado: Dois aumentos de 10% <strong>NÃO</strong> são iguais a um aumento de 20%!</p>
+                
+                <div class="example-box">
+                    <span class="example-tag">Exemplo</span>
+                    <p>Preço inicial: 100.</p>
+                    <p>+10% ➝ 110.</p>
+                    <p>+10% (sobre 110) ➝ 121.</p>
+                    <p style="font-weight:700;">Aumento real = 21%.</p>
                 </div>
             </div>
 
@@ -405,7 +404,7 @@
         <div id="viewPractice" class="section-view">
             <div style="margin-bottom: 15px;">
                 <h2>Hora de Praticar!</h2>
-                <p style="color: #666; font-size: 0.9rem;">Calcule a fração geratriz.</p>
+                <p style="color: #666; font-size: 0.9rem;">Use a calculadora mental.</p>
             </div>
             <div class="question-map" id="qMap"></div>
             <div id="quizContainer" style="margin-bottom: 100px;"></div>
@@ -431,177 +430,177 @@
     </footer>
 
     <script>
-        // --- BANCO DE QUESTÕES (FRAÇÃO GERATRIZ - 8º ANO) ---
+        // --- BANCO DE QUESTÕES (PORCENTAGEM 8º ANO) ---
         const questions = [
-            // NÍVEL 1: DÍZIMAS SIMPLES
+            // NÍVEL 1: CONCEITOS E FATORES
             {
                 id: 1,
-                text: "Qual é a fração geratriz de <strong>0,555...</strong>?",
-                options: ["5/10", "5/9", "5/90", "5/99"],
+                text: "Para calcular <strong>35%</strong> de um valor, por qual número decimal devemos multiplicar?",
+                options: ["3,5", "0,35", "0,035", "35"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 5/10 é igual a 0,5 (decimal exato).<br>
-                    <strong>(B) Correta:</strong> Período é 5 (um algarismo). Denominador é um 9. Resultado: 5/9.<br>
-                    <strong>(C) Incorreta:</strong> 90 é usado para dízimas compostas.<br>
-                    <strong>(D) Incorreta:</strong> 99 é para período com dois algarismos.`
+                    <strong>(A) Incorreta:</strong> Isso seria 350%.<br>
+                    <strong>(B) Correta:</strong> 35% significa 35 dividido por 100, que é 0,35.<br>
+                    <strong>(C) Incorreta:</strong> Isso seria 3,5%.<br>
+                    <strong>(D) Incorreta:</strong> Isso seria 3500%.`
             },
             {
                 id: 2,
-                text: "A dízima <strong>0,232323...</strong> tem como geratriz:",
-                options: ["23/100", "23/90", "23/99", "2/9"],
-                correct: 2,
+                text: "Qual é o fator de multiplicação para um <strong>aumento</strong> de 20%?",
+                options: ["0,20", "1,20", "20", "1,02"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 23/100 é 0,23 (exato).<br>
-                    <strong>(B) Incorreta:</strong> 23/90 seria 0,2555...<br>
-                    <strong>(C) Correta:</strong> Período é 23 (dois algarismos). Colocamos dois noves: 23/99.<br>
-                    <strong>(D) Incorreta:</strong> 2/9 é 0,222...`
+                    <strong>(A) Incorreta:</strong> 0,20 calcula apenas a parte do aumento, não o valor final.<br>
+                    <strong>(B) Correta:</strong> O valor original (100%) + o aumento (20%) = 120%. Em decimal: 1,20.<br>
+                    <strong>(C) Incorreta:</strong> Multiplicar por 20 aumenta 2000%.<br>
+                    <strong>(D) Incorreta:</strong> Isso seria aumento de 2%.`
             },
             {
                 id: 3,
-                text: "Determine a fração de <strong>0,999...</strong>",
-                options: ["9/10", "99/100", "1", "0,9"],
+                text: "Qual é o fator de multiplicação para um <strong>desconto</strong> de 15%?",
+                options: ["0,15", "1,15", "0,85", "8,5"],
                 correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> É 0,9.<br>
-                    <strong>(B) Incorreta:</strong> É 0,99.<br>
-                    <strong>(C) Correta:</strong> 9/9 é igual a 1. Matematicamente, 0,999... é igual a 1.<br>
-                    <strong>(D) Incorreta:</strong> É o próprio número arredondado.`
+                    <strong>(A) Incorreta:</strong> 0,15 calcula o valor do desconto, não o preço final.<br>
+                    <strong>(B) Incorreta:</strong> Isso seria aumento de 15%.<br>
+                    <strong>(C) Correta:</strong> O valor original (100%) - o desconto (15%) = 85%. Em decimal: 0,85.<br>
+                    <strong>(D) Incorreta:</strong> Erro de casa decimal.`
             },
-            // NÍVEL 2: DÍZIMAS COMPOSTAS BÁSICAS
+            // NÍVEL 2: CÁLCULOS BÁSICOS
             {
                 id: 4,
-                text: "Qual a fração geratriz de <strong>0,1666...</strong>?",
-                options: ["16/99", "16/90", "15/90", "15/99"],
-                correct: 2,
+                text: "Quanto é <strong>15% de 200</strong>?",
+                options: ["30", "15", "20", "45"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria 0,1616...<br>
-                    <strong>(B) Incorreta:</strong> Esqueceu de subtrair o anti-período.<br>
-                    <strong>(C) Correta:</strong> (16 - 1) / 90 = 15/90. (Simplificando dá 1/6).<br>
-                    <strong>(D) Incorreta:</strong> Denominador de simples.`
+                    <strong>(A) Correta:</strong> 10% de 200 é 20. 5% é 10. Logo, 15% é 20 + 10 = 30. Ou 0,15 x 200.<br>
+                    <strong>(B) Incorreta:</strong> Repetiu a porcentagem.<br>
+                    <strong>(C) Incorreta:</strong> 10% do valor.<br>
+                    <strong>(D) Incorreta:</strong> Cálculo errado.`
             },
             {
                 id: 5,
-                text: "Converta <strong>0,2333...</strong> para fração.",
-                options: ["21/90", "23/90", "21/99", "23/99"],
-                correct: 0,
+                text: "Um produto custa R$ 100,00 e sofre um aumento de 10%. Qual o novo preço?",
+                options: ["R$ 101,00", "R$ 110,00", "R$ 90,00", "R$ 100,10"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Correta:</strong> (23 - 2) / 90 = 21/90.<br>
-                    <strong>(B) Incorreta:</strong> Não subtraiu o anti-período (2).<br>
-                    <strong>(C) Incorreta:</strong> Denominador errado.<br>
-                    <strong>(D) Incorreta:</strong> Seria 0,2323...`
+                    <strong>(A) Incorreta:</strong> Somou 1 real.<br>
+                    <strong>(B) Correta:</strong> 10% de 100 é 10. Novo preço: 100 + 10 = 110.<br>
+                    <strong>(C) Incorreta:</strong> Isso seria desconto.<br>
+                    <strong>(D) Incorreta:</strong> Erro de cálculo.`
             },
             {
                 id: 6,
-                text: "A geratriz de <strong>0,4111...</strong> é:",
-                options: ["41/99", "37/90", "41/90", "37/99"],
-                correct: 1,
+                text: "Uma camisa de R$ 50,00 tem 20% de desconto. Quanto vou pagar?",
+                options: ["R$ 40,00", "R$ 30,00", "R$ 10,00", "R$ 48,00"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria 0,4141...<br>
-                    <strong>(B) Correta:</strong> (41 - 4) / 90 = 37/90.<br>
-                    <strong>(C) Incorreta:</strong> Esqueceu de subtrair.<br>
-                    <strong>(D) Incorreta:</strong> Denominador errado.`
+                    <strong>(A) Correta:</strong> 20% de 50 é 10. Preço final: 50 - 10 = 40.<br>
+                    <strong>(B) Incorreta:</strong> Desconto exagerado.<br>
+                    <strong>(C) Incorreta:</strong> Esse é o valor do desconto, não o preço final.<br>
+                    <strong>(D) Incorreta:</strong> Desconto de apenas 2 reais.`
             },
-            // NÍVEL 3: COM PARTE INTEIRA
+            // NÍVEL 3: PROBLEMAS INVERSOS E VARIAÇÃO
             {
                 id: 7,
-                text: "Encontre a fração de <strong>1,333...</strong>",
-                options: ["13/9", "4/3", "10/9", "13/10"],
-                correct: 1,
+                text: "Se 20% de um número é 40, qual é o número total (100%)?",
+                options: ["80", "100", "200", "400"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> (13-1)/9 = 12/9 = 4/3. 13/9 é 1,444...<br>
-                    <strong>(B) Correta:</strong> Separe: 1 + 0,333... = 1 + 3/9 = 1 + 1/3 = 4/3.<br>
-                    <strong>(C) Incorreta:</strong> Cálculo errado.<br>
-                    <strong>(D) Incorreta:</strong> Decimal exato 1,3.`
+                    <strong>(A) Incorreta:</strong> 20% de 80 é 16.<br>
+                    <strong>(B) Incorreta:</strong> 20% de 100 é 20.<br>
+                    <strong>(C) Correta:</strong> Se 20% vale 40, então 100% (que é 5 vezes maior) vale 40 x 5 = 200.<br>
+                    <strong>(D) Incorreta:</strong> Exagerado.`
             },
             {
                 id: 8,
-                text: "Qual é a fração de <strong>2,1212...</strong>?",
-                options: ["212/99", "210/99", "70/33", "21/99"],
-                correct: 2,
+                text: "Um preço subiu de R$ 50,00 para R$ 60,00. Qual foi a porcentagem de aumento?",
+                options: ["10%", "20%", "50%", "100%"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> (212-2)/99 = 210/99.<br>
-                    <strong>(B) Incorreta:</strong> Está correto antes de simplificar. Vamos ver se tem simplificada...<br>
-                    <strong>(C) Correta:</strong> 210/99 simplificado por 3 é 70/33. Essa é a resposta final mais adequada.<br>
-                    <strong>(D) Incorreta:</strong> Ignorou a parte inteira.`
+                    <strong>(A) Incorreta:</strong> O aumento foi de R$ 10, mas em relação a 50, não a 100.<br>
+                    <strong>(B) Correta:</strong> O aumento foi de R$ 10. R$ 10 é 1/5 de R$ 50. 1/5 é igual a 20%.<br>
+                    <strong>(C) Incorreta:</strong> Seria se fosse para 75.<br>
+                    <strong>(D) Incorreta:</strong> Seria se fosse para 100.`
             },
             {
                 id: 9,
-                text: "A dízima <strong>1,555...</strong> em fração imprópria é:",
-                options: ["15/9", "14/9", "16/9", "5/9"],
-                correct: 1,
+                text: "Calcule 20% de 50% (porcentagem de porcentagem).",
+                options: ["10%", "70%", "30%", "25%"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Não subtraiu.<br>
-                    <strong>(B) Correta:</strong> (15 - 1) / 9 = 14/9.<br>
-                    <strong>(C) Incorreta:</strong> Somou.<br>
-                    <strong>(D) Incorreta:</strong> Ignorou o inteiro.`
+                    <strong>(A) Correta:</strong> 0,20 x 0,50 = 0,10. Ou seja, um quinto da metade é 10%.<br>
+                    <strong>(B) Incorreta:</strong> Somou.<br>
+                    <strong>(C) Incorreta:</strong> Subtraiu.<br>
+                    <strong>(D) Incorreta:</strong> Erro.`
             },
-            // NÍVEL 4: SIMPLIFICAÇÃO OBRIGATÓRIA
+            // NÍVEL 4: AUMENTOS E DESCONTOS SUCESSIVOS
             {
                 id: 10,
-                text: "Qual a fração <strong>irredutível</strong> de 0,666...?",
-                options: ["6/9", "2/3", "3/2", "66/99"],
+                text: "Um produto aumentou 10% e depois aumentou mais 10%. O aumento total foi de:",
+                options: ["20%", "21%", "100%", "11%"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Correta, mas não está simplificada.<br>
-                    <strong>(B) Correta:</strong> 6/9 simplificado por 3 vira 2/3.<br>
-                    <strong>(C) Incorreta:</strong> Inverso.<br>
-                    <strong>(D) Incorreta:</strong> Não simplificada.`
+                    <strong>(A) Incorreta:</strong> Aumentos sucessivos não se somam diretamente.<br>
+                    <strong>(B) Correta:</strong> Fator: 1,10 x 1,10 = 1,21. Isso significa um aumento total de 21%. (O segundo 10% incide sobre o valor já aumentado).<br>
+                    <strong>(C) Incorreta:</strong> Impossível.<br>
+                    <strong>(D) Incorreta:</strong> Muito baixo.`
             },
             {
                 id: 11,
-                text: "A dízima <strong>0,1515...</strong> simplificada é:",
-                options: ["15/99", "5/33", "1/5", "3/20"],
+                text: "Se eu der um desconto de 50% e depois outro de 50%, o produto sai de graça?",
+                options: ["Sim, 100% de desconto", "Não, sobra 25% do valor", "Não, sobra 50% do valor", "Sobra 0%"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Falta simplificar.<br>
-                    <strong>(B) Correta:</strong> 15/99 dividido por 3 em cima e embaixo resulta em 5/33.<br>
-                    <strong>(C) Incorreta:</strong> Decimal exato 0,2.<br>
-                    <strong>(D) Incorreta:</strong> Decimal exato 0,15.`
+                    <strong>(A) Incorreta:</strong> O segundo desconto é sobre o valor reduzido.<br>
+                    <strong>(B) Correta:</strong> Primeiro cai para a metade (50%). O segundo desconto tira metade dessa metade (25%). Sobra 25% do valor original.<br>
+                    <strong>(C) Incorreta:</strong> Só aplicou um desconto.<br>
+                    <strong>(D) Incorreta:</strong> Não sai de graça.`
             },
             {
                 id: 12,
-                text: "Simplifique a geratriz de <strong>0,222...</strong>",
-                options: ["2/9", "1/9", "2/10", "1/5"],
-                correct: 0,
+                text: "Qual fator representa um aumento de 100%?",
+                options: ["1,00", "2,00", "100", "0,5"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Correta:</strong> 2/9 não dá para simplificar mais, pois 2 e 9 não têm divisores comuns.<br>
-                    <strong>(B) Incorreta:</strong> É 0,111...<br>
-                    <strong>(C) Incorreta:</strong> É 0,2.<br>
-                    <strong>(D) Incorreta:</strong> É 0,2.`
+                    <strong>(A) Incorreta:</strong> Isso é manter o valor (100%).<br>
+                    <strong>(B) Correta:</strong> Valor original (100%) + Aumento (100%) = 200%. Multiplicar por 2.<br>
+                    <strong>(C) Incorreta:</strong> Multiplicaria por 100.<br>
+                    <strong>(D) Incorreta:</strong> Isso é metade.`
             },
-            // NÍVEL 5: DESAFIOS E OPERAÇÕES
+            // NÍVEL 5: DESAFIOS E JUROS
             {
                 id: 13,
-                text: "Quanto vale <strong>√0,444...</strong>?",
-                options: ["0,2", "0,222...", "2/3", "0,666..."],
-                correct: 3,
+                text: "Um salário de R$ 2000,00 teve um aumento e foi para R$ 2200,00. De quanto foi o aumento?",
+                options: ["5%", "10%", "20%", "2%"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Raiz de 0,04.<br>
-                    <strong>(B) Incorreta:</strong> Raiz de 0,049...<br>
-                    <strong>(C) Incorreta:</strong> É 2/3, mas a opção D mostra o decimal equivalente.<br>
-                    <strong>(D) Correta:</strong> √(4/9) = 2/3. E 2/3 é igual a 0,666... (As opções C e D são matematicamente iguais, mas D mantém o formato dízima).`
+                    <strong>(A) Incorreta:</strong> Seria 100 reais.<br>
+                    <strong>(B) Correta:</strong> A diferença é R$ 200. R$ 200 é 10% de R$ 2000 (basta cortar um zero).<br>
+                    <strong>(C) Incorreta:</strong> Seria 400 reais.<br>
+                    <strong>(D) Incorreta:</strong> Seria 40 reais.`
             },
             {
                 id: 14,
-                text: "Calcule a soma: <strong>0,333... + 0,111...</strong>",
-                options: ["0,4", "0,444...", "4/10", "44/99"],
-                correct: 1,
+                text: "Se o lado de um quadrado aumenta 10%, o que acontece com a sua ÁREA?",
+                options: ["Aumenta 10%", "Aumenta 20%", "Aumenta 21%", "Aumenta 100%"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Decimal exato.<br>
-                    <strong>(B) Correta:</strong> 3/9 + 1/9 = 4/9. E 4/9 é 0,444...<br>
-                    <strong>(C) Incorreta:</strong> Decimal exato.<br>
-                    <strong>(D) Incorreta:</strong> Fração equivalente, mas formato diferente.`
+                    <strong>(A) Incorreta:</strong> A área cresce mais que o lado.<br>
+                    <strong>(B) Incorreta:</strong> Não é o dobro simples.<br>
+                    <strong>(C) Correta:</strong> Fator do lado = 1,10. Fator da área = 1,10 x 1,10 = 1,21. Aumento de 21%.<br>
+                    <strong>(D) Incorreta:</strong> Exagero.`
             },
             {
                 id: 15,
-                text: "Qual é o valor de <strong>1,222... x 9</strong>?",
-                options: ["10", "11", "12", "9"],
+                text: "Comprei algo por 80 e vendi por 100. Qual foi minha taxa de lucro sobre o custo?",
+                options: ["20%", "25%", "15%", "80%"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Erro de conta.<br>
-                    <strong>(B) Correta:</strong> 1,222... = (12-1)/9 = 11/9. Multiplicando: (11/9) x 9 = 11.<br>
-                    <strong>(C) Incorreta:</strong> Seria se fosse 12/9.<br>
-                    <strong>(D) Incorreta:</strong> Erro de conta.`
+                    <strong>(A) Incorreta:</strong> 20 reais não é 20% de 80.<br>
+                    <strong>(B) Correta:</strong> Lucro de R$ 20. A relação é 20/80 = 1/4 = 0,25 = 25%.<br>
+                    <strong>(C) Incorreta:</strong> Cálculo errado.<br>
+                    <strong>(D) Incorreta:</strong> Valor de compra.`
             }
         ];
 
@@ -766,7 +765,7 @@
             if (currentQuestion === questions.length - 1) {
                 btnNext.textContent = "Finalizar";
                 btnNext.onclick = finishQuiz;
-                btnNext.style.backgroundColor = "#00695C"; 
+                btnNext.style.backgroundColor = "#059669"; 
             } else {
                 btnNext.textContent = "Próxima";
                 btnNext.onclick = () => changeQuestion(1);
