@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gráfico da Função Afim - Detalhado</title>
+    <title>Sequências Numéricas - Detalhado</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,9 @@
             --text-color: #2D3748;
             --border-color: #000000;
             
-            /* CORES DA MATÉRIA: TEMA TURQUESA (Precisão/Gráfico) */
-            --theme-color: #CCFBF1; 
-            --theme-active: #0F766E; 
+            /* CORES DA MATÉRIA: TEMA ROXO/NEON (Lógica/Padrão/Futuro) */
+            --theme-color: #EDE9FE; 
+            --theme-active: #7C3AED; 
             --theme-text-active: #FFFFFF;
             
             /* FEEDBACK */
@@ -156,15 +156,15 @@
             justify-content: center;
             margin: 15px 0;
             padding: 15px;
-            background-color: #F0FDFA;
+            background-color: #EDE9FE;
             border-radius: 12px;
             border: 1px dashed var(--theme-active);
         }
 
-        /* --- CARDS DE EXEMPLO DETALHADO (NOVO) --- */
+        /* --- CARDS DE EXEMPLO DETALHADO --- */
         .step-box {
-            background-color: #F0FDFA; 
-            border-left: 5px solid #0F766E;
+            background-color: #F5F3FF; 
+            border-left: 5px solid #7C3AED;
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
@@ -174,7 +174,7 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             font-weight: 800;
-            color: #115E59;
+            color: #5B21B6;
             margin-bottom: 10px;
             display: block;
             border-bottom: 1px solid #ccc;
@@ -202,7 +202,7 @@
         }
 
         .highlight {
-            color: #0F766E;
+            color: #7C3AED;
             font-weight: 700;
         }
 
@@ -390,72 +390,67 @@
 
         <div id="viewExplanation" class="section-view" style="display: block;">
             
-            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Gráfico da Função Afim</h1>
-            <p style="color: #555; margin-bottom: 20px;">Como transformar a fórmula matemática em um desenho (uma reta) e vice-versa.</p>
+            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Sequências Numéricas</h1>
+            <p style="color: #555; margin-bottom: 20px;">Uma sequência é uma lista ordenada de números que seguem uma regra lógica ou padrão.</p>
             
             <div class="card-content">
-                <h3>1. A Fórmula e a Reta</h3>
-                <p>Toda função do tipo <strong>f(x) = ax + b</strong> desenha uma <strong>RETA</strong>.</p>
-                <div style="margin-top:10px; border:2px dashed #0F766E; padding:10px; border-radius:8px; text-align:center;">
-                    <p style="font-weight:700; font-size:1.1rem; color:#0F766E;">y = ax + b</p>
-                    <p style="font-size:0.8rem;">Onde "a" inclina a reta e "b" corta o eixo Y.</p>
-                </div>
-            </div>
-
-            <div class="card-content">
-                <h3>2. Desenhando a Reta: Passo a Passo</h3>
-                <p>Vamos desenhar o gráfico de <strong>y = 2x - 1</strong>.</p>
-                <p>Precisamos de apenas 2 pontos.</p>
-
-                <div class="step-box">
-                    <span class="step-title">Ponto 1: Escolha x = 0</span>
-                    <div class="math-row">y = 2(0) - 1 <span class="math-comment">Substituímos x por 0</span></div>
-                    <div class="math-row">y = 0 - 1 <span class="math-comment">Multiplicação</span></div>
-                    <div class="math-row">y = -1 <span class="math-comment">Resultado</span></div>
-                    <p class="explanation-text">Encontramos o par ordenado <strong>(0, -1)</strong>. Este é o corte no eixo Y (é o valor de 'b').</p>
-                </div>
-
-                <div class="step-box">
-                    <span class="step-title">Ponto 2: Escolha x = 1</span>
-                    <div class="math-row">y = 2(1) - 1 <span class="math-comment">Substituímos x por 1</span></div>
-                    <div class="math-row">y = 2 - 1 <span class="math-comment">Multiplicação</span></div>
-                    <div class="math-row">y = 1 <span class="math-comment">Resultado</span></div>
-                    <p class="explanation-text">Encontramos o par ordenado <strong>(1, 1)</strong>.</p>
-                </div>
-
-                <div class="step-box">
-                    <span class="step-title">Resultado Visual</span>
-                    <p class="explanation-text">Agora ligamos os pontos (0, -1) e (1, 1) com uma régua.</p>
-                    <div style="display:flex; justify-content:center;">
-                        <svg width="150" height="150" viewBox="0 0 100 100" style="background:white; border:1px solid #ccc;">
-                            <line x1="50" y1="0" x2="50" y2="100" stroke="#ccc" />
-                            <line x1="0" y1="50" x2="100" y2="50" stroke="#ccc" />
-                            <line x1="30" y1="90" x2="70" y2="10" stroke="#0F766E" stroke-width="2" />
-                            <circle cx="50" cy="70" r="3" fill="red" /> <text x="55" y="70" font-size="8">(0,-1)</text>
-                            <circle cx="70" cy="30" r="3" fill="red" /> <text x="75" y="30" font-size="8">(1,1)</text>
-                        </svg>
+                <h3>1. Posição e Termo</h3>
+                <p class="explanation-text">Em uma sequência, a posição é "onde" o número está, e o termo é o "valor" do número.</p>
+                <div style="display:flex; justify-content:center; gap:10px; margin-top:10px;">
+                    <div style="text-align:center;">
+                        <div style="font-size:0.8rem; color:#888;">Posição 1</div>
+                        <div style="font-size:1.5rem; font-weight:bold; color:#7C3AED;">2</div>
+                    </div>
+                    <div style="text-align:center; padding-top:10px;">➜</div>
+                    <div style="text-align:center;">
+                        <div style="font-size:0.8rem; color:#888;">Posição 2</div>
+                        <div style="font-size:1.5rem; font-weight:bold; color:#7C3AED;">4</div>
+                    </div>
+                    <div style="text-align:center; padding-top:10px;">➜</div>
+                    <div style="text-align:center;">
+                        <div style="font-size:0.8rem; color:#888;">Posição 3</div>
+                        <div style="font-size:1.5rem; font-weight:bold; color:#7C3AED;">6</div>
                     </div>
                 </div>
+                <p style="text-align:center; margin-top:10px; font-size:0.9rem;">Chamamos os termos de <strong>a₁, a₂, a₃...</strong></p>
             </div>
 
             <div class="card-content">
-                <h3>3. A Raiz da Função (Corte em X)</h3>
-                <p>Para saber onde a reta corta o eixo deitado (X), o <strong>y tem que ser zero</strong>.</p>
+                <h3>2. Lei de Formação (Fórmula)</h3>
+                <p class="explanation-text">É a regra matemática que permite calcular qualquer número da sequência sem precisar escrever todos os anteriores.</p>
                 
                 <div class="step-box">
-                    <span class="step-title">Exemplo: y = -3x + 6</span>
+                    <span class="step-title">Exemplo: aₙ = 3n + 1</span>
+                    <p class="explanation-text">Aqui, <strong>n</strong> é a posição. Vamos descobrir os primeiros termos:</p>
                     
-                    <p class="explanation-text"><strong>Passo 1:</strong> Igualar a função a zero.</p>
-                    <div class="math-row">-3x + 6 = 0</div>
+                    <p class="explanation-text"><strong>Para n = 1 (1º termo):</strong></p>
+                    <div class="math-row">a₁ = 3(1) + 1 <span class="math-comment">Substitui n por 1</span></div>
+                    <div class="math-row">a₁ = 3 + 1</div>
+                    <div class="math-row"><span class="highlight">a₁ = 4</span></div>
+
+                    <p class="explanation-text"><strong>Para n = 2 (2º termo):</strong></p>
+                    <div class="math-row">a₂ = 3(2) + 1 <span class="math-comment">Substitui n por 2</span></div>
+                    <div class="math-row">a₂ = 6 + 1</div>
+                    <div class="math-row"><span class="highlight">a₂ = 7</span></div>
+
+                    <p class="explanation-text"><strong>Para n = 10 (10º termo):</strong></p>
+                    <div class="math-row">a₁₀ = 3(10) + 1</div>
+                    <div class="math-row"><span class="highlight">a₁₀ = 31</span></div>
+                </div>
+            </div>
+
+            <div class="card-content">
+                <h3>3. Fórmula Recursiva</h3>
+                <p class="explanation-text">É quando a regra depende do termo anterior. Você precisa saber o passado para calcular o futuro.</p>
+                
+                <div class="step-box">
+                    <span class="step-title">Exemplo: Começa em 5 e soma 2</span>
+                    <p class="explanation-text">Regra: <strong>aₙ = aₙ₋₁ + 2</strong> (O atual é o anterior mais 2).</p>
                     
-                    <p class="explanation-text"><strong>Passo 2:</strong> Isolar o termo com x.</p>
-                    <div class="math-row">-3x = -6 <span class="math-comment">O 6 passa negativo</span></div>
-                    
-                    <p class="explanation-text"><strong>Passo 3:</strong> Dividir.</p>
-                    <div class="math-row">x = -6 / -3 <span class="math-comment">Menos com menos dá mais</span></div>
-                    <div class="math-row"><span class="highlight">x = 2</span></div>
-                    
-                    <p class="explanation-text">A reta corta o eixo X exatamente no número <strong>2</strong>.</p>
+                    <div class="math-row">Termo 1: <span class="highlight">5</span></div>
+                    <div class="math-row">Termo 2: 5 + 2 = <span class="highlight">7</span></div>
+                    <div class="math-row">Termo 3: 7 + 2 = <span class="highlight">9</span></div>
+                    <div class="math-row">Termo 4: 9 + 2 = <span class="highlight">11</span></div>
                 </div>
             </div>
 
@@ -467,7 +462,7 @@
         <div id="viewPractice" class="section-view">
             <div style="margin-bottom: 15px;">
                 <h2>Hora de Praticar!</h2>
-                <p style="color: #666; font-size: 0.9rem;">Analise os gráficos e funções.</p>
+                <p style="color: #666; font-size: 0.9rem;">Descubra os padrões.</p>
             </div>
             <div class="question-map" id="qMap"></div>
             <div id="quizContainer" style="margin-bottom: 100px;"></div>
@@ -493,177 +488,177 @@
     </footer>
 
     <script>
-        // --- BANCO DE QUESTÕES (GRÁFICO DA FUNÇÃO AFIM) ---
+        // --- BANCO DE QUESTÕES (SEQUÊNCIAS NUMÉRICAS) ---
         const questions = [
-            // NÍVEL 1: CONCEITOS VISUAIS
+            // NÍVEL 1: IDENTIFICAÇÃO DE PADRÕES SIMPLES
             {
                 id: 1,
-                text: "O gráfico de uma função do 1º grau (ex: y = 2x + 1) é geometricamente:",
-                options: ["Uma parábola (curva em U)", "Uma reta", "Uma circunferência", "Um ponto isolado"],
+                text: "Qual é o próximo número da sequência: 2, 4, 6, 8, ...?",
+                options: ["9", "10", "12", "16"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Parábola é gráfico de função do 2º grau ($x^2$).<br>
-                    <strong>(B) Correta:</strong> A principal característica da função afim ($ax+b$) é que a variação é constante, formando sempre uma linha reta.<br>
-                    <strong>(C) Incorreta:</strong> Circunferência tem equação diferente ($x^2+y^2=r^2$).<br>
-                    <strong>(D) Incorreta:</strong> A função tem infinitos pontos que formam a reta.`
+                    <strong>(A) Incorreta:</strong> A sequência pula de 2 em 2.<br>
+                    <strong>(B) Correta:</strong> O padrão é somar 2 ao número anterior (números pares). 8 + 2 = 10.<br>
+                    <strong>(C) Incorreta:</strong> Pulou um termo.<br>
+                    <strong>(D) Incorreta:</strong> Dobrou o último termo (seria PG).`
             },
             {
                 id: 2,
-                text: "Na função <strong>f(x) = -2x + 5</strong>, o gráfico é crescente ou decrescente?",
-                options: ["Crescente (sobe)", "Decrescente (desce)", "Constante (horizontal)", "Vertical"],
+                text: "Descubra o padrão: 10, 20, 30, 40, ... O próximo é:",
+                options: ["41", "50", "60", "100"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria crescente se o 'a' fosse positivo (ex: 2x).<br>
-                    <strong>(B) Correta:</strong> O coeficiente 'a' é -2. Como ele é negativo ($a < 0$), a reta 'cai' ou desce da esquerda para a direita.<br>
-                    <strong>(C) Incorreta:</strong> Seria constante se $a=0$.<br>
-                    <strong>(D) Incorreta:</strong> Retas verticais não são funções.`
+                    <strong>(A) Incorreta:</strong> Apenas somou 1.<br>
+                    <strong>(B) Correta:</strong> A sequência aumenta de 10 em 10. 40 + 10 = 50.<br>
+                    <strong>(C) Incorreta:</strong> Pulou o 50.<br>
+                    <strong>(D) Incorreta:</strong> Valor muito alto.`
             },
             {
                 id: 3,
-                text: "O coeficiente <strong>b</strong> (linear) indica onde a reta corta qual eixo?",
-                options: ["Eixo X (horizontal)", "Eixo Y (vertical)", "A origem (0,0)", "Nenhum eixo"],
+                text: "Sequência: 1, 3, 5, 7, ... Qual é a regra?",
+                options: ["Números pares", "Números ímpares (soma 2)", "Tabuada do 3", "Multiplica por 2"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> O corte em X é chamado de Raiz.<br>
-                    <strong>(B) Correta:</strong> Quando $x=0$, $y = a(0) + b = b$. Por isso, o gráfico sempre cruza o eixo vertical Y na altura 'b'.<br>
-                    <strong>(C) Incorreta:</strong> Só passa na origem se $b=0$.<br>
-                    <strong>(D) Incorreta:</strong> Ela sempre corta o eixo Y.`
+                    <strong>(A) Incorreta:</strong> Pares são 0, 2, 4...<br>
+                    <strong>(B) Correta:</strong> Começa em 1 e soma 2 a cada passo. São os números ímpares.<br>
+                    <strong>(C) Incorreta:</strong> Tabuada do 3 tem 6, 9...<br>
+                    <strong>(D) Incorreta:</strong> 1x2=2 (não 3).`
             },
-            // NÍVEL 2: IDENTIFICAÇÃO NA EQUAÇÃO
+            // NÍVEL 2: APLICANDO A LEI DE FORMAÇÃO
             {
                 id: 4,
-                text: "Onde a reta da função <strong>y = 3x - 4</strong> corta o eixo Y?",
-                options: ["No ponto 3", "No ponto -4", "No ponto 4", "No ponto -3"],
-                correct: 1,
+                text: "Se a fórmula é <strong>aₙ = 2n</strong>, qual é o 5º termo (n=5)?",
+                options: ["5", "7", "10", "25"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 3 é a inclinação (a).<br>
-                    <strong>(B) Correta:</strong> O corte em Y é dado pelo termo independente $b$. Na equação, $b = -4$.<br>
-                    <strong>(C) Incorreta:</strong> Ignorou o sinal de menos.<br>
-                    <strong>(D) Incorreta:</strong> Confundiu o coeficiente 'a' com sinal trocado.`
+                    <strong>(A) Incorreta:</strong> Valor de n.<br>
+                    <strong>(B) Incorreta:</strong> Somou 2+5.<br>
+                    <strong>(C) Correta:</strong> Substitua n por 5 na fórmula: 2 vezes 5 = 10.<br>
+                    <strong>(D) Incorreta:</strong> Elevou ao quadrado.`
             },
             {
                 id: 5,
-                text: "Qual destas funções gera um gráfico que <strong>sobe</strong> (crescente)?",
-                options: ["y = -5x + 10", "y = 4 - x", "y = 2x - 100", "y = -x"],
+                text: "Dada a lei <strong>aₙ = n + 3</strong>, qual é o 1º termo (n=1)?",
+                options: ["1", "3", "4", "0"],
                 correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $a = -5$. Negativo desce.<br>
-                    <strong>(B) Incorreta:</strong> $a = -1$ (o número que multiplica o x). Negativo desce.<br>
-                    <strong>(C) Correta:</strong> $a = 2$. Como 2 é positivo, a reta é crescente, não importa onde ela comece (mesmo sendo -100).<br>
-                    <strong>(D) Incorreta:</strong> $a = -1$. Negativo desce.`
+                    <strong>(A) Incorreta:</strong> Valor de n.<br>
+                    <strong>(B) Incorreta:</strong> Valor da constante.<br>
+                    <strong>(C) Correta:</strong> Substitua n por 1: 1 + 3 = 4.<br>
+                    <strong>(D) Incorreta:</strong> Cálculo errado.`
             },
             {
                 id: 6,
-                text: "Se uma reta passa pela origem (0,0), podemos afirmar que:",
-                options: ["a = 0", "b = 0", "x é sempre positivo", "A função não existe"],
-                correct: 1,
-                explanation: `
-                    <strong>(A) Incorreta:</strong> Se $a=0$, a reta é horizontal e pode passar em qualquer altura, não necessariamente na origem.<br>
-                    <strong>(B) Correta:</strong> A origem é o ponto onde $y=0$. Se a reta passa ali, o corte no eixo Y é 0, logo $b=0$. (Função Linear).<br>
-                    <strong>(C) Incorreta:</strong> O gráfico se estende para x negativo também.<br>
-                    <strong>(D) Incorreta:</strong> Existe e é chamada de função linear.`
-            },
-            // NÍVEL 3: CÁLCULO DA RAIZ (CORTE EM X)
-            {
-                id: 7,
-                text: "Em qual ponto a função <strong>f(x) = 2x - 10</strong> corta o eixo X?",
-                options: ["5", "-5", "10", "2"],
+                text: "Use a fórmula <strong>aₙ = 3n - 1</strong> para achar o 3º termo.",
+                options: ["8", "9", "2", "6"],
                 correct: 0,
                 explanation: `
-                    <strong>(A) Correta:</strong> Para achar o corte em X, fazemos $y=0$.<br> $2x - 10 = 0 \u2192 2x = 10 \u2192 x = 5$.<br>
-                    <strong>(B) Incorreta:</strong> Erro de sinal ao passar o 10.<br>
-                    <strong>(C) Incorreta:</strong> Esse é o corte em Y (com sinal trocado).<br>
-                    <strong>(D) Incorreta:</strong> Esse é o coeficiente angular.`
+                    <strong>(A) Correta:</strong> Substitua n por 3: 3(3) - 1 = 9 - 1 = 8.<br>
+                    <strong>(B) Incorreta:</strong> Esqueceu de subtrair 1.<br>
+                    <strong>(C) Incorreta:</strong> Calculou para n=1.<br>
+                    <strong>(D) Incorreta:</strong> Erro de cálculo.`
+            },
+            // NÍVEL 3: LÓGICA RECURSIVA E VISUAL
+            {
+                id: 7,
+                text: "Sequência: 1, 4, 9, 16, ... Qual é o próximo?",
+                options: ["20", "25", "18", "30"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> Somou 4.<br>
+                    <strong>(B) Correta:</strong> Esta é a sequência dos quadrados perfeitos (1², 2², 3², 4²). O próximo é 5² = 25.<br>
+                    <strong>(C) Incorreta:</strong> Somou 2.<br>
+                    <strong>(D) Incorreta:</strong> Erro de padrão.`
             },
             {
                 id: 8,
-                text: "Qual é a raiz da função <strong>y = -3x + 12</strong>?",
-                options: ["-4", "4", "3", "12"],
+                text: "Qual número falta? 5, 10, __, 20, 25.",
+                options: ["12", "15", "18", "13"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $-12 / -3 = +4$, não -4.<br>
-                    <strong>(B) Correta:</strong> Igualando a zero: $-3x + 12 = 0$.<br>Passa 12 para lá: $-3x = -12$.<br>Divide: $x = -12 / -3 = 4$.<br>
-                    <strong>(C) Incorreta:</strong> Valor de 'a' ignorando sinal.<br>
-                    <strong>(D) Incorreta:</strong> Valor de 'b'.`
+                    <strong>(A) Incorreta:</strong> Não segue o +5.<br>
+                    <strong>(B) Correta:</strong> A sequência pula de 5 em 5. 10 + 5 = 15. E 15 + 5 = 20 (confere).<br>
+                    <strong>(C) Incorreta:</strong> Não segue o padrão.<br>
+                    <strong>(D) Incorreta:</strong> Não segue o padrão.`
             },
             {
                 id: 9,
-                text: "O gráfico corta o eixo X no ponto 2 e o eixo Y no ponto 4. Qual é a função?",
-                options: ["y = 2x + 4", "y = -2x + 4", "y = 4x + 2", "y = 2x - 4"],
-                correct: 1,
-                explanation: `
-                    <strong>(A) Incorreta:</strong> Se $x=2$, $y = 2(2)+4 = 8$ (não zero).<br>
-                    <strong>(B) Correta:</strong> Corta Y no 4, então $b=4$. Corta X no 2 (raiz), então se $x=2$, $y$ tem que ser 0. Testando: $-2(2) + 4 = -4 + 4 = 0$. Funciona!<br>
-                    <strong>(C) Incorreta:</strong> Trocou a e b.<br>
-                    <strong>(D) Incorreta:</strong> O corte em Y seria -4.`
-            },
-            // NÍVEL 4: ANÁLISE GRÁFICA
-            {
-                id: 10,
-                text: "Se o gráfico é uma reta horizontal que passa pelo y = 3, qual é a função?",
-                options: ["y = 3x", "y = x + 3", "y = 3", "x = 3"],
+                text: "A fórmula recursiva diz: 'O próximo é o anterior vezes 2'. Se começou com 3, qual é a sequência?",
+                options: ["3, 5, 7, 9", "3, 6, 9, 12", "3, 6, 12, 24", "3, 9, 27, 81"],
                 correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Essa reta é inclinada e passa na origem.<br>
-                    <strong>(B) Incorreta:</strong> Essa reta também é inclinada.<br>
-                    <strong>(C) Correta:</strong> É uma função constante ($a=0$). Não importa o valor de x, o y é sempre fixo em 3.<br>
-                    <strong>(D) Incorreta:</strong> $x=3$ é uma reta vertical, que não representa uma função.`
+                    <strong>(A) Incorreta:</strong> Isso é somar 2.<br>
+                    <strong>(B) Incorreta:</strong> Isso é somar 3 (tabuada).<br>
+                    <strong>(C) Correta:</strong> 3 x 2 = 6. 6 x 2 = 12. 12 x 2 = 24. Está dobrando.<br>
+                    <strong>(D) Incorreta:</strong> Isso é vezes 3.`
+            },
+            // NÍVEL 4: DESCOBRINDO A FÓRMULA
+            {
+                id: 10,
+                text: "Qual fórmula gera a sequência: 2, 3, 4, 5, ...?",
+                options: ["n", "n + 1", "2n", "n + 2"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> Geraria 1, 2, 3...<br>
+                    <strong>(B) Correta:</strong> Teste n=1: 1+1=2. Teste n=2: 2+1=3. Funciona!<br>
+                    <strong>(C) Incorreta:</strong> Geraria 2, 4, 6...<br>
+                    <strong>(D) Incorreta:</strong> Geraria 3, 4, 5...`
             },
             {
                 id: 11,
-                text: "Olhando o gráfico, a reta desce e corta o eixo Y acima da origem (positivo). Sinais de 'a' e 'b':",
-                options: ["a > 0, b > 0", "a < 0, b > 0", "a < 0, b < 0", "a > 0, b < 0"],
+                text: "Qual a lei de formação de: 3, 6, 9, 12...?",
+                options: ["n + 3", "3n", "n³", "3n + 1"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 'a' positivo faria a reta subir.<br>
-                    <strong>(B) Correta:</strong> Reta desce = 'a' negativo ($a < 0$). Corta acima da origem = 'b' positivo ($b > 0$).<br>
-                    <strong>(C) Incorreta:</strong> b negativo cortaria abaixo da origem.<br>
-                    <strong>(D) Incorreta:</strong> Subiria e cortaria abaixo.`
+                    <strong>(A) Incorreta:</strong> Para n=1 daria 4.<br>
+                    <strong>(B) Correta:</strong> É a tabuada do 3. 3x1=3, 3x2=6, 3x3=9.<br>
+                    <strong>(C) Incorreta:</strong> Potência.<br>
+                    <strong>(D) Incorreta:</strong> Para n=1 daria 4.`
             },
             {
                 id: 12,
-                text: "Dois gráficos são paralelos (nunca se cruzam). O que eles têm em comum?",
-                options: ["O mesmo valor de b", "O mesmo valor de a (inclinação)", "A mesma raiz", "Nada"],
-                correct: 1,
+                text: "Sequência: 100, 90, 80, 70... A regra é:",
+                options: ["Subtrair 10", "Dividir por 10", "Somar 10", "Subtrair 20"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se tivessem o mesmo 'b' e inclinações diferentes, se cruzariam no eixo Y.<br>
-                    <strong>(B) Correta:</strong> O coeficiente 'a' define a inclinação. Se a inclinação é igual, as retas sobem no mesmo ritmo e nunca se tocam.<br>
-                    <strong>(C) Incorreta:</strong> Teriam raízes diferentes.<br>
-                    <strong>(D) Incorreta:</strong> Compartilham a inclinação.`
+                    <strong>(A) Correta:</strong> A cada passo, o valor diminui 10 unidades.<br>
+                    <strong>(B) Incorreta:</strong> 100/10 seria 10.<br>
+                    <strong>(C) Incorreta:</strong> Aumentaria.<br>
+                    <strong>(D) Incorreta:</strong> Diminuiria muito rápido.`
             },
-            // NÍVEL 5: CONSTRUÇÃO E DESAFIOS
+            // NÍVEL 5: DESAFIOS E FIBONACCI
             {
                 id: 13,
-                text: "Uma reta passa pelos pontos (1, 3) e (2, 5). Qual é a taxa de variação (a)?",
-                options: ["1", "2", "3", "0,5"],
+                text: "Na sequência de Fibonacci (1, 1, 2, 3, 5, 8...), como achamos o próximo?",
+                options: ["Multiplicamos por 2", "Somamos os dois anteriores", "Somamos 1", "Elevamos ao quadrado"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Cálculo errado.<br>
-                    <strong>(B) Correta:</strong> Observe a variação: O x aumentou 1 (de 1 para 2). O y aumentou 2 (de 3 para 5).<br>Taxa $a = \u0394y / \u0394x = (5-3) / (2-1) = 2/1 = 2$.<br>
-                    <strong>(C) Incorreta:</strong> Pegou o valor de y inicial.<br>
-                    <strong>(D) Incorreta:</strong> Inverteu x e y na divisão.`
+                    <strong>(A) Incorreta:</strong> Não é PG.<br>
+                    <strong>(B) Correta:</strong> 1+1=2, 1+2=3, 2+3=5, 3+5=8. O próximo seria 5+8=13.<br>
+                    <strong>(C) Incorreta:</strong> Não é PA.<br>
+                    <strong>(D) Incorreta:</strong> Cresceria muito rápido.`
             },
             {
                 id: 14,
-                text: "Para desenhar o gráfico de <strong>y = x + 1</strong>, quais pontos posso usar?",
-                options: ["(0,0) e (1,1)", "(0,1) e (1,2)", "(1,0) e (0,1)", "(2,2) e (3,3)"],
+                text: "Quantos palitos preciso para a figura 10, se a regra é <strong>2n + 1</strong>?",
+                options: ["20", "21", "11", "30"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se $x=0$, $y=1$ (não 0).<br>
-                    <strong>(B) Correta:</strong><br>Se $x=0 \u2192 y=0+1=1$ (Ponto 0,1).<br>Se $x=1 \u2192 y=1+1=2$ (Ponto 1,2). Os dois conferem.<br>
-                    <strong>(C) Incorreta:</strong> Se $x=1$, $y=2$ (não 0).<br>
-                    <strong>(D) Incorreta:</strong> Se $x=2$, $y=3$ (não 2).`
+                    <strong>(A) Incorreta:</strong> 2x10.<br>
+                    <strong>(B) Correta:</strong> Substitua n por 10: 2(10) + 1 = 20 + 1 = 21.<br>
+                    <strong>(C) Incorreta:</strong> 10+1.<br>
+                    <strong>(D) Incorreta:</strong> Erro de cálculo.`
             },
             {
                 id: 15,
-                text: "Qual é a equação da reta que passa na origem (0,0) e pelo ponto (3, 6)?",
-                options: ["y = 3x", "y = 2x", "y = x + 3", "y = 6x"],
-                correct: 1,
+                text: "Qual é o 20º termo da sequência pares (2, 4, 6...)? Fórmula aₙ = 2n.",
+                options: ["20", "22", "40", "42"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $3(3) = 9 \u2260 6$.<br>
-                    <strong>(B) Correta:</strong> Passa na origem, então $b=0$ (formato $y=ax$). Usando o ponto (3,6):<br>$6 = a(3) \u2192 a = 6/3 = 2$. A função é $y = 2x$.<br>
-                    <strong>(C) Incorreta:</strong> $3+3=6$, mas na origem $0+3 \u2260 0$.<br>
-                    <strong>(D) Incorreta:</strong> $6(3) = 18 \u2260 6$.`
+                    <strong>(A) Incorreta:</strong> Valor de n.<br>
+                    <strong>(B) Incorreta:</strong> 20+2.<br>
+                    <strong>(C) Correta:</strong> a₂₀ = 2 x 20 = 40.<br>
+                    <strong>(D) Incorreta:</strong> Erro de cálculo.`
             }
         ];
 
@@ -828,7 +823,7 @@
             if (currentQuestion === questions.length - 1) {
                 btnNext.textContent = "Finalizar";
                 btnNext.onclick = finishQuiz;
-                btnNext.style.backgroundColor = "#0F766E"; 
+                btnNext.style.backgroundColor = "#7C3AED"; 
             } else {
                 btnNext.textContent = "Próxima";
                 btnNext.onclick = () => changeQuestion(1);

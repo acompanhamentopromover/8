@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gráfico da Função Afim - Detalhado</title>
+    <title>Congruência de Triângulos - Ilustrado</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,9 @@
             --text-color: #2D3748;
             --border-color: #000000;
             
-            /* CORES DA MATÉRIA: TEMA TURQUESA (Precisão/Gráfico) */
-            --theme-color: #CCFBF1; 
-            --theme-active: #0F766E; 
+            /* CORES DA MATÉRIA: TEMA ÍNDIGO (Geometria/Igualdade) */
+            --theme-color: #E0E7FF; 
+            --theme-active: #4338CA; 
             --theme-text-active: #FFFFFF;
             
             /* FEEDBACK */
@@ -146,9 +146,8 @@
         }
 
         /* ESTILO PARA AS ILUSTRAÇÕES VISUAIS */
-        .visual-row { display: flex; align-items: flex-end; gap: 10px; justify-content: space-around; flex-wrap: wrap; }
-        .visual-item { text-align: center; width: 30%; min-width: 80px; }
-        .visual-svg { color: var(--theme-active); margin-bottom: 5px; }
+        .visual-row { display: flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
+        .visual-svg { color: var(--theme-active); }
         
         /* Estilo para SVGs dentro das questões */
         .question-visual {
@@ -156,15 +155,15 @@
             justify-content: center;
             margin: 15px 0;
             padding: 15px;
-            background-color: #F0FDFA;
+            background-color: #E0E7FF;
             border-radius: 12px;
             border: 1px dashed var(--theme-active);
         }
 
-        /* --- CARDS DE EXEMPLO DETALHADO (NOVO) --- */
+        /* --- CARDS DE EXEMPLO DETALHADO --- */
         .step-box {
-            background-color: #F0FDFA; 
-            border-left: 5px solid #0F766E;
+            background-color: #EEF2FF; 
+            border-left: 5px solid #4338CA;
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
@@ -174,7 +173,7 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             font-weight: 800;
-            color: #115E59;
+            color: #3730A3;
             margin-bottom: 10px;
             display: block;
             border-bottom: 1px solid #ccc;
@@ -190,19 +189,8 @@
             color: #333;
         }
 
-        .math-comment {
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.8rem;
-            color: #555;
-            margin-left: 10px;
-            font-style: italic;
-            background: #fff;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
         .highlight {
-            color: #0F766E;
+            color: #4338CA;
             font-weight: 700;
         }
 
@@ -390,73 +378,98 @@
 
         <div id="viewExplanation" class="section-view" style="display: block;">
             
-            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Gráfico da Função Afim</h1>
-            <p style="color: #555; margin-bottom: 20px;">Como transformar a fórmula matemática em um desenho (uma reta) e vice-versa.</p>
+            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Congruência de Triângulos</h1>
+            <p style="color: #555; margin-bottom: 20px;">Dois triângulos são congruentes quando são "cópias perfeitas": têm as mesmas medidas de lados e ângulos. Usamos os "Casos de Congruência" para identificar isso sem medir tudo.</p>
             
             <div class="card-content">
-                <h3>1. A Fórmula e a Reta</h3>
-                <p>Toda função do tipo <strong>f(x) = ax + b</strong> desenha uma <strong>RETA</strong>.</p>
-                <div style="margin-top:10px; border:2px dashed #0F766E; padding:10px; border-radius:8px; text-align:center;">
-                    <p style="font-weight:700; font-size:1.1rem; color:#0F766E;">y = ax + b</p>
-                    <p style="font-size:0.8rem;">Onde "a" inclina a reta e "b" corta o eixo Y.</p>
+                <h3>🔍 O que é Congruência?</h3>
+                <p class="explanation-text">Significa que se você recortar um triângulo e colocar sobre o outro, eles se encaixam perfeitamente.</p>
+                <div class="visual-row">
+                    <svg width="80" height="80" viewBox="0 0 100 100" class="visual-svg">
+                        <polygon points="10,90 90,90 50,20" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <text x="40" y="60" font-size="10" fill="currentColor">A</text>
+                    </svg>
+                    <div style="font-size:2rem; color:var(--theme-active);">≅</div>
+                    <svg width="80" height="80" viewBox="0 0 100 100" class="visual-svg">
+                        <polygon points="10,90 90,90 50,20" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <text x="40" y="60" font-size="10" fill="currentColor">B</text>
+                    </svg>
                 </div>
             </div>
 
             <div class="card-content">
-                <h3>2. Desenhando a Reta: Passo a Passo</h3>
-                <p>Vamos desenhar o gráfico de <strong>y = 2x - 1</strong>.</p>
-                <p>Precisamos de apenas 2 pontos.</p>
-
-                <div class="step-box">
-                    <span class="step-title">Ponto 1: Escolha x = 0</span>
-                    <div class="math-row">y = 2(0) - 1 <span class="math-comment">Substituímos x por 0</span></div>
-                    <div class="math-row">y = 0 - 1 <span class="math-comment">Multiplicação</span></div>
-                    <div class="math-row">y = -1 <span class="math-comment">Resultado</span></div>
-                    <p class="explanation-text">Encontramos o par ordenado <strong>(0, -1)</strong>. Este é o corte no eixo Y (é o valor de 'b').</p>
-                </div>
-
-                <div class="step-box">
-                    <span class="step-title">Ponto 2: Escolha x = 1</span>
-                    <div class="math-row">y = 2(1) - 1 <span class="math-comment">Substituímos x por 1</span></div>
-                    <div class="math-row">y = 2 - 1 <span class="math-comment">Multiplicação</span></div>
-                    <div class="math-row">y = 1 <span class="math-comment">Resultado</span></div>
-                    <p class="explanation-text">Encontramos o par ordenado <strong>(1, 1)</strong>.</p>
-                </div>
-
-                <div class="step-box">
-                    <span class="step-title">Resultado Visual</span>
-                    <p class="explanation-text">Agora ligamos os pontos (0, -1) e (1, 1) com uma régua.</p>
-                    <div style="display:flex; justify-content:center;">
-                        <svg width="150" height="150" viewBox="0 0 100 100" style="background:white; border:1px solid #ccc;">
-                            <line x1="50" y1="0" x2="50" y2="100" stroke="#ccc" />
-                            <line x1="0" y1="50" x2="100" y2="50" stroke="#ccc" />
-                            <line x1="30" y1="90" x2="70" y2="10" stroke="#0F766E" stroke-width="2" />
-                            <circle cx="50" cy="70" r="3" fill="red" /> <text x="55" y="70" font-size="8">(0,-1)</text>
-                            <circle cx="70" cy="30" r="3" fill="red" /> <text x="75" y="30" font-size="8">(1,1)</text>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-content">
-                <h3>3. A Raiz da Função (Corte em X)</h3>
-                <p>Para saber onde a reta corta o eixo deitado (X), o <strong>y tem que ser zero</strong>.</p>
+                <h3>1. Caso LLL (Lado-Lado-Lado)</h3>
+                <p class="explanation-text">Se os <strong>3 lados</strong> de um triângulo são iguais aos 3 lados do outro, eles são congruentes.</p>
                 
-                <div class="step-box">
-                    <span class="step-title">Exemplo: y = -3x + 6</span>
-                    
-                    <p class="explanation-text"><strong>Passo 1:</strong> Igualar a função a zero.</p>
-                    <div class="math-row">-3x + 6 = 0</div>
-                    
-                    <p class="explanation-text"><strong>Passo 2:</strong> Isolar o termo com x.</p>
-                    <div class="math-row">-3x = -6 <span class="math-comment">O 6 passa negativo</span></div>
-                    
-                    <p class="explanation-text"><strong>Passo 3:</strong> Dividir.</p>
-                    <div class="math-row">x = -6 / -3 <span class="math-comment">Menos com menos dá mais</span></div>
-                    <div class="math-row"><span class="highlight">x = 2</span></div>
-                    
-                    <p class="explanation-text">A reta corta o eixo X exatamente no número <strong>2</strong>.</p>
+                <div class="visual-row">
+                    <svg width="100" height="80" viewBox="0 0 100 80" class="visual-svg">
+                        <polygon points="10,70 90,70 50,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="45" y1="70" x2="55" y2="70" stroke="currentColor" stroke-width="2"/> <line x1="25" y1="40" x2="35" y2="35" stroke="currentColor" stroke-width="2"/> <line x1="28" y1="43" x2="38" y2="38" stroke="currentColor" stroke-width="2"/> <line x1="65" y1="35" x2="75" y2="40" stroke="currentColor" stroke-width="2"/> <line x1="68" y1="38" x2="78" y2="43" stroke="currentColor" stroke-width="2"/> <line x1="71" y1="41" x2="81" y2="46" stroke="currentColor" stroke-width="2"/> </svg>
+                    <div style="font-size:2rem; color:var(--theme-active);">≅</div>
+                    <svg width="100" height="80" viewBox="0 0 100 80" class="visual-svg">
+                        <polygon points="10,70 90,70 50,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="45" y1="70" x2="55" y2="70" stroke="currentColor" stroke-width="2"/>
+                        <line x1="25" y1="40" x2="35" y2="35" stroke="currentColor" stroke-width="2"/> <line x1="28" y1="43" x2="38" y2="38" stroke="currentColor" stroke-width="2"/>
+                        <line x1="65" y1="35" x2="75" y2="40" stroke="currentColor" stroke-width="2"/> <line x1="68" y1="38" x2="78" y2="43" stroke="currentColor" stroke-width="2"/> <line x1="71" y1="41" x2="81" y2="46" stroke="currentColor" stroke-width="2"/>
+                    </svg>
                 </div>
+                <p class="explanation-text" style="text-align:center; font-size:0.8rem;">Marcas iguais indicam lados de mesma medida.</p>
+            </div>
+
+            <div class="card-content">
+                <h3>2. Caso LAL (Lado-Ângulo-Lado)</h3>
+                <p class="explanation-text">Dois lados iguais e o <strong>ângulo entre eles</strong> também igual.</p>
+                
+                <div class="visual-row">
+                     <svg width="100" height="80" viewBox="0 0 100 80" class="visual-svg">
+                        <polygon points="10,70 90,70 30,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="45" y1="70" x2="55" y2="70" stroke="currentColor" stroke-width="2"/> <line x1="18" y1="40" x2="28" y2="35" stroke="currentColor" stroke-width="2"/> <line x1="21" y1="43" x2="31" y2="38" stroke="currentColor" stroke-width="2"/> <path d="M 25 70 A 15 15 0 0 1 18 55" fill="none" stroke="currentColor" stroke-width="2"/> </svg>
+                    <div style="font-size:2rem; color:var(--theme-active);">≅</div>
+                     <svg width="100" height="80" viewBox="0 0 100 80" class="visual-svg">
+                        <polygon points="10,70 90,70 30,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="45" y1="70" x2="55" y2="70" stroke="currentColor" stroke-width="2"/>
+                        <line x1="18" y1="40" x2="28" y2="35" stroke="currentColor" stroke-width="2"/> <line x1="21" y1="43" x2="31" y2="38" stroke="currentColor" stroke-width="2"/>
+                        <path d="M 25 70 A 15 15 0 0 1 18 55" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <p class="explanation-text" style="text-align:center; font-size:0.8rem;">O ângulo deve estar "preso" entre os dois lados marcados.</p>
+            </div>
+
+            <div class="card-content">
+                <h3>3. Caso ALA (Ângulo-Lado-Ângulo)</h3>
+                <p class="explanation-text">Dois ângulos iguais e o <strong>lado entre eles</strong> igual.</p>
+                
+                <div class="visual-row">
+                    <svg width="100" height="80" viewBox="0 0 100 80" class="visual-svg">
+                       <polygon points="10,70 90,70 50,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                       <path d="M 25 70 A 15 15 0 0 1 20 55" fill="none" stroke="currentColor" stroke-width="2"/> <path d="M 75 70 A 15 15 0 0 0 80 55" fill="none" stroke="currentColor" stroke-width="2"/> <path d="M 72 70 A 18 18 0 0 0 77 52" fill="none" stroke="currentColor" stroke-width="2"/> <line x1="45" y1="70" x2="55" y2="70" stroke="currentColor" stroke-width="2"/> </svg>
+                   <div style="font-size:2rem; color:var(--theme-active);">≅</div>
+                    <svg width="100" height="80" viewBox="0 0 100 80" class="visual-svg">
+                       <polygon points="10,70 90,70 50,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                       <path d="M 25 70 A 15 15 0 0 1 20 55" fill="none" stroke="currentColor" stroke-width="2"/>
+                       <path d="M 75 70 A 15 15 0 0 0 80 55" fill="none" stroke="currentColor" stroke-width="2"/> <path d="M 72 70 A 18 18 0 0 0 77 52" fill="none" stroke="currentColor" stroke-width="2"/>
+                       <line x1="45" y1="70" x2="55" y2="70" stroke="currentColor" stroke-width="2"/>
+                   </svg>
+               </div>
+            </div>
+
+            <div class="card-content">
+                <h3>4. Caso LAA (Lado-Ângulo-Ângulo Oposto)</h3>
+                <p class="explanation-text">Um lado igual, um ângulo adjacente (grudado) e o ângulo <strong>oposto</strong> ao lado também igual.</p>
+                
+                <div class="visual-row">
+                    <svg width="100" height="80" viewBox="0 0 100 80" class="visual-svg">
+                       <polygon points="10,70 90,70 30,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                       <line x1="45" y1="70" x2="55" y2="70" stroke="currentColor" stroke-width="2"/> <path d="M 25 70 A 15 15 0 0 1 18 55" fill="none" stroke="currentColor" stroke-width="2"/> <path d="M 30 25 A 15 15 0 0 1 45 25" fill="none" stroke="currentColor" stroke-width="2"/> <path d="M 30 22 A 18 18 0 0 1 48 22" fill="none" stroke="currentColor" stroke-width="2"/> </svg>
+                   <div style="font-size:2rem; color:var(--theme-active);">≅</div>
+                    <svg width="100" height="80" viewBox="0 0 100 80" class="visual-svg">
+                       <polygon points="10,70 90,70 30,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                       <line x1="45" y1="70" x2="55" y2="70" stroke="currentColor" stroke-width="2"/>
+                       <path d="M 25 70 A 15 15 0 0 1 18 55" fill="none" stroke="currentColor" stroke-width="2"/>
+                       <path d="M 30 25 A 15 15 0 0 1 45 25" fill="none" stroke="currentColor" stroke-width="2"/> <path d="M 30 22 A 18 18 0 0 1 48 22" fill="none" stroke="currentColor" stroke-width="2"/>
+                   </svg>
+               </div>
+               <p class="explanation-text" style="text-align:center; font-size:0.8rem;">O ângulo com dois arcos está oposto ao lado marcado.</p>
             </div>
 
             <button onclick="setMode('practice')" style="width: 100%; padding: 15px; background: var(--text-color); color: white; border: none; border-radius: 12px; font-weight: 700; margin-bottom: 20px;">
@@ -467,7 +480,7 @@
         <div id="viewPractice" class="section-view">
             <div style="margin-bottom: 15px;">
                 <h2>Hora de Praticar!</h2>
-                <p style="color: #666; font-size: 0.9rem;">Analise os gráficos e funções.</p>
+                <p style="color: #666; font-size: 0.9rem;">Identifique o caso de congruência.</p>
             </div>
             <div class="question-map" id="qMap"></div>
             <div id="quizContainer" style="margin-bottom: 100px;"></div>
@@ -493,177 +506,177 @@
     </footer>
 
     <script>
-        // --- BANCO DE QUESTÕES (GRÁFICO DA FUNÇÃO AFIM) ---
+        // --- BANCO DE QUESTÕES (CONGRUÊNCIA DE TRIÂNGULOS) ---
         const questions = [
-            // NÍVEL 1: CONCEITOS VISUAIS
+            // NÍVEL 1: CONCEITOS BÁSICOS
             {
                 id: 1,
-                text: "O gráfico de uma função do 1º grau (ex: y = 2x + 1) é geometricamente:",
-                options: ["Uma parábola (curva em U)", "Uma reta", "Uma circunferência", "Um ponto isolado"],
-                correct: 1,
+                text: "O que significa dizer que dois triângulos são <strong>congruentes</strong>?",
+                options: ["Têm a mesma área, mas formatos diferentes", "Têm os mesmos ângulos, mas tamanhos diferentes", "São exatamente iguais em medidas de lados e ângulos", "Possuem apenas um lado igual"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Parábola é gráfico de função do 2º grau ($x^2$).<br>
-                    <strong>(B) Correta:</strong> A principal característica da função afim ($ax+b$) é que a variação é constante, formando sempre uma linha reta.<br>
-                    <strong>(C) Incorreta:</strong> Circunferência tem equação diferente ($x^2+y^2=r^2$).<br>
-                    <strong>(D) Incorreta:</strong> A função tem infinitos pontos que formam a reta.`
+                    <strong>(A) Incorreta:</strong> Área igual não garante congruência (ex: retângulo e quadrado podem ter mesma área).<br>
+                    <strong>(B) Incorreta:</strong> Isso é Semelhança, não congruência.<br>
+                    <strong>(C) Correta:</strong> Congruência na geometria significa coincidência perfeita: mesmos lados e mesmos ângulos correspondentes.<br>
+                    <strong>(D) Incorreta:</strong> Isso não é suficiente.`
             },
             {
                 id: 2,
-                text: "Na função <strong>f(x) = -2x + 5</strong>, o gráfico é crescente ou decrescente?",
-                options: ["Crescente (sobe)", "Decrescente (desce)", "Constante (horizontal)", "Vertical"],
-                correct: 1,
+                text: "Qual símbolo matemático usamos para indicar congruência?",
+                options: ["=", "≈", "≅", "≠"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria crescente se o 'a' fosse positivo (ex: 2x).<br>
-                    <strong>(B) Correta:</strong> O coeficiente 'a' é -2. Como ele é negativo ($a < 0$), a reta 'cai' ou desce da esquerda para a direita.<br>
-                    <strong>(C) Incorreta:</strong> Seria constante se $a=0$.<br>
-                    <strong>(D) Incorreta:</strong> Retas verticais não são funções.`
+                    <strong>(A) Incorreta:</strong> Igualdade numérica.<br>
+                    <strong>(B) Incorreta:</strong> Aproximadamente.<br>
+                    <strong>(C) Correta:</strong> O símbolo ≅ (igual com um til em cima) representa congruência geométrica.<br>
+                    <strong>(D) Incorreta:</strong> Diferente.`
             },
             {
                 id: 3,
-                text: "O coeficiente <strong>b</strong> (linear) indica onde a reta corta qual eixo?",
-                options: ["Eixo X (horizontal)", "Eixo Y (vertical)", "A origem (0,0)", "Nenhum eixo"],
-                correct: 1,
+                text: "Se o triângulo ABC é congruente ao DEF (ABC ≅ DEF), o lado AB corresponde a qual lado?",
+                options: ["EF", "DF", "DE", "BC"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> O corte em X é chamado de Raiz.<br>
-                    <strong>(B) Correta:</strong> Quando $x=0$, $y = a(0) + b = b$. Por isso, o gráfico sempre cruza o eixo vertical Y na altura 'b'.<br>
-                    <strong>(C) Incorreta:</strong> Só passa na origem se $b=0$.<br>
-                    <strong>(D) Incorreta:</strong> Ela sempre corta o eixo Y.`
+                    <strong>(A) Incorreta:</strong> EF corresponde a BC.<br>
+                    <strong>(B) Incorreta:</strong> DF corresponde a AC.<br>
+                    <strong>(C) Correta:</strong> A ordem das letras importa. As duas primeiras (AB) correspondem às duas primeiras do outro (DE).<br>
+                    <strong>(D) Incorreta:</strong> Lado do próprio triângulo.`
             },
-            // NÍVEL 2: IDENTIFICAÇÃO NA EQUAÇÃO
+            // NÍVEL 2: IDENTIFICAÇÃO DE CASOS (SIMPLES)
             {
                 id: 4,
-                text: "Onde a reta da função <strong>y = 3x - 4</strong> corta o eixo Y?",
-                options: ["No ponto 3", "No ponto -4", "No ponto 4", "No ponto -3"],
-                correct: 1,
+                text: "Dois triângulos têm os três lados respectivamente iguais (3cm, 4cm, 5cm). Qual o caso de congruência?",
+                options: ["LAL", "ALA", "LLL", "LAA"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 3 é a inclinação (a).<br>
-                    <strong>(B) Correta:</strong> O corte em Y é dado pelo termo independente $b$. Na equação, $b = -4$.<br>
-                    <strong>(C) Incorreta:</strong> Ignorou o sinal de menos.<br>
-                    <strong>(D) Incorreta:</strong> Confundiu o coeficiente 'a' com sinal trocado.`
+                    <strong>(A) Incorreta:</strong> Não envolve ângulos.<br>
+                    <strong>(B) Incorreta:</strong> Não envolve ângulos.<br>
+                    <strong>(C) Correta:</strong> Como conhecemos apenas os 3 Lados (Lado-Lado-Lado), o caso é LLL.<br>
+                    <strong>(D) Incorreta:</strong> Requer ângulo.`
             },
             {
                 id: 5,
-                text: "Qual destas funções gera um gráfico que <strong>sobe</strong> (crescente)?",
-                options: ["y = -5x + 10", "y = 4 - x", "y = 2x - 100", "y = -x"],
-                correct: 2,
+                text: "Você sabe que dois triângulos têm: Lado=5cm, Ângulo=30°, Lado=8cm. O ângulo está entre os lados. Qual é o caso?",
+                options: ["LLL", "LAL", "ALA", "LAA"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $a = -5$. Negativo desce.<br>
-                    <strong>(B) Incorreta:</strong> $a = -1$ (o número que multiplica o x). Negativo desce.<br>
-                    <strong>(C) Correta:</strong> $a = 2$. Como 2 é positivo, a reta é crescente, não importa onde ela comece (mesmo sendo -100).<br>
-                    <strong>(D) Incorreta:</strong> $a = -1$. Negativo desce.`
+                    <strong>(A) Incorreta:</strong> Falta o terceiro lado.<br>
+                    <strong>(B) Correta:</strong> Temos Lado, Ângulo no meio, e outro Lado. A sigla segue a ordem visual: L-A-L.<br>
+                    <strong>(C) Incorreta:</strong> Precisaria de dois ângulos.<br>
+                    <strong>(D) Incorreta:</strong> O ângulo não é oposto.`
             },
             {
                 id: 6,
-                text: "Se uma reta passa pela origem (0,0), podemos afirmar que:",
-                options: ["a = 0", "b = 0", "x é sempre positivo", "A função não existe"],
-                correct: 1,
-                explanation: `
-                    <strong>(A) Incorreta:</strong> Se $a=0$, a reta é horizontal e pode passar em qualquer altura, não necessariamente na origem.<br>
-                    <strong>(B) Correta:</strong> A origem é o ponto onde $y=0$. Se a reta passa ali, o corte no eixo Y é 0, logo $b=0$. (Função Linear).<br>
-                    <strong>(C) Incorreta:</strong> O gráfico se estende para x negativo também.<br>
-                    <strong>(D) Incorreta:</strong> Existe e é chamada de função linear.`
-            },
-            // NÍVEL 3: CÁLCULO DA RAIZ (CORTE EM X)
-            {
-                id: 7,
-                text: "Em qual ponto a função <strong>f(x) = 2x - 10</strong> corta o eixo X?",
-                options: ["5", "-5", "10", "2"],
+                text: "Dois triângulos têm um lado de 10cm, e os dois ângulos adjacentes a esse lado medem 45° e 60°. Caso:",
+                options: ["ALA", "LAL", "LLL", "LAA"],
                 correct: 0,
                 explanation: `
-                    <strong>(A) Correta:</strong> Para achar o corte em X, fazemos $y=0$.<br> $2x - 10 = 0 \u2192 2x = 10 \u2192 x = 5$.<br>
-                    <strong>(B) Incorreta:</strong> Erro de sinal ao passar o 10.<br>
-                    <strong>(C) Incorreta:</strong> Esse é o corte em Y (com sinal trocado).<br>
-                    <strong>(D) Incorreta:</strong> Esse é o coeficiente angular.`
+                    <strong>(A) Correta:</strong> Temos Ângulo, Lado no meio, Ângulo. A ordem é A-L-A.<br>
+                    <strong>(B) Incorreta:</strong> Precisaria de dois lados.<br>
+                    <strong>(C) Incorreta:</strong> Não temos 3 lados.<br>
+                    <strong>(D) Incorreta:</strong> O lado está entre os ângulos.`
+            },
+            // NÍVEL 3: LÓGICA E CASOS INVÁLIDOS
+            {
+                id: 7,
+                text: "Por que 'AAA' (Ângulo-Ângulo-Ângulo) NÃO é um caso de congruência?",
+                options: ["Porque não existe triângulo assim", "Porque os triângulos podem ter tamanhos diferentes (zoom)", "Porque a soma passa de 180°", "É um caso válido sim"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> Existem infinitos.<br>
+                    <strong>(B) Correta:</strong> Dois triângulos podem ter os mesmos ângulos mas um ser gigante e o outro minúsculo (Semelhança). Congruência exige mesmo tamanho.<br>
+                    <strong>(C) Incorreta:</strong> Não tem relação.<br>
+                    <strong>(D) Incorreta:</strong> Não garante igualdade de tamanho.`
             },
             {
                 id: 8,
-                text: "Qual é a raiz da função <strong>y = -3x + 12</strong>?",
-                options: ["-4", "4", "3", "12"],
-                correct: 1,
+                text: "No caso LAA (Lado-Ângulo-Ângulo Oposto), onde está o ângulo oposto?",
+                options: ["Entre os dois lados", "Adjacente ao lado conhecido", "De frente para o lado conhecido", "Fora do triângulo"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $-12 / -3 = +4$, não -4.<br>
-                    <strong>(B) Correta:</strong> Igualando a zero: $-3x + 12 = 0$.<br>Passa 12 para lá: $-3x = -12$.<br>Divide: $x = -12 / -3 = 4$.<br>
-                    <strong>(C) Incorreta:</strong> Valor de 'a' ignorando sinal.<br>
-                    <strong>(D) Incorreta:</strong> Valor de 'b'.`
+                    <strong>(A) Incorreta:</strong> Esse seria LAL.<br>
+                    <strong>(B) Incorreta:</strong> Esse é o ângulo adjacente.<br>
+                    <strong>(C) Correta:</strong> Ângulo oposto é aquele que 'olha' para o lado de frente, sem tocá-lo.<br>
+                    <strong>(D) Incorreta:</strong> Não faz sentido.`
             },
             {
                 id: 9,
-                text: "O gráfico corta o eixo X no ponto 2 e o eixo Y no ponto 4. Qual é a função?",
-                options: ["y = 2x + 4", "y = -2x + 4", "y = 4x + 2", "y = 2x - 4"],
+                text: "O caso LLA (Lado-Lado-Ângulo não incluso) é sempre válido?",
+                options: ["Sim, sempre", "Não, é um caso ambíguo", "Só para triângulos equiláteros", "Depende da cor"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se $x=2$, $y = 2(2)+4 = 8$ (não zero).<br>
-                    <strong>(B) Correta:</strong> Corta Y no 4, então $b=4$. Corta X no 2 (raiz), então se $x=2$, $y$ tem que ser 0. Testando: $-2(2) + 4 = -4 + 4 = 0$. Funciona!<br>
-                    <strong>(C) Incorreta:</strong> Trocou a e b.<br>
-                    <strong>(D) Incorreta:</strong> O corte em Y seria -4.`
+                    <strong>(A) Incorreta:</strong> É uma pegadinha clássica.<br>
+                    <strong>(B) Correta:</strong> LLA pode formar dois triângulos diferentes com as mesmas medidas iniciais. Não garante congruência única.<br>
+                    <strong>(C) Incorreta:</strong> Irrelevante.<br>
+                    <strong>(D) Incorreta:</strong> Sem sentido.`
             },
-            // NÍVEL 4: ANÁLISE GRÁFICA
+            // NÍVEL 4: APLICAÇÕES E PROPRIEDADES
             {
                 id: 10,
-                text: "Se o gráfico é uma reta horizontal que passa pelo y = 3, qual é a função?",
-                options: ["y = 3x", "y = x + 3", "y = 3", "x = 3"],
-                correct: 2,
+                text: "Se dois triângulos são congruentes, o que podemos dizer sobre seus perímetros?",
+                options: ["São iguais", "Um é o dobro do outro", "São diferentes", "Depende da altura"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Essa reta é inclinada e passa na origem.<br>
-                    <strong>(B) Incorreta:</strong> Essa reta também é inclinada.<br>
-                    <strong>(C) Correta:</strong> É uma função constante ($a=0$). Não importa o valor de x, o y é sempre fixo em 3.<br>
-                    <strong>(D) Incorreta:</strong> $x=3$ é uma reta vertical, que não representa uma função.`
+                    <strong>(A) Correta:</strong> Se todos os lados correspondentes são iguais, a soma deles (perímetro) também será idêntica.<br>
+                    <strong>(B) Incorreta:</strong> Isso seria semelhança razão 2.<br>
+                    <strong>(C) Incorreta:</strong> Contradiz a congruência.<br>
+                    <strong>(D) Incorreta:</strong> Não depende.`
             },
             {
                 id: 11,
-                text: "Olhando o gráfico, a reta desce e corta o eixo Y acima da origem (positivo). Sinais de 'a' e 'b':",
-                options: ["a > 0, b > 0", "a < 0, b > 0", "a < 0, b < 0", "a > 0, b < 0"],
+                text: "Em um triângulo isósceles, a altura relativa à base divide o triângulo em dois menores. Esses dois são congruentes?",
+                options: ["Sim, pelo caso LLL", "Sim, pelo caso LAL ou LAA", "Não, são diferentes", "Apenas se for equilátero"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 'a' positivo faria a reta subir.<br>
-                    <strong>(B) Correta:</strong> Reta desce = 'a' negativo ($a < 0$). Corta acima da origem = 'b' positivo ($b > 0$).<br>
-                    <strong>(C) Incorreta:</strong> b negativo cortaria abaixo da origem.<br>
-                    <strong>(D) Incorreta:</strong> Subiria e cortaria abaixo.`
+                    <strong>(A) Incorreta:</strong> Também possível, mas LAL é mais direto.<br>
+                    <strong>(B) Correta:</strong> A altura é comum (L), os lados oblíquos são iguais (L) e o ângulo da base ou o ângulo reto garantem a congruência.<br>
+                    <strong>(C) Incorreta:</strong> Eles são espelhados e iguais.<br>
+                    <strong>(D) Incorreta:</strong> Vale para qualquer isósceles.`
             },
             {
                 id: 12,
-                text: "Dois gráficos são paralelos (nunca se cruzam). O que eles têm em comum?",
-                options: ["O mesmo valor de b", "O mesmo valor de a (inclinação)", "A mesma raiz", "Nada"],
-                correct: 1,
+                text: "Traçamos uma diagonal em um quadrado. Os dois triângulos formados são congruentes?",
+                options: ["Sim, caso LLL", "Sim, caso LAL", "Sim, caso ALA", "Todas as anteriores estão corretas"],
+                correct: 3,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se tivessem o mesmo 'b' e inclinações diferentes, se cruzariam no eixo Y.<br>
-                    <strong>(B) Correta:</strong> O coeficiente 'a' define a inclinação. Se a inclinação é igual, as retas sobem no mesmo ritmo e nunca se tocam.<br>
-                    <strong>(C) Incorreta:</strong> Teriam raízes diferentes.<br>
-                    <strong>(D) Incorreta:</strong> Compartilham a inclinação.`
+                    <strong>(A) Correta:</strong> Lados do quadrado iguais + diagonal comum.<br>
+                    <strong>(B) Correta:</strong> Lados iguais + ângulo de 90°.<br>
+                    <strong>(C) Correta:</strong> Ângulos de 45° + diagonal.<br>
+                    <strong>(D) Correta:</strong> Num quadrado, todos os critérios de congruência são satisfeitos.`
             },
-            // NÍVEL 5: CONSTRUÇÃO E DESAFIOS
+            // NÍVEL 5: DESAFIOS LÓGICOS
             {
                 id: 13,
-                text: "Uma reta passa pelos pontos (1, 3) e (2, 5). Qual é a taxa de variação (a)?",
-                options: ["1", "2", "3", "0,5"],
-                correct: 1,
+                text: "Dois triângulos retângulos têm hipotenusas iguais e um cateto igual. Eles são congruentes?",
+                options: ["Sim, é um caso especial (Cateto-Hipotenusa)", "Não, falta o ângulo", "Não, falta o outro cateto", "Talvez"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Cálculo errado.<br>
-                    <strong>(B) Correta:</strong> Observe a variação: O x aumentou 1 (de 1 para 2). O y aumentou 2 (de 3 para 5).<br>Taxa $a = \u0394y / \u0394x = (5-3) / (2-1) = 2/1 = 2$.<br>
-                    <strong>(C) Incorreta:</strong> Pegou o valor de y inicial.<br>
-                    <strong>(D) Incorreta:</strong> Inverteu x e y na divisão.`
+                    <strong>(A) Correta:</strong> Pitágoras garante que se dois lados são iguais num triângulo retângulo, o terceiro também será. Logo, cai no caso LLL.<br>
+                    <strong>(B) Incorreta:</strong> O ângulo reto já é conhecido.<br>
+                    <strong>(C) Incorreta:</strong> O terceiro cateto será consequência.<br>
+                    <strong>(D) Incorreta:</strong> É certeza.`
             },
             {
                 id: 14,
-                text: "Para desenhar o gráfico de <strong>y = x + 1</strong>, quais pontos posso usar?",
-                options: ["(0,0) e (1,1)", "(0,1) e (1,2)", "(1,0) e (0,1)", "(2,2) e (3,3)"],
-                correct: 1,
+                text: "Se $\\Delta ABC \\cong \\Delta XYZ$ e o ângulo A = 50°, qual é o ângulo X?",
+                options: ["50°", "130°", "Não dá para saber", "40°"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se $x=0$, $y=1$ (não 0).<br>
-                    <strong>(B) Correta:</strong><br>Se $x=0 \u2192 y=0+1=1$ (Ponto 0,1).<br>Se $x=1 \u2192 y=1+1=2$ (Ponto 1,2). Os dois conferem.<br>
-                    <strong>(C) Incorreta:</strong> Se $x=1$, $y=2$ (não 0).<br>
-                    <strong>(D) Incorreta:</strong> Se $x=2$, $y=3$ (não 2).`
+                    <strong>(A) Correta:</strong> Partes correspondentes de triângulos congruentes são iguais. A é o primeiro, X é o primeiro. A = X.<br>
+                    <strong>(B) Incorreta:</strong> Suplementar.<br>
+                    <strong>(C) Incorreta:</strong> A notação garante a ordem.<br>
+                    <strong>(D) Incorreta:</strong> Complementar.`
             },
             {
                 id: 15,
-                text: "Qual é a equação da reta que passa na origem (0,0) e pelo ponto (3, 6)?",
-                options: ["y = 3x", "y = 2x", "y = x + 3", "y = 6x"],
-                correct: 1,
+                text: "Para provar que dois triângulos são congruentes, qual é o número MÍNIMO de informações necessárias?",
+                options: ["1", "2", "3", "6"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $3(3) = 9 \u2260 6$.<br>
-                    <strong>(B) Correta:</strong> Passa na origem, então $b=0$ (formato $y=ax$). Usando o ponto (3,6):<br>$6 = a(3) \u2192 a = 6/3 = 2$. A função é $y = 2x$.<br>
-                    <strong>(C) Incorreta:</strong> $3+3=6$, mas na origem $0+3 \u2260 0$.<br>
-                    <strong>(D) Incorreta:</strong> $6(3) = 18 \u2260 6$.`
+                    <strong>(A) Incorreta:</strong> Muito pouco.<br>
+                    <strong>(B) Incorreta:</strong> Insuficiente.<br>
+                    <strong>(C) Correta:</strong> Todos os casos (LLL, LAL, ALA, LAA) exigem exatamente 3 informações específicas (sendo pelo menos uma delas um lado).<br>
+                    <strong>(D) Incorreta:</strong> 6 seria medir tudo (desnecessário).`
             }
         ];
 
@@ -828,7 +841,7 @@
             if (currentQuestion === questions.length - 1) {
                 btnNext.textContent = "Finalizar";
                 btnNext.onclick = finishQuiz;
-                btnNext.style.backgroundColor = "#0F766E"; 
+                btnNext.style.backgroundColor = "#4338CA"; 
             } else {
                 btnNext.textContent = "Próxima";
                 btnNext.onclick = () => changeQuestion(1);

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gráfico da Função Afim - Detalhado</title>
+    <title>Média, Moda e Mediana - Detalhado</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,9 @@
             --text-color: #2D3748;
             --border-color: #000000;
             
-            /* CORES DA MATÉRIA: TEMA TURQUESA (Precisão/Gráfico) */
-            --theme-color: #CCFBF1; 
-            --theme-active: #0F766E; 
+            /* CORES DA MATÉRIA: TEMA AMARELO/OURO (Dados/Estatística) */
+            --theme-color: #FFFBEB; 
+            --theme-active: #D97706; 
             --theme-text-active: #FFFFFF;
             
             /* FEEDBACK */
@@ -146,9 +146,8 @@
         }
 
         /* ESTILO PARA AS ILUSTRAÇÕES VISUAIS */
-        .visual-row { display: flex; align-items: flex-end; gap: 10px; justify-content: space-around; flex-wrap: wrap; }
-        .visual-item { text-align: center; width: 30%; min-width: 80px; }
-        .visual-svg { color: var(--theme-active); margin-bottom: 5px; }
+        .visual-row { display: flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
+        .visual-svg { color: var(--theme-active); }
         
         /* Estilo para SVGs dentro das questões */
         .question-visual {
@@ -156,15 +155,15 @@
             justify-content: center;
             margin: 15px 0;
             padding: 15px;
-            background-color: #F0FDFA;
+            background-color: #FFFBEB;
             border-radius: 12px;
             border: 1px dashed var(--theme-active);
         }
 
-        /* --- CARDS DE EXEMPLO DETALHADO (NOVO) --- */
+        /* --- CARDS DE EXEMPLO DETALHADO --- */
         .step-box {
-            background-color: #F0FDFA; 
-            border-left: 5px solid #0F766E;
+            background-color: #FFFBEB; 
+            border-left: 5px solid #D97706;
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
@@ -174,7 +173,7 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             font-weight: 800;
-            color: #115E59;
+            color: #92400E;
             margin-bottom: 10px;
             display: block;
             border-bottom: 1px solid #ccc;
@@ -202,8 +201,11 @@
         }
 
         .highlight {
-            color: #0F766E;
+            color: #D97706;
             font-weight: 700;
+            background-color: #FEF3C7;
+            padding: 0 4px;
+            border-radius: 4px;
         }
 
         /* --- QUIZ MAPA --- */
@@ -390,72 +392,72 @@
 
         <div id="viewExplanation" class="section-view" style="display: block;">
             
-            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Gráfico da Função Afim</h1>
-            <p style="color: #555; margin-bottom: 20px;">Como transformar a fórmula matemática em um desenho (uma reta) e vice-versa.</p>
+            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Média, Moda e Mediana</h1>
+            <p style="color: #555; margin-bottom: 20px;">São as medidas de "tendência central". Elas resumem uma lista enorme de dados em um único número representativo.</p>
             
             <div class="card-content">
-                <h3>1. A Fórmula e a Reta</h3>
-                <p>Toda função do tipo <strong>f(x) = ax + b</strong> desenha uma <strong>RETA</strong>.</p>
-                <div style="margin-top:10px; border:2px dashed #0F766E; padding:10px; border-radius:8px; text-align:center;">
-                    <p style="font-weight:700; font-size:1.1rem; color:#0F766E;">y = ax + b</p>
-                    <p style="font-size:0.8rem;">Onde "a" inclina a reta e "b" corta o eixo Y.</p>
-                </div>
-            </div>
-
-            <div class="card-content">
-                <h3>2. Desenhando a Reta: Passo a Passo</h3>
-                <p>Vamos desenhar o gráfico de <strong>y = 2x - 1</strong>.</p>
-                <p>Precisamos de apenas 2 pontos.</p>
-
-                <div class="step-box">
-                    <span class="step-title">Ponto 1: Escolha x = 0</span>
-                    <div class="math-row">y = 2(0) - 1 <span class="math-comment">Substituímos x por 0</span></div>
-                    <div class="math-row">y = 0 - 1 <span class="math-comment">Multiplicação</span></div>
-                    <div class="math-row">y = -1 <span class="math-comment">Resultado</span></div>
-                    <p class="explanation-text">Encontramos o par ordenado <strong>(0, -1)</strong>. Este é o corte no eixo Y (é o valor de 'b').</p>
-                </div>
-
-                <div class="step-box">
-                    <span class="step-title">Ponto 2: Escolha x = 1</span>
-                    <div class="math-row">y = 2(1) - 1 <span class="math-comment">Substituímos x por 1</span></div>
-                    <div class="math-row">y = 2 - 1 <span class="math-comment">Multiplicação</span></div>
-                    <div class="math-row">y = 1 <span class="math-comment">Resultado</span></div>
-                    <p class="explanation-text">Encontramos o par ordenado <strong>(1, 1)</strong>.</p>
-                </div>
-
-                <div class="step-box">
-                    <span class="step-title">Resultado Visual</span>
-                    <p class="explanation-text">Agora ligamos os pontos (0, -1) e (1, 1) com uma régua.</p>
-                    <div style="display:flex; justify-content:center;">
-                        <svg width="150" height="150" viewBox="0 0 100 100" style="background:white; border:1px solid #ccc;">
-                            <line x1="50" y1="0" x2="50" y2="100" stroke="#ccc" />
-                            <line x1="0" y1="50" x2="100" y2="50" stroke="#ccc" />
-                            <line x1="30" y1="90" x2="70" y2="10" stroke="#0F766E" stroke-width="2" />
-                            <circle cx="50" cy="70" r="3" fill="red" /> <text x="55" y="70" font-size="8">(0,-1)</text>
-                            <circle cx="70" cy="30" r="3" fill="red" /> <text x="75" y="30" font-size="8">(1,1)</text>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-content">
-                <h3>3. A Raiz da Função (Corte em X)</h3>
-                <p>Para saber onde a reta corta o eixo deitado (X), o <strong>y tem que ser zero</strong>.</p>
+                <h3>1. Média (O Equilíbrio)</h3>
+                <p class="explanation-text">É como "dividir a conta" igualmente. Você soma tudo e divide pela quantidade de pessoas.</p>
                 
                 <div class="step-box">
-                    <span class="step-title">Exemplo: y = -3x + 6</span>
+                    <span class="step-title">Exemplo: Notas 6, 8 e 10</span>
                     
-                    <p class="explanation-text"><strong>Passo 1:</strong> Igualar a função a zero.</p>
-                    <div class="math-row">-3x + 6 = 0</div>
+                    <p class="explanation-text"><strong>Passo 1: Somar todos os valores.</strong></p>
+                    <div class="math-row">6 + 8 + 10 = 24</div>
                     
-                    <p class="explanation-text"><strong>Passo 2:</strong> Isolar o termo com x.</p>
-                    <div class="math-row">-3x = -6 <span class="math-comment">O 6 passa negativo</span></div>
+                    <p class="explanation-text"><strong>Passo 2: Contar quantos valores são.</strong></p>
+                    <div class="math-row">São 3 notas.</div>
                     
-                    <p class="explanation-text"><strong>Passo 3:</strong> Dividir.</p>
-                    <div class="math-row">x = -6 / -3 <span class="math-comment">Menos com menos dá mais</span></div>
-                    <div class="math-row"><span class="highlight">x = 2</span></div>
+                    <p class="explanation-text"><strong>Passo 3: Dividir a soma pela quantidade.</strong></p>
+                    <div class="math-row">24 ÷ 3 = <span class="highlight">8</span></div>
                     
-                    <p class="explanation-text">A reta corta o eixo X exatamente no número <strong>2</strong>.</p>
+                    <p class="explanation-text">A média é 8.</p>
+                </div>
+            </div>
+
+            <div class="card-content">
+                <h3>2. Moda (O Popular)</h3>
+                <p class="explanation-text">A Moda é o número que está "na moda", ou seja, o que aparece <strong>mais vezes</strong>.</p>
+                
+                <div class="step-box">
+                    <span class="step-title">Exemplo: Lista de Sapatos</span>
+                    <p class="explanation-text">Números: 35, 36, 37, 36, 38, 36, 40.</p>
+                    
+                    <p class="explanation-text"><strong>Contagem:</strong></p>
+                    <div class="math-row">35: 1 vez</div>
+                    <div class="math-row">36: <span class="highlight">3 vezes</span> (Campeão!)</div>
+                    <div class="math-row">37: 1 vez</div>
+                    
+                    <p class="explanation-text">A Moda é <strong>36</strong>.</p>
+                    <p class="explanation-text" style="font-size:0.8rem; margin-top:5px;">Obs: Se dois números empatarem, temos duas modas (Bimodal).</p>
+                </div>
+            </div>
+
+            <div class="card-content">
+                <h3>3. Mediana (O Centro)</h3>
+                <p class="explanation-text">É o valor que fica exatamente no meio da lista. Mas atenção: a lista precisa estar <strong>ORDENADA</strong> (crescente ou decrescente).</p>
+                
+                <div class="step-box">
+                    <span class="step-title">Caso 1: Quantidade Ímpar</span>
+                    <p class="explanation-text">Lista: 5, 2, 9, 1, 8.</p>
+                    
+                    <p class="explanation-text"><strong>Passo 1: ORDENAR! (Crucial)</strong></p>
+                    <div class="math-row">1, 2, <span class="highlight">5</span>, 8, 9</div>
+                    
+                    <p class="explanation-text">O número 5 está bem no centro (tem 2 antes e 2 depois).</p>
+                    <p class="explanation-text">Mediana = <strong>5</strong>.</p>
+                </div>
+
+                <div class="step-box" style="margin-top:15px;">
+                    <span class="step-title">Caso 2: Quantidade Par</span>
+                    <p class="explanation-text">Lista Ordenada: 2, 4, 6, 8.</p>
+                    
+                    <p class="explanation-text">Não tem um único meio. Temos dois: o 4 e o 6.</p>
+                    <div class="math-row">2, <span class="highlight">4, 6</span>, 8</div>
+                    
+                    <p class="explanation-text"><strong>Solução:</strong> Fazemos a média dos dois.</p>
+                    <div class="math-row">(4 + 6) ÷ 2 = 10 ÷ 2 = <span class="highlight">5</span></div>
+                    <p class="explanation-text">Mediana = 5.</p>
                 </div>
             </div>
 
@@ -467,7 +469,7 @@
         <div id="viewPractice" class="section-view">
             <div style="margin-bottom: 15px;">
                 <h2>Hora de Praticar!</h2>
-                <p style="color: #666; font-size: 0.9rem;">Analise os gráficos e funções.</p>
+                <p style="color: #666; font-size: 0.9rem;">Analise os dados.</p>
             </div>
             <div class="question-map" id="qMap"></div>
             <div id="quizContainer" style="margin-bottom: 100px;"></div>
@@ -493,177 +495,177 @@
     </footer>
 
     <script>
-        // --- BANCO DE QUESTÕES (GRÁFICO DA FUNÇÃO AFIM) ---
+        // --- BANCO DE QUESTÕES (MÉDIA, MODA, MEDIANA) ---
         const questions = [
-            // NÍVEL 1: CONCEITOS VISUAIS
+            // NÍVEL 1: CONCEITOS
             {
                 id: 1,
-                text: "O gráfico de uma função do 1º grau (ex: y = 2x + 1) é geometricamente:",
-                options: ["Uma parábola (curva em U)", "Uma reta", "Uma circunferência", "Um ponto isolado"],
+                text: "O que é a <strong>Moda</strong> em um conjunto de dados?",
+                options: ["O valor do meio", "O valor que mais se repete", "A soma dividida pelo total", "O maior valor"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Parábola é gráfico de função do 2º grau ($x^2$).<br>
-                    <strong>(B) Correta:</strong> A principal característica da função afim ($ax+b$) é que a variação é constante, formando sempre uma linha reta.<br>
-                    <strong>(C) Incorreta:</strong> Circunferência tem equação diferente ($x^2+y^2=r^2$).<br>
-                    <strong>(D) Incorreta:</strong> A função tem infinitos pontos que formam a reta.`
+                    <strong>(A) Incorreta:</strong> Isso é a Mediana.<br>
+                    <strong>(B) Correta:</strong> Moda vem de 'estar na moda', ou seja, o que aparece com maior frequência.<br>
+                    <strong>(C) Incorreta:</strong> Isso é a Média.<br>
+                    <strong>(D) Incorreta:</strong> Isso é o Máximo.`
             },
             {
                 id: 2,
-                text: "Na função <strong>f(x) = -2x + 5</strong>, o gráfico é crescente ou decrescente?",
-                options: ["Crescente (sobe)", "Decrescente (desce)", "Constante (horizontal)", "Vertical"],
+                text: "Para calcular a <strong>Mediana</strong>, qual é o passo obrigatório antes de achar o meio?",
+                options: ["Somar tudo", "Colocar os números em ordem crescente ou decrescente", "Dividir pelo total", "Multiplicar os extremos"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria crescente se o 'a' fosse positivo (ex: 2x).<br>
-                    <strong>(B) Correta:</strong> O coeficiente 'a' é -2. Como ele é negativo ($a < 0$), a reta 'cai' ou desce da esquerda para a direita.<br>
-                    <strong>(C) Incorreta:</strong> Seria constante se $a=0$.<br>
-                    <strong>(D) Incorreta:</strong> Retas verticais não são funções.`
+                    <strong>(A) Incorreta:</strong> Passo da média.<br>
+                    <strong>(B) Correta:</strong> Se não ordenar, o valor do meio será aleatório e errado. Ex: a mediana de 1, 9, 2 não é 9, é 2.<br>
+                    <strong>(C) Incorreta:</strong> Passo da média.<br>
+                    <strong>(D) Incorreta:</strong> Não existe essa regra.`
             },
             {
                 id: 3,
-                text: "O coeficiente <strong>b</strong> (linear) indica onde a reta corta qual eixo?",
-                options: ["Eixo X (horizontal)", "Eixo Y (vertical)", "A origem (0,0)", "Nenhum eixo"],
-                correct: 1,
+                text: "Como calculamos a <strong>Média Aritmética</strong> simples?",
+                options: ["Soma dos valores ÷ Quantidade de valores", "Maior valor - Menor valor", "Valor do meio", "Produto dos valores"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> O corte em X é chamado de Raiz.<br>
-                    <strong>(B) Correta:</strong> Quando $x=0$, $y = a(0) + b = b$. Por isso, o gráfico sempre cruza o eixo vertical Y na altura 'b'.<br>
-                    <strong>(C) Incorreta:</strong> Só passa na origem se $b=0$.<br>
-                    <strong>(D) Incorreta:</strong> Ela sempre corta o eixo Y.`
+                    <strong>(A) Correta:</strong> É a distribuição igualitária da soma total pelo número de participantes.<br>
+                    <strong>(B) Incorreta:</strong> Isso é a Amplitude.<br>
+                    <strong>(C) Incorreta:</strong> Mediana.<br>
+                    <strong>(D) Incorreta:</strong> Não se usa.`
             },
-            // NÍVEL 2: IDENTIFICAÇÃO NA EQUAÇÃO
+            // NÍVEL 2: CÁLCULOS SIMPLES
             {
                 id: 4,
-                text: "Onde a reta da função <strong>y = 3x - 4</strong> corta o eixo Y?",
-                options: ["No ponto 3", "No ponto -4", "No ponto 4", "No ponto -3"],
+                text: "Calcule a média das notas: 5, 7, 9.",
+                options: ["6", "7", "8", "21"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 3 é a inclinação (a).<br>
-                    <strong>(B) Correta:</strong> O corte em Y é dado pelo termo independente $b$. Na equação, $b = -4$.<br>
-                    <strong>(C) Incorreta:</strong> Ignorou o sinal de menos.<br>
-                    <strong>(D) Incorreta:</strong> Confundiu o coeficiente 'a' com sinal trocado.`
+                    <strong>(A) Incorreta:</strong> Baixo.<br>
+                    <strong>(B) Correta:</strong> Soma: 5 + 7 + 9 = 21. Divisão: 21 ÷ 3 = 7.<br>
+                    <strong>(C) Incorreta:</strong> Alto.<br>
+                    <strong>(D) Incorreta:</strong> Esqueceu de dividir.`
             },
             {
                 id: 5,
-                text: "Qual destas funções gera um gráfico que <strong>sobe</strong> (crescente)?",
-                options: ["y = -5x + 10", "y = 4 - x", "y = 2x - 100", "y = -x"],
-                correct: 2,
+                text: "Qual é a moda da lista: 2, 3, 5, 5, 5, 8, 9?",
+                options: ["5", "3", "8", "2"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $a = -5$. Negativo desce.<br>
-                    <strong>(B) Incorreta:</strong> $a = -1$ (o número que multiplica o x). Negativo desce.<br>
-                    <strong>(C) Correta:</strong> $a = 2$. Como 2 é positivo, a reta é crescente, não importa onde ela comece (mesmo sendo -100).<br>
-                    <strong>(D) Incorreta:</strong> $a = -1$. Negativo desce.`
+                    <strong>(A) Correta:</strong> O número 5 aparece 3 vezes. Todos os outros aparecem apenas 1 vez.<br>
+                    <strong>(B) Incorreta:</strong> Aparece 1 vez.<br>
+                    <strong>(C) Incorreta:</strong> Aparece 1 vez.<br>
+                    <strong>(D) Incorreta:</strong> Aparece 1 vez.`
             },
             {
                 id: 6,
-                text: "Se uma reta passa pela origem (0,0), podemos afirmar que:",
-                options: ["a = 0", "b = 0", "x é sempre positivo", "A função não existe"],
+                text: "Encontre a mediana de: 10, 20, 30, 40, 50.",
+                options: ["20", "30", "40", "150"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se $a=0$, a reta é horizontal e pode passar em qualquer altura, não necessariamente na origem.<br>
-                    <strong>(B) Correta:</strong> A origem é o ponto onde $y=0$. Se a reta passa ali, o corte no eixo Y é 0, logo $b=0$. (Função Linear).<br>
-                    <strong>(C) Incorreta:</strong> O gráfico se estende para x negativo também.<br>
-                    <strong>(D) Incorreta:</strong> Existe e é chamada de função linear.`
+                    <strong>(A) Incorreta:</strong> Não é o centro.<br>
+                    <strong>(B) Correta:</strong> Já estão ordenados. O termo central é o 30. Ficam 2 para a esquerda e 2 para a direita.<br>
+                    <strong>(C) Incorreta:</strong> Não é o centro.<br>
+                    <strong>(D) Incorreta:</strong> Soma.`
             },
-            // NÍVEL 3: CÁLCULO DA RAIZ (CORTE EM X)
+            // NÍVEL 3: CÁLCULOS COM PEGADINHAS (ORDENAÇÃO)
             {
                 id: 7,
-                text: "Em qual ponto a função <strong>f(x) = 2x - 10</strong> corta o eixo X?",
-                options: ["5", "-5", "10", "2"],
-                correct: 0,
+                text: "Qual a mediana de: 5, 1, 3?",
+                options: ["1", "5", "3", "4"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Correta:</strong> Para achar o corte em X, fazemos $y=0$.<br> $2x - 10 = 0 \u2192 2x = 10 \u2192 x = 5$.<br>
-                    <strong>(B) Incorreta:</strong> Erro de sinal ao passar o 10.<br>
-                    <strong>(C) Incorreta:</strong> Esse é o corte em Y (com sinal trocado).<br>
-                    <strong>(D) Incorreta:</strong> Esse é o coeficiente angular.`
+                    <strong>(A) Incorreta:</strong> Pegou o menor, mas não o do meio.<br>
+                    <strong>(B) Incorreta:</strong> Pegou o primeiro da lista original (erro comum).<br>
+                    <strong>(C) Correta:</strong> 1º Ordenar: 1, 3, 5. 2º Achar o meio: 3.<br>
+                    <strong>(D) Incorreta:</strong> Calculou a média (9/3=3), que por acaso deu igual.`
             },
             {
                 id: 8,
-                text: "Qual é a raiz da função <strong>y = -3x + 12</strong>?",
-                options: ["-4", "4", "3", "12"],
-                correct: 1,
+                text: "Calcule a mediana do conjunto par: 2, 4, 8, 10.",
+                options: ["4", "8", "6", "12"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $-12 / -3 = +4$, não -4.<br>
-                    <strong>(B) Correta:</strong> Igualando a zero: $-3x + 12 = 0$.<br>Passa 12 para lá: $-3x = -12$.<br>Divide: $x = -12 / -3 = 4$.<br>
-                    <strong>(C) Incorreta:</strong> Valor de 'a' ignorando sinal.<br>
-                    <strong>(D) Incorreta:</strong> Valor de 'b'.`
+                    <strong>(A) Incorreta:</strong> Um dos meios.<br>
+                    <strong>(B) Incorreta:</strong> Um dos meios.<br>
+                    <strong>(C) Correta:</strong> Os meios são 4 e 8. A média entre eles é (4+8) ÷ 2 = 12 ÷ 2 = 6.<br>
+                    <strong>(D) Incorreta:</strong> A soma dos meios.`
             },
             {
                 id: 9,
-                text: "O gráfico corta o eixo X no ponto 2 e o eixo Y no ponto 4. Qual é a função?",
-                options: ["y = 2x + 4", "y = -2x + 4", "y = 4x + 2", "y = 2x - 4"],
-                correct: 1,
+                text: "Lista: 1, 1, 2, 3. Qual a moda e a mediana?",
+                options: ["Moda 1, Mediana 1,5", "Moda 1, Mediana 2", "Moda 2, Mediana 1,5", "Moda 3, Mediana 2"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se $x=2$, $y = 2(2)+4 = 8$ (não zero).<br>
-                    <strong>(B) Correta:</strong> Corta Y no 4, então $b=4$. Corta X no 2 (raiz), então se $x=2$, $y$ tem que ser 0. Testando: $-2(2) + 4 = -4 + 4 = 0$. Funciona!<br>
-                    <strong>(C) Incorreta:</strong> Trocou a e b.<br>
-                    <strong>(D) Incorreta:</strong> O corte em Y seria -4.`
+                    <strong>(A) Correta:</strong> Moda é 1 (repete). Mediana é média de 1 e 2 (meios): (1+2)/2 = 1,5.<br>
+                    <strong>(B) Incorreta:</strong> Mediana errada.<br>
+                    <strong>(C) Incorreta:</strong> Moda errada.<br>
+                    <strong>(D) Incorreta:</strong> Tudo errado.`
             },
-            // NÍVEL 4: ANÁLISE GRÁFICA
+            // NÍVEL 4: INTERPRETAÇÃO E ZEROS
             {
                 id: 10,
-                text: "Se o gráfico é uma reta horizontal que passa pelo y = 3, qual é a função?",
-                options: ["y = 3x", "y = x + 3", "y = 3", "x = 3"],
-                correct: 2,
+                text: "Notas: 0, 10, 10. Qual a média?",
+                options: ["10", "6,6", "20", "5"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Essa reta é inclinada e passa na origem.<br>
-                    <strong>(B) Incorreta:</strong> Essa reta também é inclinada.<br>
-                    <strong>(C) Correta:</strong> É uma função constante ($a=0$). Não importa o valor de x, o y é sempre fixo em 3.<br>
-                    <strong>(D) Incorreta:</strong> $x=3$ é uma reta vertical, que não representa uma função.`
+                    <strong>(A) Incorreta:</strong> Ignorou o zero.<br>
+                    <strong>(B) Correta:</strong> Soma: 0+10+10 = 20. Divisão por 3: 20 ÷ 3 ≈ 6,66.<br>
+                    <strong>(C) Incorreta:</strong> Soma.<br>
+                    <strong>(D) Incorreta:</strong> Calculou (0+10)/2?`
             },
             {
                 id: 11,
-                text: "Olhando o gráfico, a reta desce e corta o eixo Y acima da origem (positivo). Sinais de 'a' e 'b':",
-                options: ["a > 0, b > 0", "a < 0, b > 0", "a < 0, b < 0", "a > 0, b < 0"],
+                text: "Um conjunto pode ter duas modas (Bimodal)? Ex: 2, 2, 5, 5, 8.",
+                options: ["Não, escolhe o maior", "Sim, as modas são 2 e 5", "Sim, a moda é a média deles", "Não, não tem moda"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 'a' positivo faria a reta subir.<br>
-                    <strong>(B) Correta:</strong> Reta desce = 'a' negativo ($a < 0$). Corta acima da origem = 'b' positivo ($b > 0$).<br>
-                    <strong>(C) Incorreta:</strong> b negativo cortaria abaixo da origem.<br>
-                    <strong>(D) Incorreta:</strong> Subiria e cortaria abaixo.`
+                    <strong>(A) Incorreta:</strong> Não há hierarquia.<br>
+                    <strong>(B) Correta:</strong> Se dois números empatam na frequência máxima, ambos são a moda.<br>
+                    <strong>(C) Incorreta:</strong> Não se faz média de moda.<br>
+                    <strong>(D) Incorreta:</strong> Amodal é quando nenhum repete.`
             },
             {
                 id: 12,
-                text: "Dois gráficos são paralelos (nunca se cruzam). O que eles têm em comum?",
-                options: ["O mesmo valor de b", "O mesmo valor de a (inclinação)", "A mesma raiz", "Nada"],
-                correct: 1,
+                text: "Se a média de 2 números é 10, qual é a soma deles?",
+                options: ["5", "10", "20", "100"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se tivessem o mesmo 'b' e inclinações diferentes, se cruzariam no eixo Y.<br>
-                    <strong>(B) Correta:</strong> O coeficiente 'a' define a inclinação. Se a inclinação é igual, as retas sobem no mesmo ritmo e nunca se tocam.<br>
-                    <strong>(C) Incorreta:</strong> Teriam raízes diferentes.<br>
-                    <strong>(D) Incorreta:</strong> Compartilham a inclinação.`
+                    <strong>(A) Incorreta:</strong> Divisão.<br>
+                    <strong>(B) Incorreta:</strong> A média.<br>
+                    <strong>(C) Correta:</strong> Se Média = Soma / 2 = 10, então Soma = 10 x 2 = 20.<br>
+                    <strong>(D) Incorreta:</strong> Quadrado.`
             },
-            // NÍVEL 5: CONSTRUÇÃO E DESAFIOS
+            // NÍVEL 5: DESAFIOS DE RACIOCÍNIO
             {
                 id: 13,
-                text: "Uma reta passa pelos pontos (1, 3) e (2, 5). Qual é a taxa de variação (a)?",
-                options: ["1", "2", "3", "0,5"],
+                text: "Tenho notas 5 e 7. Quanto preciso tirar na próxima para a média ser 7?",
+                options: ["7", "9", "10", "8"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Cálculo errado.<br>
-                    <strong>(B) Correta:</strong> Observe a variação: O x aumentou 1 (de 1 para 2). O y aumentou 2 (de 3 para 5).<br>Taxa $a = \u0394y / \u0394x = (5-3) / (2-1) = 2/1 = 2$.<br>
-                    <strong>(C) Incorreta:</strong> Pegou o valor de y inicial.<br>
-                    <strong>(D) Incorreta:</strong> Inverteu x e y na divisão.`
+                    <strong>(A) Incorreta:</strong> (5+7+7)/3 = 6,33.<br>
+                    <strong>(B) Correta:</strong> Quero média 7 em 3 provas. Total necessário = 7 x 3 = 21. Já tenho 5+7=12. Faltam 21 - 12 = 9.<br>
+                    <strong>(C) Incorreta:</strong> (5+7+10)/3 = 7,33.<br>
+                    <strong>(D) Incorreta:</strong> (5+7+8)/3 = 6,66.`
             },
             {
                 id: 14,
-                text: "Para desenhar o gráfico de <strong>y = x + 1</strong>, quais pontos posso usar?",
-                options: ["(0,0) e (1,1)", "(0,1) e (1,2)", "(1,0) e (0,1)", "(2,2) e (3,3)"],
-                correct: 1,
+                text: "Adicionar um número muito alto à lista (ex: 1000) afeta mais:",
+                options: ["A Média", "A Mediana", "A Moda", "Afeta todos igual"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se $x=0$, $y=1$ (não 0).<br>
-                    <strong>(B) Correta:</strong><br>Se $x=0 \u2192 y=0+1=1$ (Ponto 0,1).<br>Se $x=1 \u2192 y=1+1=2$ (Ponto 1,2). Os dois conferem.<br>
-                    <strong>(C) Incorreta:</strong> Se $x=1$, $y=2$ (não 0).<br>
-                    <strong>(D) Incorreta:</strong> Se $x=2$, $y=3$ (não 2).`
+                    <strong>(A) Correta:</strong> A média é sensível a valores extremos (outliers) porque soma tudo. A mediana (meio) quase não muda.<br>
+                    <strong>(B) Incorreta:</strong> Mediana é robusta a extremos.<br>
+                    <strong>(C) Incorreta:</strong> Moda só muda se o 1000 se repetir muito.<br>
+                    <strong>(D) Incorreta:</strong> A média sofre mais.`
             },
             {
                 id: 15,
-                text: "Qual é a equação da reta que passa na origem (0,0) e pelo ponto (3, 6)?",
-                options: ["y = 3x", "y = 2x", "y = x + 3", "y = 6x"],
+                text: "Em um conjunto de dados onde todos os números são iguais (Ex: 5, 5, 5), a média, moda e mediana são:",
+                options: ["Diferentes", "Iguais (todas 5)", "Zero", "Indefinidas"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $3(3) = 9 \u2260 6$.<br>
-                    <strong>(B) Correta:</strong> Passa na origem, então $b=0$ (formato $y=ax$). Usando o ponto (3,6):<br>$6 = a(3) \u2192 a = 6/3 = 2$. A função é $y = 2x$.<br>
-                    <strong>(C) Incorreta:</strong> $3+3=6$, mas na origem $0+3 \u2260 0$.<br>
-                    <strong>(D) Incorreta:</strong> $6(3) = 18 \u2260 6$.`
+                    <strong>(A) Incorreta:</strong> São iguais.<br>
+                    <strong>(B) Correta:</strong> Média (15/3=5), Moda (5 repete), Mediana (5 tá no meio).<br>
+                    <strong>(C) Incorreta:</strong> Não.<br>
+                    <strong>(D) Incorreta:</strong> Existem.`
             }
         ];
 
@@ -828,7 +830,7 @@
             if (currentQuestion === questions.length - 1) {
                 btnNext.textContent = "Finalizar";
                 btnNext.onclick = finishQuiz;
-                btnNext.style.backgroundColor = "#0F766E"; 
+                btnNext.style.backgroundColor = "#D97706"; 
             } else {
                 btnNext.textContent = "Próxima";
                 btnNext.onclick = () => changeQuestion(1);

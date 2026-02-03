@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gráfico da Função Afim - Detalhado</title>
+    <title>Transformações Geométricas - Passo a Passo</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,9 @@
             --text-color: #2D3748;
             --border-color: #000000;
             
-            /* CORES DA MATÉRIA: TEMA TURQUESA (Precisão/Gráfico) */
-            --theme-color: #CCFBF1; 
-            --theme-active: #0F766E; 
+            /* CORES DA MATÉRIA: TEMA MAGENTA (Dinâmica/Movimento) */
+            --theme-color: #FCE7F3; 
+            --theme-active: #BE185D; 
             --theme-text-active: #FFFFFF;
             
             /* FEEDBACK */
@@ -146,9 +146,8 @@
         }
 
         /* ESTILO PARA AS ILUSTRAÇÕES VISUAIS */
-        .visual-row { display: flex; align-items: flex-end; gap: 10px; justify-content: space-around; flex-wrap: wrap; }
-        .visual-item { text-align: center; width: 30%; min-width: 80px; }
-        .visual-svg { color: var(--theme-active); margin-bottom: 5px; }
+        .visual-row { display: flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
+        .visual-svg { color: var(--theme-active); }
         
         /* Estilo para SVGs dentro das questões */
         .question-visual {
@@ -156,15 +155,15 @@
             justify-content: center;
             margin: 15px 0;
             padding: 15px;
-            background-color: #F0FDFA;
+            background-color: #FCE7F3;
             border-radius: 12px;
             border: 1px dashed var(--theme-active);
         }
 
-        /* --- CARDS DE EXEMPLO DETALHADO (NOVO) --- */
+        /* --- CARDS DE EXEMPLO DETALHADO --- */
         .step-box {
-            background-color: #F0FDFA; 
-            border-left: 5px solid #0F766E;
+            background-color: #FDF2F8; 
+            border-left: 5px solid #BE185D;
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
@@ -174,7 +173,7 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             font-weight: 800;
-            color: #115E59;
+            color: #831843;
             margin-bottom: 10px;
             display: block;
             border-bottom: 1px solid #ccc;
@@ -202,8 +201,11 @@
         }
 
         .highlight {
-            color: #0F766E;
+            color: #BE185D;
             font-weight: 700;
+            background-color: #FBCFE8;
+            padding: 0 4px;
+            border-radius: 4px;
         }
 
         /* --- QUIZ MAPA --- */
@@ -390,72 +392,69 @@
 
         <div id="viewExplanation" class="section-view" style="display: block;">
             
-            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Gráfico da Função Afim</h1>
-            <p style="color: #555; margin-bottom: 20px;">Como transformar a fórmula matemática em um desenho (uma reta) e vice-versa.</p>
+            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Transformações Geométricas</h1>
+            <p style="color: #555; margin-bottom: 20px;">Vamos aprender a mover figuras no plano cartesiano sem deformá-las (Isometria). Existem 3 movimentos principais.</p>
             
             <div class="card-content">
-                <h3>1. A Fórmula e a Reta</h3>
-                <p>Toda função do tipo <strong>f(x) = ax + b</strong> desenha uma <strong>RETA</strong>.</p>
-                <div style="margin-top:10px; border:2px dashed #0F766E; padding:10px; border-radius:8px; text-align:center;">
-                    <p style="font-weight:700; font-size:1.1rem; color:#0F766E;">y = ax + b</p>
-                    <p style="font-size:0.8rem;">Onde "a" inclina a reta e "b" corta o eixo Y.</p>
-                </div>
-            </div>
+                <h3>1. Translação (Deslizar)</h3>
+                <p class="explanation-text">A figura "escorrega" em linha reta. Somamos valores ao X (movimento horizontal) e ao Y (movimento vertical).</p>
+                
 
-            <div class="card-content">
-                <h3>2. Desenhando a Reta: Passo a Passo</h3>
-                <p>Vamos desenhar o gráfico de <strong>y = 2x - 1</strong>.</p>
-                <p>Precisamos de apenas 2 pontos.</p>
+[Image of geometric translation]
 
                 <div class="step-box">
-                    <span class="step-title">Ponto 1: Escolha x = 0</span>
-                    <div class="math-row">y = 2(0) - 1 <span class="math-comment">Substituímos x por 0</span></div>
-                    <div class="math-row">y = 0 - 1 <span class="math-comment">Multiplicação</span></div>
-                    <div class="math-row">y = -1 <span class="math-comment">Resultado</span></div>
-                    <p class="explanation-text">Encontramos o par ordenado <strong>(0, -1)</strong>. Este é o corte no eixo Y (é o valor de 'b').</p>
-                </div>
-
-                <div class="step-box">
-                    <span class="step-title">Ponto 2: Escolha x = 1</span>
-                    <div class="math-row">y = 2(1) - 1 <span class="math-comment">Substituímos x por 1</span></div>
-                    <div class="math-row">y = 2 - 1 <span class="math-comment">Multiplicação</span></div>
-                    <div class="math-row">y = 1 <span class="math-comment">Resultado</span></div>
-                    <p class="explanation-text">Encontramos o par ordenado <strong>(1, 1)</strong>.</p>
-                </div>
-
-                <div class="step-box">
-                    <span class="step-title">Resultado Visual</span>
-                    <p class="explanation-text">Agora ligamos os pontos (0, -1) e (1, 1) com uma régua.</p>
-                    <div style="display:flex; justify-content:center;">
-                        <svg width="150" height="150" viewBox="0 0 100 100" style="background:white; border:1px solid #ccc;">
-                            <line x1="50" y1="0" x2="50" y2="100" stroke="#ccc" />
-                            <line x1="0" y1="50" x2="100" y2="50" stroke="#ccc" />
-                            <line x1="30" y1="90" x2="70" y2="10" stroke="#0F766E" stroke-width="2" />
-                            <circle cx="50" cy="70" r="3" fill="red" /> <text x="55" y="70" font-size="8">(0,-1)</text>
-                            <circle cx="70" cy="30" r="3" fill="red" /> <text x="75" y="30" font-size="8">(1,1)</text>
+                    <span class="step-title">Exemplo Prático</span>
+                    <p class="explanation-text"><strong>Problema:</strong> Mover o ponto A(2, 3) <span class="highlight">4 casas para a direita</span> e <span class="highlight">2 casas para baixo</span>.</p>
+                    
+                    <p class="explanation-text"><strong>Raciocínio:</strong></p>
+                    <div class="math-row">Direita (soma no X): 2 + 4 = 6</div>
+                    <div class="math-row">Baixo (subtrai no Y): 3 - 2 = 1</div>
+                    
+                    <p class="explanation-text"><strong>Resultado:</strong> Novo ponto A'(6, 1).</p>
+                    
+                    <div class="visual-row" style="margin-top:15px;">
+                        <svg width="150" height="100" viewBox="0 0 150 100" style="border:1px solid #ddd; background:white;">
+                            <circle cx="20" cy="30" r="4" fill="#BE185D"/><text x="25" y="30" font-size="10">A(2,3)</text>
+                            <line x1="20" y1="30" x2="120" y2="80" stroke="#BE185D" stroke-dasharray="4" marker-end="url(#arrow)"/>
+                            <circle cx="120" cy="80" r="4" fill="#BE185D"/><text x="125" y="80" font-size="10">A'(6,1)</text>
                         </svg>
                     </div>
                 </div>
             </div>
 
             <div class="card-content">
-                <h3>3. A Raiz da Função (Corte em X)</h3>
-                <p>Para saber onde a reta corta o eixo deitado (X), o <strong>y tem que ser zero</strong>.</p>
+                <h3>2. Reflexão (Espelhar)</h3>
+                <p class="explanation-text">A figura é invertida sobre um eixo, como num espelho. A distância até o espelho é mantida.</p>
+                
+
+[Image of geometric reflection]
+
+                <div class="step-box">
+                    <span class="step-title">Espelho no Eixo Y (Vertical)</span>
+                    <p class="explanation-text">Imagine o eixo Y como um espelho. O que está na direita vai para a esquerda.</p>
+                    <p class="explanation-text"><strong>Regra:</strong> Troca o sinal do X. O Y fica igual.</p>
+                    <div class="math-row">Ponto P(3, 5) ➝ P'(-3, 5)</div>
+                    
+                    <span class="step-title" style="margin-top:15px; border-top:1px solid #ccc; padding-top:10px;">Espelho no Eixo X (Horizontal)</span>
+                    <p class="explanation-text">O que está em cima vai para baixo.</p>
+                    <p class="explanation-text"><strong>Regra:</strong> Troca o sinal do Y. O X fica igual.</p>
+                    <div class="math-row">Ponto P(3, 5) ➝ P'(3, -5)</div>
+                </div>
+            </div>
+
+            <div class="card-content">
+                <h3>3. Rotação (Girar)</h3>
+                <p class="explanation-text">A figura gira em torno de um ponto fixo (origem 0,0). A regra mais comum é o giro de 90°.</p>
                 
                 <div class="step-box">
-                    <span class="step-title">Exemplo: y = -3x + 6</span>
+                    <span class="step-title">Giro de 90° (Anti-horário)</span>
+                    <p class="explanation-text">Imagine o ponto preso num relógio e você empurra o ponteiro para trás 90 graus.</p>
+                    <p class="explanation-text"><strong>Regra de Ouro:</strong> Troca as posições e muda o sinal do <strong>primeiro</strong> (o novo X).</p>
+                    <div class="math-row">(x, y) ➝ (-y, x)</div>
                     
-                    <p class="explanation-text"><strong>Passo 1:</strong> Igualar a função a zero.</p>
-                    <div class="math-row">-3x + 6 = 0</div>
-                    
-                    <p class="explanation-text"><strong>Passo 2:</strong> Isolar o termo com x.</p>
-                    <div class="math-row">-3x = -6 <span class="math-comment">O 6 passa negativo</span></div>
-                    
-                    <p class="explanation-text"><strong>Passo 3:</strong> Dividir.</p>
-                    <div class="math-row">x = -6 / -3 <span class="math-comment">Menos com menos dá mais</span></div>
-                    <div class="math-row"><span class="highlight">x = 2</span></div>
-                    
-                    <p class="explanation-text">A reta corta o eixo X exatamente no número <strong>2</strong>.</p>
+                    <p class="explanation-text"><strong>Exemplo:</strong> Ponto B(2, 4)</p>
+                    <div class="math-row">1. Inverte: (4, 2)</div>
+                    <div class="math-row">2. Sinal no 1º: <span class="highlight">(-4, 2)</span></div>
                 </div>
             </div>
 
@@ -467,7 +466,7 @@
         <div id="viewPractice" class="section-view">
             <div style="margin-bottom: 15px;">
                 <h2>Hora de Praticar!</h2>
-                <p style="color: #666; font-size: 0.9rem;">Analise os gráficos e funções.</p>
+                <p style="color: #666; font-size: 0.9rem;">Aplique as regras de movimento.</p>
             </div>
             <div class="question-map" id="qMap"></div>
             <div id="quizContainer" style="margin-bottom: 100px;"></div>
@@ -492,178 +491,186 @@
         <button class="nav-btn btn-next" id="btnNext" onclick="changeQuestion(1)">Próxima</button>
     </footer>
 
+    <svg style="display: none;">
+        <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L0,6 L9,3 z" fill="#BE185D" />
+            </marker>
+        </defs>
+    </svg>
+
     <script>
-        // --- BANCO DE QUESTÕES (GRÁFICO DA FUNÇÃO AFIM) ---
+        // --- BANCO DE QUESTÕES (TRANSFORMAÇÕES - DETALHADO) ---
         const questions = [
-            // NÍVEL 1: CONCEITOS VISUAIS
+            // NÍVEL 1: CONCEITOS BÁSICOS
             {
                 id: 1,
-                text: "O gráfico de uma função do 1º grau (ex: y = 2x + 1) é geometricamente:",
-                options: ["Uma parábola (curva em U)", "Uma reta", "Uma circunferência", "Um ponto isolado"],
-                correct: 1,
+                text: "Qual transformação faz a figura deslizar sem girar nem inverter?",
+                options: ["Reflexão", "Rotação", "Translação", "Ampliação"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Parábola é gráfico de função do 2º grau ($x^2$).<br>
-                    <strong>(B) Correta:</strong> A principal característica da função afim ($ax+b$) é que a variação é constante, formando sempre uma linha reta.<br>
-                    <strong>(C) Incorreta:</strong> Circunferência tem equação diferente ($x^2+y^2=r^2$).<br>
-                    <strong>(D) Incorreta:</strong> A função tem infinitos pontos que formam a reta.`
+                    <strong>(A) Incorreta:</strong> Reflexão inverte (espelha).<br>
+                    <strong>(B) Incorreta:</strong> Rotação gira a figura.<br>
+                    <strong>(C) Correta:</strong> Translação é o movimento de arrastar a figura em uma direção fixa.<br>
+                    <strong>(D) Incorreta:</strong> Ampliação muda o tamanho.`
             },
             {
                 id: 2,
-                text: "Na função <strong>f(x) = -2x + 5</strong>, o gráfico é crescente ou decrescente?",
-                options: ["Crescente (sobe)", "Decrescente (desce)", "Constante (horizontal)", "Vertical"],
-                correct: 1,
+                text: "O que acontece numa Reflexão?",
+                options: ["A figura muda de tamanho", "A figura gira 90 graus", "A figura é espelhada em relação a uma reta", "A figura se move para cima"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Seria crescente se o 'a' fosse positivo (ex: 2x).<br>
-                    <strong>(B) Correta:</strong> O coeficiente 'a' é -2. Como ele é negativo ($a < 0$), a reta 'cai' ou desce da esquerda para a direita.<br>
-                    <strong>(C) Incorreta:</strong> Seria constante se $a=0$.<br>
-                    <strong>(D) Incorreta:</strong> Retas verticais não são funções.`
+                    <strong>(A) Incorreta:</strong> Isometrias mantêm o tamanho.<br>
+                    <strong>(B) Incorreta:</strong> Isso é Rotação.<br>
+                    <strong>(C) Correta:</strong> Reflexão cria uma imagem simétrica, como num espelho.<br>
+                    <strong>(D) Incorreta:</strong> Isso é Translação.`
             },
             {
                 id: 3,
-                text: "O coeficiente <strong>b</strong> (linear) indica onde a reta corta qual eixo?",
-                options: ["Eixo X (horizontal)", "Eixo Y (vertical)", "A origem (0,0)", "Nenhum eixo"],
+                text: "Para realizar uma Rotação, precisamos de:",
+                options: ["Um espelho", "Um centro de giro e um ângulo", "Um vetor de direção", "Uma régua"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> O corte em X é chamado de Raiz.<br>
-                    <strong>(B) Correta:</strong> Quando $x=0$, $y = a(0) + b = b$. Por isso, o gráfico sempre cruza o eixo vertical Y na altura 'b'.<br>
-                    <strong>(C) Incorreta:</strong> Só passa na origem se $b=0$.<br>
-                    <strong>(D) Incorreta:</strong> Ela sempre corta o eixo Y.`
+                    <strong>(A) Incorreta:</strong> Para reflexão.<br>
+                    <strong>(B) Correta:</strong> Definimos ONDE gira (centro) e QUANTO gira (ângulo, ex: 90°).<br>
+                    <strong>(C) Incorreta:</strong> Para translação.<br>
+                    <strong>(D) Incorreta:</strong> Instrumento.`
             },
-            // NÍVEL 2: IDENTIFICAÇÃO NA EQUAÇÃO
+            // NÍVEL 2: TRANSLAÇÃO (CÁLCULOS)
             {
                 id: 4,
-                text: "Onde a reta da função <strong>y = 3x - 4</strong> corta o eixo Y?",
-                options: ["No ponto 3", "No ponto -4", "No ponto 4", "No ponto -3"],
-                correct: 1,
+                text: "Ponto A(2, 5). Translação: <strong>3 para a direita</strong>. Novo ponto:",
+                options: ["(5, 5)", "(2, 8)", "(-1, 5)", "(6, 5)"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 3 é a inclinação (a).<br>
-                    <strong>(B) Correta:</strong> O corte em Y é dado pelo termo independente $b$. Na equação, $b = -4$.<br>
-                    <strong>(C) Incorreta:</strong> Ignorou o sinal de menos.<br>
-                    <strong>(D) Incorreta:</strong> Confundiu o coeficiente 'a' com sinal trocado.`
+                    <strong>(A) Correta:</strong> 'Direita' soma no X. Y não muda. (2+3, 5) = (5, 5).<br>
+                    <strong>(B) Incorreta:</strong> Somou no Y (subiu).<br>
+                    <strong>(C) Incorreta:</strong> Subtraiu (foi para esquerda).<br>
+                    <strong>(D) Incorreta:</strong> Erro de soma.`
             },
             {
                 id: 5,
-                text: "Qual destas funções gera um gráfico que <strong>sobe</strong> (crescente)?",
-                options: ["y = -5x + 10", "y = 4 - x", "y = 2x - 100", "y = -x"],
+                text: "Ponto B(10, 8). Translação: <strong>5 para baixo</strong>. Novo ponto:",
+                options: ["(5, 8)", "(10, 13)", "(10, 3)", "(15, 8)"],
                 correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $a = -5$. Negativo desce.<br>
-                    <strong>(B) Incorreta:</strong> $a = -1$ (o número que multiplica o x). Negativo desce.<br>
-                    <strong>(C) Correta:</strong> $a = 2$. Como 2 é positivo, a reta é crescente, não importa onde ela comece (mesmo sendo -100).<br>
-                    <strong>(D) Incorreta:</strong> $a = -1$. Negativo desce.`
+                    <strong>(A) Incorreta:</strong> Mexeu no X.<br>
+                    <strong>(B) Incorreta:</strong> Somou (subiu).<br>
+                    <strong>(C) Correta:</strong> 'Baixo' subtrai do Y. (10, 8-5) = (10, 3).<br>
+                    <strong>(D) Incorreta:</strong> Mexeu no X.`
             },
             {
                 id: 6,
-                text: "Se uma reta passa pela origem (0,0), podemos afirmar que:",
-                options: ["a = 0", "b = 0", "x é sempre positivo", "A função não existe"],
-                correct: 1,
-                explanation: `
-                    <strong>(A) Incorreta:</strong> Se $a=0$, a reta é horizontal e pode passar em qualquer altura, não necessariamente na origem.<br>
-                    <strong>(B) Correta:</strong> A origem é o ponto onde $y=0$. Se a reta passa ali, o corte no eixo Y é 0, logo $b=0$. (Função Linear).<br>
-                    <strong>(C) Incorreta:</strong> O gráfico se estende para x negativo também.<br>
-                    <strong>(D) Incorreta:</strong> Existe e é chamada de função linear.`
-            },
-            // NÍVEL 3: CÁLCULO DA RAIZ (CORTE EM X)
-            {
-                id: 7,
-                text: "Em qual ponto a função <strong>f(x) = 2x - 10</strong> corta o eixo X?",
-                options: ["5", "-5", "10", "2"],
+                text: "Ponto C(1, 2) moveu para C'(4, 6). Qual foi a translação?",
+                options: ["3 dir, 4 cima", "4 dir, 3 cima", "3 esq, 4 baixo", "5 dir, 5 cima"],
                 correct: 0,
                 explanation: `
-                    <strong>(A) Correta:</strong> Para achar o corte em X, fazemos $y=0$.<br> $2x - 10 = 0 \u2192 2x = 10 \u2192 x = 5$.<br>
-                    <strong>(B) Incorreta:</strong> Erro de sinal ao passar o 10.<br>
-                    <strong>(C) Incorreta:</strong> Esse é o corte em Y (com sinal trocado).<br>
-                    <strong>(D) Incorreta:</strong> Esse é o coeficiente angular.`
+                    <strong>(A) Correta:</strong> X: de 1 para 4 (+3, direita). Y: de 2 para 6 (+4, cima).<br>
+                    <strong>(B) Incorreta:</strong> Inverteu.<br>
+                    <strong>(C) Incorreta:</strong> Sinais opostos.<br>
+                    <strong>(D) Incorreta:</strong> Erro de cálculo.`
+            },
+            // NÍVEL 3: REFLEXÃO (EIXOS)
+            {
+                id: 7,
+                text: "Reflita o ponto (3, 4) no <strong>Eixo Y</strong> (espelho vertical).",
+                options: ["(3, -4)", "(-3, 4)", "(-3, -4)", "(4, 3)"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> Reflexão em X.<br>
+                    <strong>(B) Correta:</strong> No espelho Y, o X inverte o sinal e o Y mantém. (3, 4) ➝ (-3, 4).<br>
+                    <strong>(C) Incorreta:</strong> Reflexão na origem.<br>
+                    <strong>(D) Incorreta:</strong> Troca de coordenadas.`
             },
             {
                 id: 8,
-                text: "Qual é a raiz da função <strong>y = -3x + 12</strong>?",
-                options: ["-4", "4", "3", "12"],
+                text: "Reflita o ponto (-2, -5) no <strong>Eixo X</strong> (espelho horizontal).",
+                options: ["(2, -5)", "(-2, 5)", "(2, 5)", "(-5, -2)"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $-12 / -3 = +4$, não -4.<br>
-                    <strong>(B) Correta:</strong> Igualando a zero: $-3x + 12 = 0$.<br>Passa 12 para lá: $-3x = -12$.<br>Divide: $x = -12 / -3 = 4$.<br>
-                    <strong>(C) Incorreta:</strong> Valor de 'a' ignorando sinal.<br>
-                    <strong>(D) Incorreta:</strong> Valor de 'b'.`
+                    <strong>(A) Incorreta:</strong> Reflexão em Y.<br>
+                    <strong>(B) Correta:</strong> No espelho X, o Y inverte o sinal e o X mantém. (-2, -5) ➝ (-2, 5).<br>
+                    <strong>(C) Incorreta:</strong> Inverteu os dois.<br>
+                    <strong>(D) Incorreta:</strong> Rotação.`
             },
             {
                 id: 9,
-                text: "O gráfico corta o eixo X no ponto 2 e o eixo Y no ponto 4. Qual é a função?",
-                options: ["y = 2x + 4", "y = -2x + 4", "y = 4x + 2", "y = 2x - 4"],
+                text: "O ponto (5, 0) refletido no eixo Y vai para:",
+                options: ["(0, 5)", "(-5, 0)", "(5, 0)", "(0, -5)"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se $x=2$, $y = 2(2)+4 = 8$ (não zero).<br>
-                    <strong>(B) Correta:</strong> Corta Y no 4, então $b=4$. Corta X no 2 (raiz), então se $x=2$, $y$ tem que ser 0. Testando: $-2(2) + 4 = -4 + 4 = 0$. Funciona!<br>
-                    <strong>(C) Incorreta:</strong> Trocou a e b.<br>
-                    <strong>(D) Incorreta:</strong> O corte em Y seria -4.`
+                    <strong>(A) Incorreta:</strong> Trocou eixos.<br>
+                    <strong>(B) Correta:</strong> Inverte o sinal de X. (5, 0) ➝ (-5, 0).<br>
+                    <strong>(C) Incorreta:</strong> Não mudou nada.<br>
+                    <strong>(D) Incorreta:</strong> Erro.`
             },
-            // NÍVEL 4: ANÁLISE GRÁFICA
+            // NÍVEL 4: ROTAÇÃO (90 GRAUS)
             {
                 id: 10,
-                text: "Se o gráfico é uma reta horizontal que passa pelo y = 3, qual é a função?",
-                options: ["y = 3x", "y = x + 3", "y = 3", "x = 3"],
-                correct: 2,
+                text: "Gire o ponto (2, 3) em <strong>90° anti-horário</strong> (regra: -y, x).",
+                options: ["(3, 2)", "(-3, 2)", "(3, -2)", "(-2, -3)"],
+                correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Essa reta é inclinada e passa na origem.<br>
-                    <strong>(B) Incorreta:</strong> Essa reta também é inclinada.<br>
-                    <strong>(C) Correta:</strong> É uma função constante ($a=0$). Não importa o valor de x, o y é sempre fixo em 3.<br>
-                    <strong>(D) Incorreta:</strong> $x=3$ é uma reta vertical, que não representa uma função.`
+                    <strong>(A) Incorreta:</strong> Só trocou.<br>
+                    <strong>(B) Correta:</strong> 1º Troca: (3, 2). 2º Muda sinal do primeiro: (-3, 2).<br>
+                    <strong>(C) Incorreta:</strong> Mudou sinal do segundo.<br>
+                    <strong>(D) Incorreta:</strong> Inverteu sinais sem trocar.`
             },
             {
                 id: 11,
-                text: "Olhando o gráfico, a reta desce e corta o eixo Y acima da origem (positivo). Sinais de 'a' e 'b':",
-                options: ["a > 0, b > 0", "a < 0, b > 0", "a < 0, b < 0", "a > 0, b < 0"],
-                correct: 1,
+                text: "Gire o ponto (-1, 4) em 90° anti-horário.",
+                options: ["(-4, -1)", "(4, 1)", "(4, -1)", "(-4, 1)"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> 'a' positivo faria a reta subir.<br>
-                    <strong>(B) Correta:</strong> Reta desce = 'a' negativo ($a < 0$). Corta acima da origem = 'b' positivo ($b > 0$).<br>
-                    <strong>(C) Incorreta:</strong> b negativo cortaria abaixo da origem.<br>
-                    <strong>(D) Incorreta:</strong> Subiria e cortaria abaixo.`
+                    <strong>(A) Correta:</strong> Troca (-1, 4) para (4, -1). Muda sinal do primeiro: (-4, -1).<br>
+                    <strong>(B) Incorreta:</strong> Erro de sinal.<br>
+                    <strong>(C) Incorreta:</strong> Não mudou sinal do 4.<br>
+                    <strong>(D) Incorreta:</strong> Mudou sinal do -1 para 1.`
             },
             {
                 id: 12,
-                text: "Dois gráficos são paralelos (nunca se cruzam). O que eles têm em comum?",
-                options: ["O mesmo valor de b", "O mesmo valor de a (inclinação)", "A mesma raiz", "Nada"],
-                correct: 1,
+                text: "Rotação de 180° equivale a:",
+                options: ["Refletir no eixo X", "Refletir no eixo Y", "Inverter os dois sinais (-x, -y)", "Transladar"],
+                correct: 2,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se tivessem o mesmo 'b' e inclinações diferentes, se cruzariam no eixo Y.<br>
-                    <strong>(B) Correta:</strong> O coeficiente 'a' define a inclinação. Se a inclinação é igual, as retas sobem no mesmo ritmo e nunca se tocam.<br>
-                    <strong>(C) Incorreta:</strong> Teriam raízes diferentes.<br>
-                    <strong>(D) Incorreta:</strong> Compartilham a inclinação.`
+                    <strong>(A) Incorreta:</strong> Muda só Y.<br>
+                    <strong>(B) Incorreta:</strong> Muda só X.<br>
+                    <strong>(C) Correta:</strong> Meia volta joga o ponto para o quadrante oposto. (x, y) ➝ (-x, -y).<br>
+                    <strong>(D) Incorreta:</strong> Movimento diferente.`
             },
-            // NÍVEL 5: CONSTRUÇÃO E DESAFIOS
+            // NÍVEL 5: DESAFIOS MISTOS
             {
                 id: 13,
-                text: "Uma reta passa pelos pontos (1, 3) e (2, 5). Qual é a taxa de variação (a)?",
-                options: ["1", "2", "3", "0,5"],
-                correct: 1,
+                text: "Aplique duas transformações no ponto (2, 2): Reflita no eixo Y e depois translade 1 para cima.",
+                options: ["(-2, 3)", "(3, 3)", "(-2, 1)", "(2, 3)"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Cálculo errado.<br>
-                    <strong>(B) Correta:</strong> Observe a variação: O x aumentou 1 (de 1 para 2). O y aumentou 2 (de 3 para 5).<br>Taxa $a = \u0394y / \u0394x = (5-3) / (2-1) = 2/1 = 2$.<br>
-                    <strong>(C) Incorreta:</strong> Pegou o valor de y inicial.<br>
-                    <strong>(D) Incorreta:</strong> Inverteu x e y na divisão.`
+                    <strong>(A) Correta:</strong> 1º Reflexão Y: (2, 2) ➝ (-2, 2). 2º Translação (+1 no Y): (-2, 2+1) = (-2, 3).<br>
+                    <strong>(B) Incorreta:</strong> Erro na reflexão.<br>
+                    <strong>(C) Incorreta:</strong> Subtraiu em vez de somar.<br>
+                    <strong>(D) Incorreta:</strong> Ignorou reflexão.`
             },
             {
                 id: 14,
-                text: "Para desenhar o gráfico de <strong>y = x + 1</strong>, quais pontos posso usar?",
-                options: ["(0,0) e (1,1)", "(0,1) e (1,2)", "(1,0) e (0,1)", "(2,2) e (3,3)"],
+                text: "O que é uma Isometria?",
+                options: ["Transformação que muda o tamanho", "Transformação que mantém as medidas (tamanho e forma)", "Transformação que apaga a figura", "Desenho 3D"],
                 correct: 1,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> Se $x=0$, $y=1$ (não 0).<br>
-                    <strong>(B) Correta:</strong><br>Se $x=0 \u2192 y=0+1=1$ (Ponto 0,1).<br>Se $x=1 \u2192 y=1+1=2$ (Ponto 1,2). Os dois conferem.<br>
-                    <strong>(C) Incorreta:</strong> Se $x=1$, $y=2$ (não 0).<br>
-                    <strong>(D) Incorreta:</strong> Se $x=2$, $y=3$ (não 2).`
+                    <strong>(A) Incorreta:</strong> Isso é Homotetia.<br>
+                    <strong>(B) Correta:</strong> Iso (igual) + Metria (medida). Translação, Reflexão e Rotação são isometrias.<br>
+                    <strong>(C) Incorreta:</strong> Não.<br>
+                    <strong>(D) Incorreta:</strong> É perspectiva.`
             },
             {
                 id: 15,
-                text: "Qual é a equação da reta que passa na origem (0,0) e pelo ponto (3, 6)?",
-                options: ["y = 3x", "y = 2x", "y = x + 3", "y = 6x"],
-                correct: 1,
+                text: "Qual transformação não altera a orientação da figura (não a vira de cabeça para baixo ou espelha)?",
+                options: ["Translação", "Rotação de 180°", "Reflexão", "Rotação de 90°"],
+                correct: 0,
                 explanation: `
-                    <strong>(A) Incorreta:</strong> $3(3) = 9 \u2260 6$.<br>
-                    <strong>(B) Correta:</strong> Passa na origem, então $b=0$ (formato $y=ax$). Usando o ponto (3,6):<br>$6 = a(3) \u2192 a = 6/3 = 2$. A função é $y = 2x$.<br>
-                    <strong>(C) Incorreta:</strong> $3+3=6$, mas na origem $0+3 \u2260 0$.<br>
-                    <strong>(D) Incorreta:</strong> $6(3) = 18 \u2260 6$.`
+                    <strong>(A) Correta:</strong> Na translação, a figura se mantém 'em pé' e na mesma direção, apenas muda de lugar.<br>
+                    <strong>(B) Incorreta:</strong> Vira de cabeça para baixo.<br>
+                    <strong>(C) Incorreta:</strong> Inverte (espelha).<br>
+                    <strong>(D) Incorreta:</strong> Deita a figura.`
             }
         ];
 
@@ -828,7 +835,7 @@
             if (currentQuestion === questions.length - 1) {
                 btnNext.textContent = "Finalizar";
                 btnNext.onclick = finishQuiz;
-                btnNext.style.backgroundColor = "#0F766E"; 
+                btnNext.style.backgroundColor = "#BE185D"; 
             } else {
                 btnNext.textContent = "Próxima";
                 btnNext.onclick = () => changeQuestion(1);
