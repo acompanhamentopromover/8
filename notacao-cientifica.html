@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notação Científica - Promover</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        /* --- VARIÁVEIS DE TEMA --- */
+        :root {
+            --bg-color: #F8F9FA;
+            --text-color: #2D3748;
+            --border-color: #000000;
+            
+            /* CORES DA MATÉRIA: TEMA AZUL CÓSMICO (Ciência/Espaço) */
+            --theme-color: #E3F2FD; 
+            --theme-active: #1565C0; 
+            --theme-text-active: #FFFFFF;
+            
+            /* FEEDBACK */
+            --correct-bg: #C6F6D5;
+            --correct-border: #276749;
+            --wrong-bg: #FED7D7;
+            --wrong-border: #C53030;
+            
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-bottom: 80px;
+            overflow-x: hidden;
+        }
+
+        /* ANIMAÇÃO DE TREMOR (ERRO) */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            50% { transform: translateX(6px); }
+            75% { transform: translateX(-6px); }
+            100% { transform: translateX(0); }
+        }
+
+        .shake-effect {
+            animation: shake 0.4s ease-in-out;
+        }
+
+        /* --- LOGO --- */
+        .logo-header {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0 10px 0;
+        }
+
+        .logo-img {
+            max-height: 80px;
+            width: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        /* --- NAVEGAÇÃO --- */
+        .top-nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-close {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- TOGGLE --- */
+        .toggle-container {
+            background-color: var(--white);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            padding: 4px;
+            display: flex;
+            margin-bottom: 25px;
+            box-shadow: 3px 3px 0px var(--border-color);
+        }
+
+        .toggle-btn {
+            flex: 1;
+            border: none;
+            background: none;
+            padding: 12px 0;
+            border-radius: 40px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #888;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn.active {
+            background-color: var(--theme-active);
+            color: var(--theme-text-active);
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* --- CONTEÚDO --- */
+        .section-view {
+            display: none; 
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .card-content {
+            background-color: var(--white);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 4px 4px 0px var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        /* ESTILO PARA AS ILUSTRAÇÕES VISUAIS */
+        .visual-row { display: flex; align-items: flex-end; gap: 10px; justify-content: space-around; flex-wrap: wrap; }
+        .visual-item { text-align: center; width: 30%; min-width: 80px; }
+        .visual-svg { color: var(--theme-active); margin-bottom: 5px; }
+        
+        /* Estilo para SVGs dentro das questões */
+        .question-visual {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #E3F2FD;
+            border-radius: 12px;
+            border: 1px dashed var(--theme-active);
+        }
+
+        .example-box {
+            background-color: #F1F8E9; /* Verde/Azul claro para contraste */
+            border-left: 5px solid #1565C0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .example-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #0D47A1;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* --- QUIZ MAPA --- */
+        .question-map {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 5px;
+            margin-bottom: 20px;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        .question-map::-webkit-scrollbar { display: none; }
+
+        .map-dot {
+            min-width: 40px;
+            height: 40px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #888;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .map-dot.active {
+            border-color: var(--border-color);
+            background-color: var(--theme-active);
+            color: white;
+            box-shadow: 2px 2px 0px var(--border-color);
+            transform: scale(1.05);
+        }
+        
+        .map-dot.answered-correct { background-color: var(--correct-bg); border-color: var(--correct-border); color: var(--correct-border); }
+        .map-dot.answered-wrong { background-color: var(--wrong-bg); border-color: var(--wrong-border); color: var(--wrong-border); }
+
+        /* --- OPÇÕES --- */
+        .option-btn {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 16px;
+            background-color: var(--white);
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .opt-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .option-btn.correct { background-color: var(--correct-bg); border-color: var(--correct-border); }
+        .option-btn.correct .opt-circle { background-color: var(--correct-border); color: white; border-color: var(--correct-border); }
+
+        .option-btn.wrong { background-color: var(--wrong-bg); border-color: var(--wrong-border); opacity: 0.8; }
+        .option-btn.wrong .opt-circle { background-color: var(--wrong-border); color: white; border-color: var(--wrong-border); }
+        
+        .option-btn.disabled { pointer-events: none; }
+
+        /* --- FEEDBACK DETALHADO --- */
+        .feedback-box {
+            display: block; 
+            margin-top: 20px;
+            background-color: #EDF2F7;
+            border: 2px solid #2D3748;
+            border-radius: 12px;
+            padding: 20px;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .feedback-title {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- TELA DE RESULTADO --- */
+        #viewResult {
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .result-card {
+            background: white;
+            border: 2px solid black;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 6px 6px 0px black;
+            margin-bottom: 30px;
+        }
+
+        .stars-container { font-size: 3rem; margin: 10px 0; }
+        .score-text { font-size: 1.2rem; font-weight: 700; color: var(--text-color); }
+        .percentage-big { font-size: 3.5rem; font-weight: 800; color: var(--theme-active); line-height: 1; margin: 10px 0; }
+
+        .btn-retry {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--theme-active);
+            color: white;
+            border: 2px solid black;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px black;
+            transition: transform 0.1s;
+        }
+        
+        .btn-retry:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px black; }
+
+        /* --- RODAPÉ FIXO --- */
+        .quiz-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            border-top: 2px solid var(--border-color);
+            padding: 15px 20px;
+            display: none; 
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+        }
+        .btn-next { background-color: var(--theme-active); color: white; box-shadow: 2px 2px 0px var(--border-color); }
+        .btn-prev { background-color: #f0f0f0; color: #555; }
+        .btn-prev:disabled { opacity: 0.5; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    </style>
+</head>
+<body>
+
+    <div class="logo-header">
+        <img src="logo.png" alt="Logo Promover" class="logo-img">
+    </div>
+
+    <div class="container">
+        
+        <nav class="top-nav">
+            <a href="8ano-matematica.html" class="btn-close">⬅ Voltar</a>
+            <span style="font-size: 0.8rem; font-weight: 700; color: #888;">MATEMÁTICA</span>
+        </nav>
+
+        <div class="toggle-container">
+            <button class="toggle-btn active" id="btnExp" onclick="setMode('explanation')">📘 Explicação</button>
+            <button class="toggle-btn" id="btnPrac" onclick="setMode('practice')">🧠 Praticar</button>
+        </div>
+
+        <div id="viewExplanation" class="section-view" style="display: block;">
+            
+            <h1 style="font-size: 1.5rem; margin-bottom: 15px; line-height: 1.2;">Notação Científica</h1>
+            <p style="color: #555; margin-bottom: 20px;">Uma forma inteligente de escrever números gigantes (como estrelas) ou minúsculos (como átomos).</p>
+            
+            <div class="card-content">
+                <h3>⚛️ O Padrão Universal</h3>
+                <p>Para escrever em notação científica, usamos um número entre 1 e 10 multiplicado por uma potência de 10.</p>
+                <br>
+                <div class="visual-row" style="justify-content: center;">
+                    <div style="text-align: center; border: 2px dashed #1565C0; padding: 10px; border-radius: 10px;">
+                        <p style="font-size: 1.5rem; font-weight: 800; color: #1565C0;">a . 10ⁿ</p>
+                        <p style="font-size: 0.8rem;">Onde <strong>1 ≤ a < 10</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-content">
+                <h3>🌌 Números Gigantes</h3>
+                <p>Quando o número é muito grande, a vírgula anda para a <strong>esquerda</strong> e o expoente é <strong>positivo</strong>.</p>
+                
+                <div class="example-box">
+                    <span class="example-tag">Exemplo</span>
+                    <p>3000 = 3,0 x 10³</p>
+                    <p>(A vírgula andou 3 casas para a esquerda)</p>
+                </div>
+            </div>
+
+            <div class="card-content">
+                <h3>🔬 Números Minúsculos</h3>
+                <p>Quando o número é muito pequeno (0,00...), a vírgula anda para a <strong>direita</strong> e o expoente é <strong>negativo</strong>.</p>
+                
+                <div class="example-box">
+                    <span class="example-tag">Exemplo</span>
+                    <p>0,005 = 5,0 x 10⁻³</p>
+                    <p>(A vírgula andou 3 casas para a direita)</p>
+                </div>
+            </div>
+
+            <button onclick="setMode('practice')" style="width: 100%; padding: 15px; background: var(--text-color); color: white; border: none; border-radius: 12px; font-weight: 700; margin-bottom: 20px;">
+                Ir para Exercícios ➜
+            </button>
+        </div>
+
+        <div id="viewPractice" class="section-view">
+            <div style="margin-bottom: 15px;">
+                <h2>Hora de Praticar!</h2>
+                <p style="color: #666; font-size: 0.9rem;">Conte as casas decimais com atenção.</p>
+            </div>
+            <div class="question-map" id="qMap"></div>
+            <div id="quizContainer" style="margin-bottom: 100px;"></div>
+        </div>
+
+        <div id="viewResult">
+            <div class="result-card">
+                <h2>Resultado</h2>
+                <div class="stars-container" id="finalStars">⭐⭐⭐⭐⭐</div>
+                <div class="percentage-big" id="finalPercent">100%</div>
+                <p class="score-text" id="finalScoreText">Você acertou 15 de 15</p>
+                <p style="color:#666; margin-top:10px; font-size:0.9rem;" id="finalMessage">Excelente!</p>
+                <div id="review-container"></div>
+            </div>
+            <div id="action-buttons"></div>
+        </div>
+
+    </div>
+
+    <footer class="quiz-footer" id="quizFooter">
+        <button class="nav-btn btn-prev" id="btnPrev" onclick="changeQuestion(-1)">Anterior</button>
+        <button class="nav-btn btn-next" id="btnNext" onclick="changeQuestion(1)">Próxima</button>
+    </footer>
+
+    <script>
+        // --- BANCO DE QUESTÕES (NOTAÇÃO CIENTÍFICA - 8º ANO) ---
+        const questions = [
+            // NÍVEL 1: CONCEITO E ESTRUTURA
+            {
+                id: 1,
+                text: "Qual destas opções está escrita corretamente em notação científica?",
+                options: ["12 x 10³", "0,5 x 10⁴", "3,5 x 10²", "10 x 10⁵"],
+                correct: 2,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> O número 12 é maior que 10. O coeficiente deve ser menor que 10.<br>
+                    <strong>(B) Incorreta:</strong> O número 0,5 é menor que 1. O coeficiente deve ser maior ou igual a 1.<br>
+                    <strong>(C) Correta:</strong> 3,5 está entre 1 e 10, e está multiplicado por uma potência de 10.<br>
+                    <strong>(D) Incorreta:</strong> 10 não pode ser o coeficiente (deve ser menor que 10, ex: 1,0 x 10⁶).`
+            },
+            {
+                id: 2,
+                text: "Na expressão <strong>a . 10ⁿ</strong>, o valor de 'a' deve ser:",
+                options: ["Qualquer número", "Maior que 10", "Entre 1 e 10 (podendo ser 1)", "Menor que 1"],
+                correct: 2,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> Existem regras estritas.<br>
+                    <strong>(B) Incorreta:</strong> Se for maior que 10, ajustamos a vírgula.<br>
+                    <strong>(C) Correta:</strong> A regra fundamental é que o coeficiente (mantissa) seja maior ou igual a 1 e menor que 10.<br>
+                    <strong>(D) Incorreta:</strong> Se for menor que 1, ajustamos a vírgula.`
+            },
+            {
+                id: 3,
+                text: "Quando transformamos um número <strong>grande</strong> (ex: 5000) em notação, o expoente será:",
+                options: ["Positivo", "Negativo", "Zero", "Fracionário"],
+                correct: 0,
+                explanation: `
+                    <strong>(A) Correta:</strong> Números grandes indicam multiplicação por 10 sucessivas vezes, logo o expoente é positivo.<br>
+                    <strong>(B) Incorreta:</strong> Expoente negativo é para números decimais pequenos (0,00...).<br>
+                    <strong>(C) Incorreta:</strong> Zero indica que o número não mudou de ordem de grandeza.<br>
+                    <strong>(D) Incorreta:</strong> Não usamos frações no expoente na notação padrão.`
+            },
+            // NÍVEL 2: CONVERTENDO NÚMEROS GRANDES
+            {
+                id: 4,
+                text: "Como escrevemos <strong>3000</strong> em notação científica?",
+                options: ["30 x 10²", "3 x 10³", "3 x 10⁻³", "0,3 x 10⁴"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> 30 é maior que 10.<br>
+                    <strong>(B) Correta:</strong> A vírgula anda 3 casas para a esquerda (após o 3). Fica 3 x 10³.<br>
+                    <strong>(C) Incorreta:</strong> Expoente negativo seria para 0,003.<br>
+                    <strong>(D) Incorreta:</strong> 0,3 é menor que 1.`
+            },
+            {
+                id: 5,
+                text: "O número <strong>4.500.000</strong> em notação científica é:",
+                options: ["4,5 x 10⁵", "4,5 x 10⁶", "45 x 10⁵", "4,5 x 10⁻⁶"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> Contou apenas os zeros (5), mas a vírgula passou pelo 5 também.<br>
+                    <strong>(B) Correta:</strong> A vírgula sai do final e anda 6 casas até ficar entre 4 e 5.<br>
+                    <strong>(C) Incorreta:</strong> 45 é maior que 10.<br>
+                    <strong>(D) Incorreta:</strong> Sinal negativo é para números pequenos.`
+            },
+            {
+                id: 6,
+                text: "Converta <strong>123</strong> para notação científica:",
+                options: ["1,23 x 10¹", "1,23 x 10²", "12,3 x 10¹", "0,123 x 10³"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> 10¹ seria 12,3.<br>
+                    <strong>(B) Correta:</strong> A vírgula anda 2 casas para a esquerda (de 123, para 1,23).<br>
+                    <strong>(C) Incorreta:</strong> 12,3 é maior que 10.<br>
+                    <strong>(D) Incorreta:</strong> 0,123 é menor que 1.`
+            },
+            // NÍVEL 3: CONVERTENDO NÚMEROS PEQUENOS
+            {
+                id: 7,
+                text: "Como escrevemos <strong>0,005</strong> em notação científica?",
+                options: ["5 x 10³", "5 x 10⁻³", "50 x 10⁻⁴", "0,5 x 10⁻²"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> 10³ é 1000. 5000 não é 0,005.<br>
+                    <strong>(B) Correta:</strong> A vírgula anda 3 casas para a DIREITA para formar o 5. Logo, expoente negativo -3.<br>
+                    <strong>(C) Incorreta:</strong> 50 é maior que 10.<br>
+                    <strong>(D) Incorreta:</strong> 0,5 é menor que 1.`
+            },
+            {
+                id: 8,
+                text: "O número <strong>0,000056</strong> fica:",
+                options: ["5,6 x 10⁻⁵", "5,6 x 10⁻⁴", "56 x 10⁻⁶", "5,6 x 10⁵"],
+                correct: 0,
+                explanation: `
+                    <strong>(A) Correta:</strong> A vírgula anda 5 casas para a direita para ficar entre 5 e 6.<br>
+                    <strong>(B) Incorreta:</strong> Contou apenas os zeros antes do 5, mas a vírgula pula o primeiro zero também.<br>
+                    <strong>(C) Incorreta:</strong> 56 é maior que 10.<br>
+                    <strong>(D) Incorreta:</strong> Expoente positivo é para número grande.`
+            },
+            {
+                id: 9,
+                text: "Se o expoente é negativo (ex: 10⁻⁴), o número original é:",
+                options: ["Maior que 1", "Um número negativo (ex: -100)", "Um número decimal entre 0 e 1", "Igual a zero"],
+                correct: 2,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> Expoente positivo faz isso.<br>
+                    <strong>(B) Incorreta:</strong> O sinal do expoente não muda o sinal do número (base).<br>
+                    <strong>(C) Correta:</strong> Indica divisão por 10, resultando em números pequenos como 0,0001.<br>
+                    <strong>(D) Incorreta:</strong> Nunca chega a zero.`
+            },
+            // NÍVEL 4: CAMINHO INVERSO (NOTAÇÃO -> DECIMAL)
+            {
+                id: 10,
+                text: "Qual é o número decimal de <strong>3 x 10⁴</strong>?",
+                options: ["300", "3000", "30.000", "0,0003"],
+                correct: 2,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> Faltam zeros.<br>
+                    <strong>(B) Incorreta:</strong> São 4 zeros.<br>
+                    <strong>(C) Correta:</strong> O expoente 4 indica que devemos andar a vírgula 4 casas para a direita (adicionar 4 zeros).<br>
+                    <strong>(D) Incorreta:</strong> Isso seria expoente negativo.`
+            },
+            {
+                id: 11,
+                text: "O número <strong>2 x 10⁻³</strong> é igual a:",
+                options: ["2000", "0,002", "0,02", "-2000"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> Isso é 10 positivo.<br>
+                    <strong>(B) Correta:</strong> Expoente -3: andar a vírgula 3 casas para a esquerda. (0,002).<br>
+                    <strong>(C) Incorreta:</strong> Andou só 2 casas.<br>
+                    <strong>(D) Incorreta:</strong> Não torna o número negativo.`
+            },
+            {
+                id: 12,
+                text: "<strong>1,5 x 10²</strong> é igual a:",
+                options: ["150", "1500", "0,015", "15"],
+                correct: 0,
+                explanation: `
+                    <strong>(A) Correta:</strong> 10² = 100. 1,5 x 100 = 150. (Vírgula anda 2 casas: 1,5 -> 15 -> 150).<br>
+                    <strong>(B) Incorreta:</strong> Andou 3 casas.<br>
+                    <strong>(C) Incorreta:</strong> Andou para a esquerda.<br>
+                    <strong>(D) Incorreta:</strong> Andou só 1 casa.`
+            },
+            // NÍVEL 5: OPERAÇÕES E COMPARAÇÃO
+            {
+                id: 13,
+                text: "Qual número é maior: <strong>10⁵</strong> ou <strong>10³</strong>?",
+                options: ["10³", "10⁵", "São iguais", "Depende do coeficiente"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> 10³ = 1000.<br>
+                    <strong>(B) Correta:</strong> 10⁵ = 100.000. Quanto maior o expoente positivo, maior o número.<br>
+                    <strong>(C) Incorreta:</strong> Diferentes ordens de grandeza.<br>
+                    <strong>(D) Incorreta:</strong> A potência de 10 domina a grandeza.`
+            },
+            {
+                id: 14,
+                text: "Multiplicação: <strong>(2 x 10²) . (4 x 10³)</strong>",
+                options: ["6 x 10⁵", "8 x 10⁶", "8 x 10⁵", "6 x 10⁶"],
+                correct: 2,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> Somou as bases (2+4).<br>
+                    <strong>(B) Incorreta:</strong> Multiplicou os expoentes (2x3).<br>
+                    <strong>(C) Correta:</strong> Multiplica os números (2x4=8) e soma os expoentes da base 10 (2+3=5).<br>
+                    <strong>(D) Incorreta:</strong> Somou bases e multiplicou expoentes.`
+            },
+            {
+                id: 15,
+                text: "A distância da Terra ao Sol é aprox. 150.000.000 km. Em notação:",
+                options: ["15 x 10⁷", "1,5 x 10⁸", "1,5 x 10⁷", "150 x 10⁶"],
+                correct: 1,
+                explanation: `
+                    <strong>(A) Incorreta:</strong> 15 é maior que 10.<br>
+                    <strong>(B) Correta:</strong> A vírgula anda 8 casas para ficar em 1,5. Formato padrão.<br>
+                    <strong>(C) Incorreta:</strong> Contagem de casas errada.<br>
+                    <strong>(D) Incorreta:</strong> 150 não está na notação padrão.`
+            }
+        ];
+
+        // --- ESTADO DO APP ---
+        let currentQuestion = 0;
+        let userAnswers = new Array(questions.length).fill(null);
+        let score = 0;
+
+        // --- NAVEGAÇÃO ENTRE ABAS ---
+        function setMode(mode) {
+            const expDiv = document.getElementById('viewExplanation');
+            const pracDiv = document.getElementById('viewPractice');
+            const resDiv = document.getElementById('viewResult');
+            const expBtn = document.getElementById('btnExp');
+            const pracBtn = document.getElementById('btnPrac');
+            const footer = document.getElementById('quizFooter');
+
+            expDiv.style.display = 'none';
+            pracDiv.style.display = 'none';
+            resDiv.style.display = 'none';
+            footer.style.display = 'none';
+
+            if(mode === 'explanation') {
+                expDiv.style.display = 'block';
+                expBtn.classList.add('active');
+                pracBtn.classList.remove('active');
+            } else if (mode === 'practice') {
+                pracDiv.style.display = 'block';
+                expBtn.classList.remove('active');
+                pracBtn.classList.add('active');
+                footer.style.display = 'flex';
+                renderQuestion();
+                renderMap();
+            } else if (mode === 'result') {
+                resDiv.style.display = 'block';
+                expBtn.classList.remove('active');
+                pracBtn.classList.remove('active');
+            }
+            window.scrollTo(0,0);
+        }
+
+        // --- RENDERIZAÇÃO DO QUIZ ---
+        function renderQuestion() {
+            const q = questions[currentQuestion];
+            const container = document.getElementById('quizContainer');
+            const letters = ['A', 'B', 'C', 'D', 'E'];
+            const userAnswer = userAnswers[currentQuestion]; 
+            const isAnswered = userAnswer !== null;
+
+            let optionsHTML = '';
+            q.options.forEach((opt, idx) => {
+                let statusClass = '';
+                if (isAnswered) {
+                    if (idx === q.correct) statusClass = 'correct'; 
+                    else if (idx === userAnswer) statusClass = 'wrong'; 
+                    else statusClass = 'disabled'; 
+                }
+
+                optionsHTML += `
+                    <div class="option-btn ${statusClass}" onclick="handleAnswer(${idx})">
+                        <div class="opt-circle">${letters[idx]}</div>
+                        <div style="flex: 1;">${opt}</div>
+                    </div>
+                `;
+            });
+
+            let feedbackHTML = '';
+            if (isAnswered) {
+                const feedbackTitle = userAnswer === q.correct 
+                    ? '<span style="color:#276749">✅ Resposta Correta!</span>' 
+                    : '<span style="color:#C53030">❌ Atenção!</span>';
+                
+                feedbackHTML = `
+                    <div class="feedback-box">
+                        <div class="feedback-title">${feedbackTitle}</div>
+                        <div style="font-size: 0.90rem; line-height: 1.6;">${q.explanation}</div>
+                    </div>
+                `;
+            }
+
+            // Verifica se tem imagem visual na questão
+            let visualHTML = '';
+            if (q.visual) {
+                visualHTML = `<div class="question-visual">${q.visual}</div>`;
+            }
+
+            container.innerHTML = `
+                <div style="margin-bottom: 20px;">
+                    <span style="font-size: 0.8rem; font-weight: 700; color: #888; text-transform: uppercase;">Questão ${currentQuestion + 1} de ${questions.length}</span>
+                    <h2 style="font-size: 1.1rem; margin-top: 5px;">${q.text}</h2>
+                </div>
+                ${visualHTML}
+                <div class="options-list">
+                    ${optionsHTML}
+                </div>
+                ${feedbackHTML}
+            `;
+
+            updateNavButtons();
+            renderMap();
+        }
+
+        function handleAnswer(selectedIdx) {
+            if (userAnswers[currentQuestion] !== null) return; // Já respondeu
+
+            userAnswers[currentQuestion] = selectedIdx;
+            const isCorrect = (selectedIdx === questions[currentQuestion].correct);
+
+            if (isCorrect) {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            } else {
+                document.body.classList.add('shake-effect');
+                setTimeout(() => document.body.classList.remove('shake-effect'), 500);
+            }
+
+            renderQuestion();
+        }
+
+        function renderMap() {
+            const map = document.getElementById('qMap');
+            map.innerHTML = '';
+            
+            questions.forEach((q, idx) => {
+                const dot = document.createElement('div');
+                let className = 'map-dot';
+                if (idx === currentQuestion) className += ' active';
+                
+                const ans = userAnswers[idx];
+                if (ans !== null) {
+                    if (ans === q.correct) className += ' answered-correct';
+                    else className += ' answered-wrong';
+                }
+
+                dot.className = className;
+                dot.textContent = idx + 1;
+                dot.onclick = () => { currentQuestion = idx; renderQuestion(); };
+                map.appendChild(dot);
+            });
+
+            const currentDot = map.children[currentQuestion];
+            if (currentDot) {
+                currentDot.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+        }
+
+        function changeQuestion(dir) {
+            const next = currentQuestion + dir;
+            if (next >= 0 && next < questions.length) {
+                currentQuestion = next;
+                renderQuestion();
+            }
+        }
+
+        function updateNavButtons() {
+            document.getElementById('btnPrev').disabled = currentQuestion === 0;
+            const btnNext = document.getElementById('btnNext');
+            
+            if (currentQuestion === questions.length - 1) {
+                btnNext.textContent = "Finalizar";
+                btnNext.onclick = finishQuiz;
+                btnNext.style.backgroundColor = "#1565C0"; 
+            } else {
+                btnNext.textContent = "Próxima";
+                btnNext.onclick = () => changeQuestion(1);
+                btnNext.style.backgroundColor = ""; 
+            }
+        }
+
+        // --- LÓGICA DE FINALIZAÇÃO E FEEDBACK DETALHADO ---
+        function finishQuiz() {
+            score = 0;
+            let feedbackHTML = '<div style="text-align: left; margin-top: 30px; border-top: 2px solid #eee; padding-top: 20px;">';
+
+            userAnswers.forEach((ans, idx) => {
+                const q = questions[idx];
+                const isCorrect = (ans === q.correct);
+                
+                if (isCorrect) {
+                    score++;
+                    feedbackHTML += `
+                        <div style="margin-bottom: 15px; padding: 10px; background: #F0FFF4; border-radius: 8px; border-left: 4px solid #48BB78;">
+                            <p style="font-size: 0.9rem;"><strong>Questão ${idx+1}:</strong> ✅ Acertou!</p>
+                        </div>`;
+                } else {
+                    const userAnswerText = q.options[ans];
+                    const correctAnswerText = q.options[q.correct];
+                    feedbackHTML += `
+                        <div style="margin-bottom: 15px; padding: 15px; background: #FFF5F5; border-radius: 8px; border-left: 4px solid #F56565;">
+                            <p style="font-weight: 700; color: #C53030;">Questão ${idx+1}: ${q.text}</p>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">❌ <strong>Você marcou:</strong> ${userAnswerText}</p>
+                            <p style="font-size: 0.9rem;">🎯 <strong>Correto seria:</strong> ${correctAnswerText}</p>
+                            <div style="font-size: 0.85rem; margin-top: 10px; color: #4A5568; background: rgba(255,255,255,0.5); padding: 8px; border-radius: 4px;">
+                                ${q.explanation}
+                            </div>
+                        </div>`;
+                }
+            });
+            feedbackHTML += '</div>';
+
+            const total = questions.length;
+            const percent = Math.round((score / total) * 100);
+            
+            let stars = "";
+            let msg = "";
+            let actionButtonsHTML = "";
+
+            // CRITÉRIO DE 80%
+            if (percent >= 80) {
+                stars = "⭐⭐⭐⭐⭐"; 
+                msg = "Parabéns! Você dominou o conteúdo.";
+                actionButtonsHTML = `
+                    <button onclick="window.location.href='8ano-matematica.html'" style="width: 100%; padding: 15px; background-color: #48BB78; color: white; border: 2px solid black; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 4px 4px 0px black; transition: transform 0.1s;">
+                        Concluir Atividade
+                    </button>
+                    <button onclick="setMode('explanation')" style="margin-top:15px; width:100%; border:none; background:none; color:#555; font-weight:600; cursor:pointer; font-size:1rem;">
+                        ⬅ Voltar para o Assunto
+                    </button>
+                `;
+            } else {
+                stars = "💪 Estude mais"; 
+                msg = `Você fez ${percent}%. Precisa de 80% para passar.`;
+                actionButtonsHTML = `
+                    <button class="btn-retry" onclick="resetQuiz()">🔄 Refazer Exercícios</button>
+                    <button onclick="setMode('explanation')" style="margin-top:15px; width:100%; border:none; background:none; color:#555; font-weight:600; cursor:pointer; font-size:1rem;">
+                        ⬅ Revisar Explicação
+                    </button>
+                `;
+            }
+
+            document.getElementById('finalStars').textContent = stars;
+            document.getElementById('finalPercent').textContent = percent + "%";
+            document.getElementById('finalScoreText').textContent = `Você acertou ${score} de ${total}`;
+            document.getElementById('finalMessage').textContent = msg;
+            
+            // Injeta o feedback detalhado
+            document.getElementById('review-container').innerHTML = feedbackHTML;
+            // Injeta os botões de ação corretos
+            document.getElementById('action-buttons').innerHTML = actionButtonsHTML;
+
+            if (percent >= 80) {
+                var duration = 3 * 1000;
+                var animationEnd = Date.now() + duration;
+                var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+                function randomInOut(min, max) { return Math.random() * (max - min) + min; }
+                var interval = setInterval(function() {
+                    var timeLeft = animationEnd - Date.now();
+                    if (timeLeft <= 0) { return clearInterval(interval); }
+                    var particleCount = 50 * (timeLeft / duration);
+                    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInOut(0.1, 0.3), y: Math.random() - 0.2 } }));
+                    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInOut(0.7, 0.9), y: Math.random() - 0.2 } }));
+                }, 250);
+            }
+
+            setMode('result');
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            userAnswers = new Array(questions.length).fill(null);
+            document.getElementById('review-container').innerHTML = ""; // Limpa feedback anterior
+            setMode('explanation'); 
+        }
+
+        setMode('explanation');
+
+    </script>
+</body>
+</html>
